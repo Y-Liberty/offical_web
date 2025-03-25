@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课程体系 - 壹零贰肆少儿编程教育</title>
+    <meta name="description" content="壹零贰肆少儿编程教育机构完整课程体系，针对不同年龄段和不同编程水平的少儿提供专业编程教育">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/courses.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <div class="logo-container">
+                        <span class="logo-text">壹零贰肆</span>
+                        <span class="logo-tagline">少儿编程教育</span>
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> 首页</a>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="courses.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-book"></i> 课程体系
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="scratch.html">Scratch编程</a></li>
+                                <li><a class="dropdown-item" href="python.html">Python编程</a></li>
+                                <li><a class="dropdown-item" href="cpp.html">C++编程</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="courses.html">全部课程</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-collection"></i> 资讯中心
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="showcase.html">学生作品</a></li>
+                                <li><a class="dropdown-item" href="competition.html">赛事活动</a></li>
+                                <li><a class="dropdown-item" href="news.html">新闻动态</a></li>
+                                <li><a class="dropdown-item" href="faq.html">常见问题</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-info-circle"></i> 关于我们
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="about.html">机构介绍</a></li>
+                                <li><a class="dropdown-item" href="teachers.html">师资力量</a></li>
+                                <li><a class="dropdown-item" href="about.html#vision">教学理念</a></li>
+                                <li><a class="dropdown-item" href="about.html#history">发展历程</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="contact.html">联系我们</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-primary btn-sm ms-2 px-3" href="#" data-bs-toggle="modal" data-bs-target="#registrationModal">
+                                <i class="bi bi-calendar-check"></i> 预约试听
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 页面标题 -->
+    <section class="page-title-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold animate__animated animate__fadeInUp">探索编程世界，启迪未来思维</h1>
+                    <p class="lead animate__animated animate__fadeInUp animate__delay-1s">系统化的课程设计，全方位培养少儿编程能力</p>
+                    <nav aria-label="breadcrumb" class="animate__animated animate__fadeInUp animate__delay-2s">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="index.html">首页</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">课程体系</li>
+                        </ol>
+                    </nav>
+                    
+                    <div class="title-decoration">
+                        <span class="decoration-item"></span>
+                        <span class="decoration-item"></span>
+                        <span class="decoration-item"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 课程列表 -->
+    <section class="courses-section py-5">
+        <div class="container">
+            <!-- 课程列表标题 -->
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">精心设计的课程体系</h2>
+                <p class="section-subtitle">为不同年龄段的孩子提供专业化、系统化的编程教育</p>
+            </div>
+            
+            <!-- 课程过滤器 -->
+            <div class="course-filter mb-5">
+                <div class="d-flex flex-wrap justify-content-center">
+                    <button class="filter-btn active" data-filter="all">全部课程</button>
+                    <button class="filter-btn" data-filter="kindergarten">幼儿启蒙 (4-6岁)</button>
+                    <button class="filter-btn" data-filter="primary">小学阶段 (7-12岁)</button>
+                    <button class="filter-btn" data-filter="junior">初中阶段 (13-15岁)</button>
+                    <button class="filter-btn" data-filter="senior">高中阶段 (16-18岁)</button>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Scratch启蒙课程 -->
+                <div class="col-lg-4 col-md-6" data-category="kindergarten">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="images/course/scratch/basic.jpg" alt="Scratch启蒙课程">
+                            <span class="course-level">入门级</span>
+                            <div class="course-hover-overlay">
+                                <a href="scratch.html" class="btn btn-light">了解详情</a>
+                            </div>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-tag">Scratch</div>
+                            <h3 class="course-title">Scratch启蒙编程</h3>
+                            <p class="course-description">通过积木式编程，激发孩子的编程兴趣，培养逻辑思维和创造力，适合无编程基础的幼儿。</p>
+                            <div class="course-details">
+                                <div class="course-age">
+                                    <i class="bi bi-person"></i> 4-6岁
+                                </div>
+                                <div class="course-duration">
+                                    <i class="bi bi-clock"></i> 12课时
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">¥2,980</div>
+                                <a href="scratch.html" class="btn btn-sm btn-primary">查看详情</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scratch进阶课程 -->
+                <div class="col-lg-4 col-md-6" data-category="primary">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="images/course/scratch/advanced.jpg" alt="Scratch进阶课程">
+                            <span class="course-level">进阶级</span>
+                            <div class="course-hover-overlay">
+                                <a href="scratch.html" class="btn btn-light">了解详情</a>
+                            </div>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-tag">Scratch</div>
+                            <h3 class="course-title">Scratch创意编程</h3>
+                            <p class="course-description">深入学习Scratch编程，开发游戏、动画和互动项目，培养孩子的算法思维和项目实践能力。</p>
+                            <div class="course-details">
+                                <div class="course-age">
+                                    <i class="bi bi-person"></i> 7-9岁
+                                </div>
+                                <div class="course-duration">
+                                    <i class="bi bi-clock"></i> 16课时
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">¥3,980</div>
+                                <a href="scratch.html" class="btn btn-sm btn-primary">查看详情</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Python基础课程 -->
+                <div class="col-lg-4 col-md-6" data-category="primary">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="images/course/python/basic.jpg" alt="Python基础课程">
+                            <span class="course-level">入门级</span>
+                            <div class="course-hover-overlay">
+                                <a href="python.html" class="btn btn-light">了解详情</a>
+                            </div>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-tag">Python</div>
+                            <h3 class="course-title">Python编程基础</h3>
+                            <p class="course-description">学习Python编程基础语法和概念，通过有趣的项目培养孩子的文本编程能力和计算思维。</p>
+                            <div class="course-details">
+                                <div class="course-age">
+                                    <i class="bi bi-person"></i> 10-12岁
+                                </div>
+                                <div class="course-duration">
+                                    <i class="bi bi-clock"></i> 20课时
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">¥4,580</div>
+                                <a href="python.html" class="btn btn-sm btn-primary">查看详情</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Python进阶课程 -->
+                <div class="col-lg-4 col-md-6" data-category="junior">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="images/course/python/advanced.jpg" alt="Python进阶课程">
+                            <span class="course-level">进阶级</span>
+                            <div class="course-hover-overlay">
+                                <a href="python.html" class="btn btn-light">了解详情</a>
+                            </div>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-tag">Python</div>
+                            <h3 class="course-title">Python应用开发</h3>
+                            <p class="course-description">深入学习Python高级特性，开发实用应用程序，包括数据分析、网络爬虫和简单的人工智能应用。</p>
+                            <div class="course-details">
+                                <div class="course-age">
+                                    <i class="bi bi-person"></i> 13-15岁
+                                </div>
+                                <div class="course-duration">
+                                    <i class="bi bi-clock"></i> 24课时
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">¥5,280</div>
+                                <a href="python.html" class="btn btn-sm btn-primary">查看详情</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- C++基础课程 -->
+                <div class="col-lg-4 col-md-6" data-category="junior">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="images/course/cpp/basic.jpg" alt="C++基础课程">
+                            <span class="course-level">入门级</span>
+                            <div class="course-hover-overlay">
+                                <a href="cpp.html" class="btn btn-light">了解详情</a>
+                            </div>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-tag">C++</div>
+                            <h3 class="course-title">C++编程基础</h3>
+                            <p class="course-description">学习C++编程语言的基础语法和概念，培养扎实的编程功底，为信息学奥赛和高级编程打下基础。</p>
+                            <div class="course-details">
+                                <div class="course-age">
+                                    <i class="bi bi-person"></i> 13-15岁
+                                </div>
+                                <div class="course-duration">
+                                    <i class="bi bi-clock"></i> 24课时
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">¥5,680</div>
+                                <a href="cpp.html" class="btn btn-sm btn-primary">查看详情</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- C++算法课程 -->
+                <div class="col-lg-4 col-md-6" data-category="senior">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="images/course/cpp/algorithm.jpg" alt="C++算法课程">
+                            <span class="course-level">高级</span>
+                            <div class="course-hover-overlay">
+                                <a href="cpp.html" class="btn btn-light">了解详情</a>
+                            </div>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-tag">C++</div>
+                            <h3 class="course-title">C++算法与数据结构</h3>
+                            <p class="course-description">深入学习高级算法和数据结构，培养解决复杂问题的能力，为信息学奥赛和大学计算机专业学习做准备。</p>
+                            <div class="course-details">
+                                <div class="course-age">
+                                    <i class="bi bi-person"></i> 16-18岁
+                                </div>
+                                <div class="course-duration">
+                                    <i class="bi bi-clock"></i> 30课时
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">¥6,980</div>
+                                <a href="cpp.html" class="btn btn-sm btn-primary">查看详情</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 课程体系说明 -->
+    <section class="course-system">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title wow fadeInUp">我们的课程体系</h2>
+                <p class="section-subtitle wow fadeInUp" data-wow-delay="0.2s">科学合理的课程设计，满足不同年龄段孩子的学习需求</p>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="course-system-image reveal-on-scroll">
+                        <img src="images/course/system-diagram.jpg" alt="少儿编程课程体系" class="img-fluid">
+                        <div class="system-image-floating-elements">
+                            <div class="float-icon"><i class="fas fa-code"></i></div>
+                            <div class="float-icon"><i class="fas fa-robot"></i></div>
+                            <div class="float-icon"><i class="fas fa-brain"></i></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="course-system-content reveal-on-scroll">
+                        <h3 class="content-title">科学的编程教育体系</h3>
+                        <div class="title-underline"></div>
+                        <p class="content-description">
+                            我们精心设计的课程体系，根据儿童认知发展特点，从图形化编程到文本编程，循序渐进培养编程思维和问题解决能力，为孩子的未来奠定坚实基础。
+                        </p>
+                        
+                        <div class="system-features reveal-on-scroll">
+                            <div class="system-feature" style="opacity: 0; transform: translateX(20px);">
+                                <div class="feature-icon">
+                                    <i class="bi bi-people"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>分龄分层</h4>
+                                    <p>针对不同年龄段儿童认知能力设计课程内容，确保学习内容符合儿童发展规律。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="system-feature" style="opacity: 0; transform: translateX(20px);">
+                                <div class="feature-icon">
+                                    <i class="bi bi-bar-chart-steps"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>循序渐进</h4>
+                                    <p>从简单到复杂，由浅入深，每个阶段都有明确的学习目标和能力提升。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="system-feature" style="opacity: 0; transform: translateX(20px);">
+                                <div class="feature-icon">
+                                    <i class="bi bi-puzzle"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>项目驱动</h4>
+                                    <p>通过有趣的项目实践应用编程知识，培养创造力和解决问题的能力。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="system-feature" style="opacity: 0; transform: translateX(20px);">
+                                <div class="feature-icon">
+                                    <i class="bi bi-lightning-charge"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>能力导向</h4>
+                                    <p>注重培养逻辑思维、创新思维和计算思维，提升孩子的综合素质。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section class="faq-section py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title wow fadeInUp">常见问题解答</h2>
+                <div class="title-underline mx-auto"></div>
+                <p class="section-subtitle wow fadeInUp" data-wow-delay="0.2s">解答您关心的问题，帮助您更好地了解我们的课程</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="faq-container reveal-on-scroll">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <div class="question-icon">
+                                    <i class="bi bi-patch-question"></i>
+                                </div>
+                                <div class="question-text">
+                                    <h3>孩子没有任何编程基础，可以直接学习吗？</h3>
+                                </div>
+                                <div class="question-toggle">
+                                    <i class="bi bi-plus"></i>
+                                </div>
+                            </div>
+                            <div class="faq-answer">
+                                <p>完全可以。我们的课程体系是从零基础开始设计的，对于4-6岁的孩子，我们会从Scratch启蒙课程开始，通过可视化积木编程培养孩子的编程思维；对于更大年龄段的孩子，我们会根据其年龄和认知水平，从适合的层次开始学习。每个课程都不要求孩子有任何先前的编程知识。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <div class="question-icon">
+                                    <i class="bi bi-laptop"></i>
+                                </div>
+                                <div class="question-text">
+                                    <h3>课程采用什么样的教学方式？线上还是线下？</h3>
+                                </div>
+                                <div class="question-toggle">
+                                    <i class="bi bi-plus"></i>
+                                </div>
+                            </div>
+                            <div class="faq-answer">
+                                <p>我们同时提供线上和线下教学方式。线下课程在我们的教学中心进行，小班制教学，每班不超过12人，确保每个孩子都能得到老师充分的关注；线上课程采用实时互动的方式，配合专业的教学平台，学习效果媲美线下课程，并且更加灵活便捷。家长可以根据实际情况选择适合的学习方式。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <div class="question-icon">
+                                    <i class="bi bi-calendar-week"></i>
+                                </div>
+                                <div class="question-text">
+                                    <h3>一个课程周期有多长时间？上课频率是怎样的？</h3>
+                                </div>
+                                <div class="question-toggle">
+                                    <i class="bi bi-plus"></i>
+                                </div>
+                            </div>
+                            <div class="faq-answer">
+                                <p>不同课程的周期有所不同，一般从12课时到30课时不等。我们通常建议每周上课1-2次，每次课2小时。这样的频率可以保证孩子有足够的时间消化吸收所学知识，同时又不会遗忘前面的内容。当然，我们也可以根据家长和孩子的时间安排做适当调整。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <div class="question-icon">
+                                    <i class="bi bi-pc-display"></i>
+                                </div>
+                                <div class="question-text">
+                                    <h3>学习编程需要准备什么设备？</h3>
+                                </div>
+                                <div class="question-toggle">
+                                    <i class="bi bi-plus"></i>
+                                </div>
+                            </div>
+                            <div class="faq-answer">
+                                <p>线下课程中，我们会提供所有必要的硬件设备和软件环境，孩子无需自备任何设备。如果选择线上课程，一般需要有一台配置基本的电脑或平板电脑（Windows、Mac或iPad均可），以及稳定的网络连接。具体的设备要求会在报名时详细告知，我们的技术团队也会提供远程支持，确保孩子能够顺利开始学习。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <div class="question-icon">
+                                    <i class="bi bi-graph-up-arrow"></i>
+                                </div>
+                                <div class="question-text">
+                                    <h3>如何衡量孩子的学习进度和效果？</h3>
+                                </div>
+                                <div class="question-toggle">
+                                    <i class="bi bi-plus"></i>
+                                </div>
+                            </div>
+                            <div class="faq-answer">
+                                <p>我们建立了完整的学习评估体系，通过阶段性的项目作业、课堂表现评估和定期的学习报告来追踪孩子的学习进度。每个学期结束时，我们会为孩子组织项目展示，让他们有机会展示自己的作品，并获得老师和家长的反馈。同时，我们的老师会定期与家长沟通，分享孩子的学习情况，并提供有针对性的指导建议。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer-section">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+                        <div class="footer-widget">
+                            <h4>关于我们</h4>
+                            <p>壹零贰肆少儿编程致力于为6-18岁青少年提供优质的编程教育，培养孩子的逻辑思维、解决问题的能力和创造力。</p>
+                            
+                            <div class="mt-4">
+                                <h4>扫码关注</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="text-center">
+                                            <h5>关注公众号</h5>
+                                            <img src="images/qrcode/qrcode.jpg" alt="公众号二维码" class="img-fluid" style="max-width: 150px;">
+                                            <p>获取最新资讯、课程优惠与教育干货</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="text-center">
+                                            <h5>微信客服</h5>
+                                            <img src="images/qrcode/wechat.jpg" alt="微信二维码" class="img-fluid" style="max-width: 150px;">
+                                            <p>添加微信客服咨询课程详情</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
+                        <div class="footer-widget">
+                            <h4>快捷导航</h4>
+                            <div class="row">
+                                <div class="col-6">
+                                    <ul class="footer-links">
+                                        <li><a href="index.html">首页</a></li>
+                                        <li><a href="courses.html">课程体系</a></li>
+                                        <li><a href="scratch.html">Scratch编程</a></li>
+                                        <li><a href="python.html">Python编程</a></li>
+                                        <li><a href="cpp.html">C++编程</a></li>
+                                        <li><a href="competition.html">赛事活动</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul class="footer-links">
+                                        <li><a href="showcase.html">学生作品</a></li>
+                                        <li><a href="news.html">新闻动态</a></li>
+                                        <li><a href="teachers.html">师资力量</a></li>
+                                        <li><a href="about.html">机构介绍</a></li>
+                                        <li><a href="about.html#vision">教学理念</a></li>
+                                        <li><a href="contact.html">联系我们</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="copyright">
+                            <p>© 2023 壹零贰肆少儿编程 版权所有 | 京ICP备12345678号-1</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-menu">
+                            <a href="privacy-policy.html">隐私政策</a>
+                            <a href="terms-of-service.html">服务条款</a>
+                            <a href="careers.html">招贤纳士</a>
+                            <a href="sitemap.html">网站地图</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 回到顶部 -->
+    <a href="#" class="back-to-top">
+        <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <!-- JavaScript 依赖 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/courses.js"></script>
+</body>
+</html>

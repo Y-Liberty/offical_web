@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python编程课程 - 壹零贰肆少儿编程教育</title>
+    <meta name="description" content="壹零贰肆少儿编程Python课程，专为10-16岁青少年设计，从基础入门到实际应用开发，培养编程思维和问题解决能力">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/python.css">
+    <!-- 添加highlight.js的CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <style>
+        /* 确保代码区域正确显示 */
+        .code-example {
+            background-color: #282C34;
+            border-radius: 8px;
+            padding: 0;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            margin-bottom: 20px;
+        }
+        
+        .code-example pre {
+            margin: 0;
+            padding: 20px;
+            overflow-x: auto;
+        }
+        
+        .code-example code {
+            font-family: 'Source Code Pro', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #abb2bf;
+            background: none;
+            text-align: left;
+            white-space: pre;
+            word-spacing: normal;
+            word-break: normal;
+            word-wrap: normal;
+            tab-size: 4;
+            hyphens: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <div class="logo-container">
+                        <span class="logo-text">壹零贰肆</span>
+                        <span class="logo-tagline">少儿编程教育</span>
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> 首页</a>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="courses.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-book"></i> 课程体系
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="scratch.html">Scratch编程</a></li>
+                                <li><a class="dropdown-item active" href="python.html">Python编程</a></li>
+                                <li><a class="dropdown-item" href="cpp.html">C++编程</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="courses.html">全部课程</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-collection"></i> 资讯中心
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="showcase.html">学生作品</a></li>
+                                <li><a class="dropdown-item" href="competition.html">赛事活动</a></li>
+                                <li><a class="dropdown-item" href="news.html">新闻动态</a></li>
+                                <li><a class="dropdown-item" href="faq.html">常见问题</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-info-circle"></i> 关于我们
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="about.html">机构介绍</a></li>
+                                <li><a class="dropdown-item" href="teachers.html">师资力量</a></li>
+                                <li><a class="dropdown-item" href="about.html#vision">教学理念</a></li>
+                                <li><a class="dropdown-item" href="about.html#history">发展历程</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="contact.html">联系我们</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-primary btn-sm ms-2 px-3" href="#" data-bs-toggle="modal" data-bs-target="#trialModal">
+                                <i class="bi bi-calendar-check"></i> 预约试听
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Python横幅 -->
+    <section class="python-banner">
+        <div class="banner-decoration">
+            <div class="decoration-circle circle-1"></div>
+            <div class="decoration-circle circle-2"></div>
+            <div class="decoration-circle circle-3"></div>
+            <div class="decoration-circle circle-4"></div>
+            <div class="decoration-line line-1"></div>
+            <div class="decoration-line line-2"></div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="banner-content">
+                        <h1>Python <span class="highlight">少儿编程</span></h1>
+                        <p>专为10-16岁青少年设计的编程课程，从基础入门到实际应用开发，培养编程思维和问题解决能力</p>
+                        <div class="banner-buttons">
+                            <a href="#course-intro" class="btn btn-primary me-3">了解课程</a>
+                            <a href="#" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#trialModal">免费试听</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="images/course/python/basic.jpg" alt="Python编程" class="banner-image">
+    </section>
+
+    <!-- 课程介绍 -->
+    <section id="course-intro" class="course-intro">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="images/course/python/advanced.jpg" alt="Python应用开发" class="img-fluid intro-image">
+                </div>
+                <div class="col-lg-6">
+                    <div class="intro-content">
+                        <h2>什么是 <span class="highlight">Python</span> 编程?</h2>
+                        <p>Python是一种广受欢迎的高级编程语言，以其简洁、易读的语法和强大的功能著称。它是当今人工智能、数据科学、网站开发等领域的首选语言，被广泛应用于谷歌、NASA等知名机构。</p>
+                        <p>在我们的Python课程中，学生将从基础语法开始，逐步学习变量、条件判断、循环、函数、列表、字典等重要概念，并通过实际项目的开发，培养真实的编程能力和解决问题的思维方式。</p>
+                        <p>Python是孩子从图形化编程（如Scratch）过渡到文本编程的理想选择，它的语法直观，学习曲线平缓，同时又拥有强大的功能和广阔的应用前景。</p>
+                        <div class="mt-4">
+                            <a href="#course-features" class="btn btn-primary">课程特点</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 代码示例 -->
+    <section class="code-sample py-5 bg-light">
+        <div class="container">
+            <div class="section-title text-center mb-4">
+                <h2>Python代码示例</h2>
+                <p>简洁易读的Python代码，让编程变得简单有趣</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="code-example" style="background-color:#282c34;border-radius:8px;margin-bottom:20px;overflow:hidden;">
+                        <h5 style="color:#fff;margin:0;padding:15px 20px;background-color:#3B4252;font-weight:600;">简单的猜数字游戏</h5>
+                        <div style="padding:20px;font-family:'Source Code Pro',monospace;font-size:14px;line-height:1.6;overflow-x:auto;color:#E5E9F0;white-space:pre;">
+<span style="color:#81A1C1;">import</span> <span style="color:#8FBCBB;">random</span>
+
+<span style="color:#81A1C1;">def</span> <span style="color:#88C0D0;">guess_game</span>():
+    <span style="color:#616E88;"># 生成1到100之间的随机数</span>
+    secret = <span style="color:#8FBCBB;">random</span>.<span style="color:#88C0D0;">randint</span>(<span style="color:#B48EAD;">1</span>, <span style="color:#B48EAD;">100</span>)
+    chances = <span style="color:#B48EAD;">10</span>
+    
+    <span style="color:#88C0D0;">print</span>(<span style="color:#A3BE8C;">"欢迎来到猜数字游戏！"</span>)
+    <span style="color:#88C0D0;">print</span>(<span style="color:#81A1C1;">f</span><span style="color:#A3BE8C;">"我想了一个1到100之间的数字，你有{chances}次机会猜出它。"</span>)
+    
+    <span style="color:#81A1C1;">for</span> attempt <span style="color:#81A1C1;">in</span> <span style="color:#88C0D0;">range</span>(<span style="color:#B48EAD;">1</span>, chances + <span style="color:#B48EAD;">1</span>):
+        <span style="color:#81A1C1;">try</span>:
+            guess = <span style="color:#88C0D0;">int</span>(<span style="color:#88C0D0;">input</span>(<span style="color:#81A1C1;">f</span><span style="color:#A3BE8C;">"第{attempt}次猜测: "</span>))
+            
+            <span style="color:#81A1C1;">if</span> guess <span style="color:#81A1C1;">&lt;</span> secret:
+                <span style="color:#88C0D0;">print</span>(<span style="color:#A3BE8C;">"太小了！再试一次。"</span>)
+            <span style="color:#81A1C1;">elif</span> guess <span style="color:#81A1C1;">&gt;</span> secret:
+                <span style="color:#88C0D0;">print</span>(<span style="color:#A3BE8C;">"太大了！再试一次。"</span>)
+            <span style="color:#81A1C1;">else</span>:
+                <span style="color:#88C0D0;">print</span>(<span style="color:#81A1C1;">f</span><span style="color:#A3BE8C;">"恭喜你猜对了！答案是{secret}。"</span>)
+                <span style="color:#88C0D0;">print</span>(<span style="color:#81A1C1;">f</span><span style="color:#A3BE8C;">"你用了{attempt}次尝试。"</span>)
+                <span style="color:#81A1C1;">return</span> <span style="color:#81A1C1;">True</span>
+                
+        <span style="color:#81A1C1;">except</span> <span style="color:#8FBCBB;">ValueError</span>:
+            <span style="color:#88C0D0;">print</span>(<span style="color:#A3BE8C;">"请输入有效的数字！"</span>)
+    
+    <span style="color:#88C0D0;">print</span>(<span style="color:#81A1C1;">f</span><span style="color:#A3BE8C;">"游戏结束！正确答案是{secret}。"</span>)
+    <span style="color:#81A1C1;">return</span> <span style="color:#81A1C1;">False</span>
+
+<span style="color:#616E88;"># 运行游戏</span>
+<span style="color:#81A1C1;">if</span> __name__ == <span style="color:#A3BE8C;">"__main__"</span>:
+    <span style="color:#88C0D0;">guess_game</span>()
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="game-simulation">
+                        <div class="game-window">
+                            <div class="game-header">
+                                <span class="window-btn red"></span>
+                                <span class="window-btn yellow"></span>
+                                <span class="window-btn green"></span>
+                                <span class="window-title">Python猜数字游戏</span>
+                            </div>
+                            <div class="game-body">
+                                <div class="game-output" id="game-output">
+                                    <!-- 输出内容将通过JavaScript动态添加 -->
+                                </div>
+                                <div class="game-input-area">
+                                    <div class="d-flex justify-content-between align-items-center mb-0">
+                                        <div class="input-group" style="width: 70%;">
+                                            <input type="number" id="user-guess" class="form-control" min="1" max="100">
+                                            <button id="submit-guess" class="btn btn-primary game-btn">提交</button>
+                                        </div>
+                                        <button id="restart-game" class="btn btn-primary game-btn">重新开始</button>
+                                    </div>
+                                    <div id="guess-feedback"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-explanation mt-3">
+                            <h5>代码解释</h5>
+                            <ul>
+                                <li><strong>random.randint(1, 100)</strong>: 生成1到100之间的随机数</li>
+                                <li><strong>for循环</strong>: 控制猜测次数</li>
+                                <li><strong>条件判断</strong>: 比较猜测值与随机数的大小</li>
+                                <li><strong>异常处理</strong>: 确保输入的是有效数字</li>
+                            </ul>
+                            <p>这个简单的猜数字游戏展示了变量、循环、条件语句和异常处理等Python基础概念。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 课程特点 -->
+    <section id="course-features" class="course-features">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h2>课程特点</h2>
+                <p>培养编程思维，提升实际应用能力，为未来的科技创新之路打下坚实基础</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-code-slash"></i>
+                        </div>
+                        <h3>实践驱动</h3>
+                        <p>以项目为导向的学习方式，通过开发小游戏、网页应用等实际项目，让学生在实践中掌握编程技能</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-diagram-3"></i>
+                        </div>
+                        <h3>逻辑思维</h3>
+                        <p>培养算法思维和问题解决能力，训练孩子进行系统性思考和合理规划解决方案的能力</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-robot"></i>
+                        </div>
+                        <h3>AI与数据</h3>
+                        <p>介绍人工智能和数据分析的基础知识，让学生了解这些前沿技术，为未来学习和发展做准备</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-gear-wide-connected"></i>
+                        </div>
+                        <h3>实用工具</h3>
+                        <p>学习使用专业的开发环境和工具，培养良好的编程习惯，为将来的专业学习打下基础</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-graph-up"></i>
+                        </div>
+                        <h3>渐进式学习</h3>
+                        <p>课程内容由浅入深，从基础概念到复杂应用，确保学生能够稳步提升，建立自信</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-trophy"></i>
+                        </div>
+                        <h3>竞赛导向</h3>
+                        <p>为有兴趣的学生提供参加编程竞赛的辅导和指导，助力学生在各类编程比赛中脱颖而出</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 课程大纲 -->
+    <section id="course-outline" class="course-outline">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="outline-content">
+                        <h2>课程大纲</h2>
+                        <ul class="outline-list">
+                            <li>
+                                <h3>第一阶段：Python基础入门</h3>
+                                <p>了解Python编程环境，学习变量、数据类型、基本输入输出、运算符等基础知识，掌握简单程序的编写方法</p>
+                            </li>
+                            <li>
+                                <h3>第二阶段：控制流与函数</h3>
+                                <p>学习条件语句、循环结构、函数定义与调用，了解参数传递和返回值，进行简单算法实现</p>
+                            </li>
+                            <li>
+                                <h3>第三阶段：数据结构与文件操作</h3>
+                                <p>掌握列表、元组、字典等数据结构的使用，学习文件读写操作，开发小型数据处理程序</p>
+                            </li>
+                            <li>
+                                <h3>第四阶段：面向对象编程</h3>
+                                <p>了解面向对象的基本概念，学习类和对象的定义与使用，掌握继承和多态等高级特性</p>
+                            </li>
+                            <li>
+                                <h3>第五阶段：实用模块与项目开发</h3>
+                                <p>学习常用模块如Turtle图形、Tkinter界面、Pygame游戏开发等，完成综合性项目，展示学习成果</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="images/course/python/outline.jpg" alt="Python课程大纲" class="img-fluid rounded shadow-lg">
+                    <div class="mt-4">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-check-circle-fill text-success me-2 fs-4"></i>
+                                    <span>适合10-16岁青少年</span>
+                                </div>
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-check-circle-fill text-success me-2 fs-4"></i>
+                                    <span>小班教学(8-10人)</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-check-circle-fill text-success me-2 fs-4"></i>
+                                    <span>周末班/暑假班</span>
+                                </div>
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-check-circle-fill text-success me-2 fs-4"></i>
+                                    <span>配套教材和练习</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 学生项目展示 -->
+    <section id="projects" class="project-showcase">
+        <div class="section-decoration">
+            <div class="project-deco-item circle-5"></div>
+            <div class="project-deco-item circle-6"></div>
+        </div>
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h2>学生作品展示</h2>
+                <p>看看我们的学生使用Python创建的精彩项目</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="project-box">
+                        <div class="project-image-wrapper">
+                            <img src="images/course/python/projects/project1.jpg" alt="数据可视化项目" class="project-image">
+                            <div class="project-overlay">
+                                <div class="overlay-content">
+                                    <a href="#" class="btn">查看详情</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>数据可视化项目</h3>
+                            <p class="student-info"><i class="bi bi-person-fill"></i>王小明 | 15岁 | 学习Python 6个月</p>
+                            <p>这个项目使用Python的Matplotlib和Pandas库分析和可视化了某城市近五年的气温变化数据，展示了数据处理和可视化的基本技巧。</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="project-box">
+                        <div class="project-image-wrapper">
+                            <img src="images/course/python/projects/project2.jpg" alt="贪吃蛇游戏" class="project-image">
+                            <div class="project-overlay">
+                                <div class="overlay-content">
+                                    <a href="#" class="btn">查看详情</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>贪吃蛇游戏</h3>
+                            <p class="student-info"><i class="bi bi-person-fill"></i>李小华 | 12岁 | 学习Python 4个月</p>
+                            <p>使用Pygame库开发的经典贪吃蛇游戏，具有分数计算、难度选择和游戏记录等功能，展示了游戏开发的基本原理和技巧。</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="project-box">
+                        <div class="project-image-wrapper">
+                            <img src="images/course/python/projects/project3.jpg" alt="天气预报小程序" class="project-image">
+                            <div class="project-overlay">
+                                <div class="overlay-content">
+                                    <a href="#" class="btn">查看详情</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>天气预报小程序</h3>
+                            <p class="student-info"><i class="bi bi-person-fill"></i>张小雨 | 14岁 | 学习Python 5个月</p>
+                            <p>这是一个基于Python的天气预报程序，通过API获取实时天气数据，并使用Tkinter库构建图形界面，让用户可以查询全国各地的天气情况。</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="project-box">
+                        <div class="project-image-wrapper">
+                            <img src="images/course/python/projects/project4.jpg" alt="智能聊天机器人" class="project-image">
+                            <div class="project-overlay">
+                                <div class="overlay-content">
+                                    <a href="#" class="btn">查看详情</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>智能聊天机器人</h3>
+                            <p class="student-info"><i class="bi bi-person-fill"></i>陈小龙 | 16岁 | 学习Python 8个月</p>
+                            <p>这个项目利用Python的自然语言处理库构建了一个简单的聊天机器人，能够理解基本问题并给出相应回答，展示了AI应用的入门知识。</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="showcase.html" class="btn btn-outline-primary pulse-animation">查看更多作品 <i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h2>常见问题</h2>
+                <p>关于Python编程课程的常见疑问解答</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="faq-box">
+                        <div class="faq-question active">学习Python需要具备哪些基础知识？</div>
+                        <div class="faq-answer" style="max-height: 200px; opacity: 1; padding: 20px 25px;">
+                            <p>Python是一门对初学者非常友好的语言，学习者不需要特殊的编程基础。不过，如果孩子之前有过Scratch等图形化编程的经验，会更容易理解编程的基本概念。课程会从最基础的内容开始讲解，循序渐进地引导学生学习。具备基本的英文字母认知和简单数学运算能力即可开始学习Python。</p>
+                        </div>
+                    </div>
+                    <div class="faq-box">
+                        <div class="faq-question">Python适合多大年龄的孩子学习？</div>
+                        <div class="faq-answer">
+                            <p>我们的Python课程主要面向10-16岁的青少年。这个年龄段的孩子已经具备了一定的逻辑思维能力和抽象思维能力，能够理解Python编程的基本概念和语法结构。对于年龄较小的孩子，我们建议先从Scratch等图形化编程开始学起，打下编程思维的基础后再过渡到Python。</p>
+                        </div>
+                    </div>
+                    <div class="faq-box">
+                        <div class="faq-question">学习Python对孩子有什么好处？</div>
+                        <div class="faq-answer">
+                            <p>学习Python可以培养孩子的逻辑思维、问题解决能力和创造力。Python作为当今最流行的编程语言之一，广泛应用于人工智能、数据分析、网站开发等领域，掌握Python为孩子未来的学习和职业发展提供了广阔的可能性。此外，编程学习过程中的调试和错误修正也能培养孩子的耐心和毅力，提高抗挫折能力。</p>
+                        </div>
+                    </div>
+                    <div class="faq-box">
+                        <div class="faq-question">孩子需要自备电脑吗？</div>
+                        <div class="faq-answer">
+                            <p>我们的教室配备了高性能电脑，学生在课堂上可以直接使用，不需要自带设备。不过，为了方便孩子在家中复习和练习，我们建议家中有一台可以上网的电脑。如果家中有电脑，我们会提供Python环境的安装指导，确保孩子能够在家中继续学习和练习。对于没有家用电脑的学生，我们提供了额外的实验室开放时间。</p>
+                        </div>
+                    </div>
+                    <div class="faq-box">
+                        <div class="faq-question">Python课程与学校的信息技术课有什么不同？</div>
+                        <div class="faq-answer">
+                            <p>我们的Python课程相比学校的信息技术课更加专业和深入。学校的课程通常是通识教育，内容覆盖面广但深度有限；而我们的课程专注于Python编程，由浅入深地讲解编程概念和实际应用技巧。此外，我们采用小班教学模式，能够根据每个学生的学习情况提供个性化指导，并通过项目式学习方法培养学生的实际动手能力和创新思维。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 课程统计信息 -->
+    <section class="stats-section bg-light py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6 mb-4 mb-md-0">
+                    <div class="stat-box">
+                        <h3><span class="count-number" data-count="3000">0</span>+</h3>
+                        <p>Python学员</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4 mb-md-0">
+                    <div class="stat-box">
+                        <h3><span class="count-number" data-count="150">0</span>+</h3>
+                        <p>项目案例</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-box">
+                        <h3><span class="count-number" data-count="95">0</span>%</h3>
+                        <p>学员满意度</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-box">
+                        <h3><span class="count-number" data-count="30">0</span>+</h3>
+                        <p>竞赛获奖</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 行动号召 -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>开启Python编程之旅</h2>
+            <p>立即报名参加免费试听课，探索Python编程的无限可能</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#trialModal">预约免费试听</a>
+                <a href="contact.html" class="btn btn-outline-light">联系咨询</a>
+            </div>
+        </div>
+        <div class="cta-wave">
+            <div class="wave1"></div>
+            <div class="wave2"></div>
+        </div>
+    </section>
+
+    <!-- 试听预约模态框 -->
+    <div class="modal fade" id="trialModal" tabindex="-1" aria-labelledby="trialModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="trialModalLabel">预约免费试听课</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="trial-form" action="https://formsubmit.co/yi_coder@163.com" method="POST">
+                        <input type="hidden" name="_subject" value="壹零贰肆少儿编程 - 试听预约">
+                        <input type="hidden" name="_cc" value="info@weilaima.com">
+                        <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
+                        <input type="hidden" name="_captcha" value="false">
+                        <div class="mb-3">
+                            <label class="form-label">孩子姓名</label>
+                            <input type="text" name="child_name" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">孩子年龄</label>
+                            <input type="number" name="child_age" class="form-control" min="5" max="16" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">家长姓名</label>
+                            <input type="text" name="parent_name" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">联系电话</label>
+                            <input type="tel" name="phone" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">感兴趣的课程</label>
+                            <select name="course_type" class="form-select" required>
+                                <option>Scratch编程启蒙</option>
+                                <option>Scratch创意编程</option>
+                                <option selected value="Python少儿编程">Python少儿编程</option>
+                                <option>Python应用开发</option>
+                                <option>C++编程</option>
+                                <option>竞赛课程</option>
+                                <option>其他课程</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">预约时间</label>
+                            <input type="date" name="preferred_date" class="form-control" min="2023-03-22" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="submit" form="trial-form" class="btn btn-primary">提交预约</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer-section">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+                        <div class="footer-widget">
+                            <h4>关于我们</h4>
+                            <p>壹零贰肆少儿编程致力于为6-18岁青少年提供优质的编程教育，培养孩子的逻辑思维、解决问题的能力和创造力。</p>
+                            
+                            <div class="mt-4">
+                                <h4>扫码关注</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="text-center">
+                                            <h5>关注公众号</h5>
+                                            <img src="images/qrcode/qrcode.jpg" alt="公众号二维码" class="img-fluid" style="max-width: 150px;">
+                                            <p>获取最新资讯、课程优惠与教育干货</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="text-center">
+                                            <h5>微信客服</h5>
+                                            <img src="images/qrcode/wechat.jpg" alt="微信二维码" class="img-fluid" style="max-width: 150px;">
+                                            <p>添加微信客服咨询课程详情</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
+                        <div class="footer-widget">
+                            <h4>快捷导航</h4>
+                            <div class="row">
+                                <div class="col-6">
+                                    <ul class="footer-links">
+                                        <li><a href="index.html">首页</a></li>
+                                        <li><a href="courses.html">课程体系</a></li>
+                                        <li><a href="scratch.html">Scratch编程</a></li>
+                                        <li><a href="python.html">Python编程</a></li>
+                                        <li><a href="cpp.html">C++编程</a></li>
+                                        <li><a href="competition.html">赛事活动</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul class="footer-links">
+                                        <li><a href="showcase.html">学生作品</a></li>
+                                        <li><a href="news.html">新闻动态</a></li>
+                                        <li><a href="teachers.html">师资力量</a></li>
+                                        <li><a href="about.html">机构介绍</a></li>
+                                        <li><a href="about.html#vision">教学理念</a></li>
+                                        <li><a href="contact.html">联系我们</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="copyright">
+                            <p>© 2023 壹零贰肆少儿编程 版权所有 | 京ICP备12345678号-1</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-menu">
+                            <a href="privacy-policy.html">隐私政策</a>
+                            <a href="terms-of-service.html">服务条款</a>
+                            <a href="careers.html">招贤纳士</a>
+                            <a href="sitemap.html">网站地图</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 回到顶部 -->
+    <a href="#" class="back-to-top">
+        <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <!-- JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/python.js"></script>
+</body>
+</html> 

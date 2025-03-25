@@ -1,0 +1,381 @@
+/* 政策页面通用样式 */
+:root {
+    --primary-color: #4361ee;
+    --accent-color: #4cc9f0;
+    --text-color: #333;
+    --gray-color: #6c757d;
+    --light-gray: #f8f9fa;
+    --white: #ffffff;
+    --dark: #212529;
+    --border-radius: 10px;
+    --box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* 页面标题部分美化 */
+.page-header {
+    position: relative;
+    background: linear-gradient(135deg, #4361ee, #4cc9f0);
+    background-size: cover;
+    background-position: center;
+    padding: 120px 0 60px;
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 60px;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url('../images/wave.svg') no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+}
+
+.page-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* 浮动元素装饰 */
+.floating-element {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: float 6s infinite ease-in-out;
+}
+
+.floating-element:nth-child(1) {
+    width: 100px;
+    height: 100px;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.floating-element:nth-child(2) {
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 20%;
+    animation-delay: 1s;
+}
+
+.floating-element:nth-child(3) {
+    width: 70px;
+    height: 70px;
+    top: 30%;
+    right: 20%;
+    animation-delay: 2s;
+}
+
+.floating-element:nth-child(4) {
+    width: 40px;
+    height: 40px;
+    bottom: 30%;
+    right: 10%;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* 政策内容样式 */
+.policy-content {
+    padding: 60px 0;
+}
+
+.policy-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 40px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.policy-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.policy-item {
+    margin-bottom: 30px;
+    position: relative;
+    padding-left: 15px;
+    border-left: 3px solid var(--accent-color);
+}
+
+.policy-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.policy-item p, .policy-item li {
+    color: var(--text-color);
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.policy-item ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.policy-item ul li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.policy-item ul li::before {
+    content: '•';
+    color: var(--accent-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.policy-item strong {
+    color: var(--dark);
+    font-weight: 600;
+}
+
+.last-updated {
+    font-style: italic;
+    color: var(--gray-color);
+    text-align: right;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    margin-top: 40px;
+}
+
+/* 目录导航 */
+.policy-toc {
+    background-color: var(--light-gray);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.policy-toc::before {
+    content: '目录';
+    display: block;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--accent-color);
+    padding-bottom: 5px;
+}
+
+.toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.toc-list li {
+    margin-bottom: 8px;
+}
+
+.toc-list a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: var(--transition);
+    display: block;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.toc-list a:hover {
+    background-color: rgba(76, 201, 240, 0.1);
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+/* 搜索框样式 */
+#policy-search {
+    border-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+#policy-search:focus {
+    box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.25);
+}
+
+/* 动画效果 */
+.policy-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.policy-item.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 网站地图专用样式 */
+.sitemap-card {
+    padding: 15px;
+    transition: var(--transition);
+    height: 100%;
+    margin-bottom: 0;
+}
+
+.sitemap-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent-color);
+    font-size: 1.25rem;
+}
+
+.sitemap-list {
+    padding-left: 0;
+    list-style: none;
+}
+
+.sitemap-list li {
+    margin-bottom: 8px;
+    transition: var(--transition);
+}
+
+.sitemap-list a {
+    display: block;
+    padding: 3px 0;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 0.95rem;
+}
+
+.sitemap-list a:hover {
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.sitemap-icon {
+    margin-right: 6px;
+    color: var(--primary-color);
+}
+
+.sitemap-list .sub-list {
+    padding-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 8px;
+    list-style: none;
+}
+
+.sitemap-list .sub-list li {
+    margin-bottom: 5px;
+}
+
+.sitemap-list .sub-list a {
+    font-size: 0.9rem;
+    padding: 2px 0;
+}
+
+/* 招贤纳士页面专用样式 */
+.career-card {
+    margin-bottom: 30px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.career-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow);
+}
+
+.career-header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 20px;
+    position: relative;
+}
+
+.career-header h3 {
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.career-header .job-type {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    margin-right: 10px;
+}
+
+.career-content {
+    background-color: var(--white);
+    padding: 20px;
+}
+
+.career-content ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.career-content ul li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.career-footer {
+    background-color: var(--light-gray);
+    padding: 15px 20px;
+    text-align: right;
+}
+
+.career-footer .btn {
+    padding: 8px 20px;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .page-header {
+        padding: 100px 0 50px;
+    }
+    
+    .page-header h2 {
+        font-size: 2rem;
+    }
+    
+    .policy-card {
+        padding: 25px;
+    }
+    
+    .floating-element {
+        display: none;
+    }
+} 

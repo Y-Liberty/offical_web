@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scratch编程课程 - 壹零贰肆少儿编程教育</title>
+    <meta name="description" content="壹零贰肆少儿编程Scratch课程，专为6-12岁儿童设计，通过图形化编程激发创造力，培养逻辑思维能力">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/scratch.css">
+    <!-- 自定义视频播放器样式 -->
+    <style>
+        /* 美化视频容器 */
+        .demo-video-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            position: relative;
+            background-color: #000;
+        }
+        
+        .bilibili-video {
+            display: block;
+            width: 100%;
+            border: none;
+            box-shadow: none;
+            background-color: #000;
+            transition: all 0.3s ease;
+        }
+        
+        /* 视频播放器悬停效果 */
+        .demo-video-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+        }
+        
+        /* 项目描述样式优化 */
+        .project-description {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #ff6b00;
+        }
+        
+        /* 添加项目描述列表项样式 */
+        .project-description ul li {
+            color: #212529;
+            position: relative;
+            padding-left: 1.5em;
+            margin-bottom: 0.5em;
+            list-style-type: none;
+        }
+        
+        .project-description ul li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #ff6b00;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        /* 视频播放覆盖层样式 */
+        .video-play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+        
+        .video-play-overlay i {
+            font-size: 4rem;
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .video-play-overlay span {
+            color: white;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        
+        .video-play-overlay:hover {
+            background: rgba(0,0,0,1);
+        }
+        
+        .video-play-overlay:hover i {
+            transform: scale(1.1);
+        }
+        
+        .demo-video-container {
+            position: relative;
+        }
+        
+        /* HTML5视频播放器样式 */
+        .html5-video {
+            width: 100%;
+            display: block;
+            border-radius: 12px;
+            background-color: #000;
+        }
+        
+        /* 备选方案切换按钮 */
+        .video-switch-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            font-size: 12px;
+            z-index: 3;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .video-switch-btn:hover {
+            background: rgba(0,0,0,0.8);
+        }
+        
+        /* 常见问题模块背景美化 */
+        .faq-section {
+            position: relative;
+            background: linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%);
+            padding: 80px 0;
+            overflow: hidden;
+        }
+        
+        .faq-section:before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: #ff6b00;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        .faq-section:after {
+            content: "";
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background-color: #ff9d50;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        .faq-section .container {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="scratch-page">
+    <!-- 导航栏 -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <div class="logo-container">
+                        <span class="logo-text">壹零贰肆</span>
+                        <span class="logo-tagline">少儿编程教育</span>
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> 首页</a>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="courses.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-book"></i> 课程体系
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item active" href="scratch.html">Scratch编程</a></li>
+                                <li><a class="dropdown-item" href="python.html">Python编程</a></li>
+                                <li><a class="dropdown-item" href="cpp.html">C++编程</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="courses.html">全部课程</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-collection"></i> 资讯中心
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="showcase.html">学生作品</a></li>
+                                <li><a class="dropdown-item" href="competition.html">赛事活动</a></li>
+                                <li><a class="dropdown-item" href="news.html">新闻动态</a></li>
+                                <li><a class="dropdown-item" href="faq.html">常见问题</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-info-circle"></i> 关于我们
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="about.html">机构介绍</a></li>
+                                <li><a class="dropdown-item" href="teachers.html">师资力量</a></li>
+                                <li><a class="dropdown-item" href="about.html#vision">教学理念</a></li>
+                                <li><a class="dropdown-item" href="about.html#history">发展历程</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="contact.html">联系我们</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-primary btn-sm ms-2 px-3" href="#" data-bs-toggle="modal" data-bs-target="#trialModal">
+                                <i class="bi bi-calendar-check"></i> 预约试听
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Scratch横幅 -->
+    <section class="scratch-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="banner-content">
+                        <h1>Scratch <span class="highlight">创意编程</span></h1>
+                        <p>专为6-12岁儿童设计的图形化编程课程，激发创造力，培养逻辑思维和问题解决能力</p>
+                        <div class="banner-buttons">
+                            <a href="#course-intro" class="btn btn-primary me-3">了解课程</a>
+                            <a href="#" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#trialModal">免费试听</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="images/course/scratch/basic.jpg" alt="Scratch编程" class="banner-image">
+        <!-- 装饰元素 -->
+        <div class="banner-decoration">
+            <div class="decoration-circle circle-1"></div>
+            <div class="decoration-circle circle-2"></div>
+            <div class="decoration-circle circle-3"></div>
+            <div class="decoration-circle circle-4"></div>
+            <div class="decoration-line line-1"></div>
+            <div class="decoration-line line-2"></div>
+        </div>
+    </section>
+
+    <!-- 课程介绍 -->
+    <section id="course-intro" class="course-intro">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="images/course/scratch/advanced.jpg" alt="Scratch创意编程" class="img-fluid intro-image">
+                </div>
+                <div class="col-lg-6">
+                    <div class="intro-content">
+                        <h2>什么是 <span class="highlight">Scratch</span> 编程?</h2>
+                        <p>Scratch是由麻省理工学院开发的图形化编程工具，专为儿童设计。通过拖拽积木式的代码块，孩子们可以轻松创建动画、游戏和互动故事，无需学习复杂的编程语法。</p>
+                        <p>在我们的Scratch课程中，孩子们将在趣味学习环境中掌握编程基础概念，如顺序、循环、条件判断等，培养计算思维和创造性解决问题的能力。</p>
+                        <p>课程特别强调项目驱动学习方法，孩子们将通过制作自己的游戏、动画和互动故事，应用所学知识，激发学习兴趣和创新思维。</p>
+                        <div class="mt-4">
+                            <a href="#course-features" class="btn btn-primary">课程特点</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 课程特点 -->
+    <section id="course-features" class="course-features">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h2>课程特点</h2>
+                <p>培养编程思维，激发创造热情，为未来技术学习打下坚实基础</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-lightbulb"></i>
+                        </div>
+                        <h3>趣味学习</h3>
+                        <p>通过游戏化教学方式，让孩子在玩中学习编程知识，培养持久的学习兴趣和积极性</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-diagram-3"></i>
+                        </div>
+                        <h3>逻辑思维</h3>
+                        <p>通过编程练习培养结构化思维方式，提升分析问题和逻辑推理能力</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-puzzle"></i>
+                        </div>
+                        <h3>创造能力</h3>
+                        <p>鼓励孩子发挥想象力，设计并实现自己的创意项目，培养创新思维和问题解决能力</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-person-check"></i>
+                        </div>
+                        <h3>个性化指导</h3>
+                        <p>小班教学模式，老师能够根据每个孩子的特点和进度提供个性化的指导和反馈</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-layers"></i>
+                        </div>
+                        <h3>阶梯式课程</h3>
+                        <p>课程内容由浅入深，循序渐进，确保孩子能够扎实掌握每一个知识点</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-trophy"></i>
+                        </div>
+                        <h3>项目展示</h3>
+                        <p>定期组织学生作品展示和比赛活动，提高学习积极性，增强成就感和自信心</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 课程大纲 -->
+    <section id="course-outline" class="course-outline">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="outline-content">
+                        <h2>课程大纲</h2>
+                        <ul class="outline-list">
+                            <li class="active">
+                                <h3>第一阶段：Scratch基础入门</h3>
+                                <p>了解Scratch界面，学习基本操作，掌握角色移动、外观变化等基础功能，完成简单动画制作</p>
+                            </li>
+                            <li>
+                                <h3>第二阶段：控制结构与逻辑</h3>
+                                <p>学习顺序、循环、条件判断等编程基础概念，理解事件触发机制，制作简单互动游戏</p>
+                            </li>
+                            <li>
+                                <h3>第三阶段：变量与运算</h3>
+                                <p>掌握变量、列表和数学运算概念，学习得分系统制作，实现数据的存储和计算功能</p>
+                            </li>
+                            <li>
+                                <h3>第四阶段：高级互动功能</h3>
+                                <p>学习复杂事件处理、克隆体技术和广播机制，实现多角色协作的复杂游戏功能</p>
+                            </li>
+                            <li>
+                                <h3>第五阶段：综合项目实战</h3>
+                                <p>运用所学知识，独立设计并完成一个完整的游戏或动画项目，培养项目规划和实施能力</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="images/course/scratch/outline.jpg" alt="Scratch课程大纲" class="img-fluid rounded shadow-lg">
+                    <div class="mt-4">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-check-circle-fill text-success me-2 fs-4"></i>
+                                    <span>适合6-12岁儿童</span>
+                                </div>
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-check-circle-fill text-success me-2 fs-4"></i>
+                                    <span>零基础入门</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-check-circle-fill text-success me-2 fs-4"></i>
+                                    <span>小班教学(6-8人)</span>
+                                </div>
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-check-circle-fill text-success me-2 fs-4"></i>
+                                    <span>周末班/暑假班</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 学生项目展示 -->
+    <section id="projects" class="project-showcase">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h2>学生作品展示</h2>
+                <p>看看我们的学生使用Scratch创建的令人惊叹的项目</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="project-box">
+                        <div class="project-image-wrapper">
+                            <img src="images/course/scratch/projects/project1.jpg" alt="太空冒险游戏" class="project-image">
+                            <div class="project-overlay">
+                                <div class="overlay-content">
+                                    <button class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectDemo1">
+                                        <i class="bi bi-play-fill"></i> 查看演示
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>太空冒险游戏</h3>
+                            <p class="student-info"><i class="bi bi-person-fill"></i> 张小明 | 10岁 | 学习Scratch 3个月</p>
+                            <div class="project-buttons">
+                                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#projectCode1">
+                                    <i class="bi bi-code-slash"></i> 查看代码
+                                </button>
+                                <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#projectDemo1">
+                                    <i class="bi bi-eye"></i> 运行效果
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="project-box">
+                        <div class="project-image-wrapper">
+                            <img src="images/course/scratch/projects/project2.jpg" alt="海底世界动画" class="project-image">
+                            <div class="project-overlay">
+                                <div class="overlay-content">
+                                    <button class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectDemo2">
+                                        <i class="bi bi-play-fill"></i> 查看演示
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>海底世界动画</h3>
+                            <p class="student-info"><i class="bi bi-person-fill"></i> 李小华 | 8岁 | 学习Scratch 2个月</p>
+                            <div class="project-buttons">
+                                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#projectCode2">
+                                    <i class="bi bi-code-slash"></i> 查看代码
+                                </button>
+                                <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#projectDemo2">
+                                    <i class="bi bi-eye"></i> 运行效果
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="project-box">
+                        <div class="project-image-wrapper">
+                            <img src="images/course/scratch/projects/project3.jpg" alt="音乐创作工具" class="project-image">
+                            <div class="project-overlay">
+                                <div class="overlay-content">
+                                    <button class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#projectDemo3">
+                                        <i class="bi bi-play-fill"></i> 查看演示
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>音乐创作工具</h3>
+                            <p class="student-info"><i class="bi bi-person-fill"></i> 王小伟 | 11岁 | 学习Scratch 5个月</p>
+                            <div class="project-buttons">
+                                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#projectCode3">
+                                    <i class="bi bi-code-slash"></i> 查看代码
+                                </button>
+                                <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#projectDemo3">
+                                    <i class="bi bi-eye"></i> 运行效果
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="showcase.html" class="btn btn-primary pulse-animation">查看更多作品</a>
+            </div>
+        </div>
+        <!-- 装饰元素 -->
+        <div class="section-decoration">
+            <div class="decoration-circle circle-5"></div>
+            <div class="decoration-circle circle-6"></div>
+        </div>
+    </section>
+
+    <!-- 项目代码和演示的模态框 -->
+    <!-- 项目1的代码模态框 -->
+    <div class="modal fade" id="projectCode1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">太空冒险游戏 - 代码展示</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="character-selector">
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <ul class="character-tabs">
+                                    <li class="active" data-character="astronaut">
+                                        <img src="images/course/scratch/sprites/astronaut.png" alt="宇航员角色">
+                                        <span>宇航员</span>
+                                    </li>
+                                    <li data-character="meteor">
+                                        <img src="images/course/scratch/sprites/meteor.png" alt="陨石角色">
+                                        <span>陨石</span>
+                                    </li>
+                                    <li data-character="star">
+                                        <img src="images/course/scratch/sprites/star.png" alt="星星角色">
+                                        <span>星星</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-code">
+                        <div class="character-code" id="astronaut-code" style="display: block;">
+                            <div class="code-header">
+                                <h5 class="mb-3">宇航员角色代码</h5>
+                                <p class="code-description">宇航员是玩家操控的主角色，通过键盘控制移动，并检测碰撞事件。</p>
+                            </div>
+                            <img src="images/course/scratch/code/code1-astronaut.png" alt="宇航员代码" class="img-fluid code-image rounded zoomable-image">
+                        </div>
+                        
+                        <div class="character-code" id="meteor-code" style="display: none;">
+                            <div class="code-header">
+                                <h5 class="mb-3">陨石角色代码</h5>
+                                <p class="code-description">陨石是游戏中的障碍物，从屏幕顶部随机生成并下落，玩家需要避开它们。</p>
+                            </div>
+                            <img src="images/course/scratch/code/code1-meteor.png" alt="陨石代码" class="img-fluid code-image rounded zoomable-image">
+                        </div>
+                        
+                        <div class="character-code" id="star-code" style="display: none;">
+                            <div class="code-header">
+                                <h5 class="mb-3">星星角色代码</h5>
+                                <p class="code-description">星星是玩家需要收集的得分道具，随机位置生成，被收集后会增加分数。</p>
+                            </div>
+                            <img src="images/course/scratch/code/code1-star.png" alt="星星代码" class="img-fluid code-image rounded zoomable-image">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 项目1的演示模态框 -->
+    <div class="modal fade" id="projectDemo1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">太空冒险游戏 - 运行效果</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="project-demo">
+                        <div class="demo-video-container mb-3" id="video-container-1">
+                            <!-- 使用YouTube视频替代B站视频 -->
+                            <div class="youtube-container">
+                                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?enablejsapi=1&controls=1&autoplay=0&mute=1" 
+                                        class="youtube-video w-100" style="aspect-ratio: 16/9; height: 360px;" id="youtube-video-1" 
+                                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen></iframe>
+                                        
+                                <!-- 自定义播放覆盖层 -->
+                                <div class="video-play-overlay">
+                                    <i class="bi bi-play-circle-fill"></i>
+                                    <span>点击播放视频</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-description">
+                            <h5>项目说明</h5>
+                            <p>这是一个充满创意的太空冒险游戏，玩家需要控制宇航员角色避开陨石，收集星星获得分数。项目展示了循环、条件判断和变量的应用。</p>
+                            <h5>学习要点</h5>
+                            <ul>
+                                <li>角色控制与键盘事件处理</li>
+                                <li>随机生成与克隆体应用</li>
+                                <li>变量应用与计分系统</li>
+                                <li>碰撞检测与游戏逻辑</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 项目2的代码模态框 -->
+    <div class="modal fade" id="projectCode2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">海底世界动画 - 代码展示</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="character-selector">
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <ul class="character-tabs">
+                                    <li class="active" data-character="fish">
+                                        <img src="images/course/scratch/sprites/fish.png" alt="小鱼角色">
+                                        <span>小鱼</span>
+                                    </li>
+                                    <li data-character="octopus">
+                                        <img src="images/course/scratch/sprites/octopus.png" alt="章鱼角色">
+                                        <span>章鱼</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-code">
+                        <div class="character-code" id="fish-code" style="display: block;">
+                            <div class="code-header">
+                                <h5 class="mb-3">小鱼角色代码</h5>
+                                <p class="code-description">小鱼是故事的主角，具有多种动画状态和对话能力，通过造型切换实现游动效果。</p>
+                            </div>
+                            <img src="images/course/scratch/code/code2-fish.png" alt="小鱼代码" class="img-fluid code-image rounded zoomable-image">
+                        </div>
+                        
+                        <div class="character-code" id="octopus-code" style="display: none;">
+                            <div class="code-header">
+                                <h5 class="mb-3">章鱼角色代码</h5>
+                                <p class="code-description">章鱼是故事中的配角，能够与主角互动并参与剧情发展，具有丰富的动画效果。</p>
+                            </div>
+                            <img src="images/course/scratch/code/code2-octopus.png" alt="章鱼代码" class="img-fluid code-image rounded zoomable-image">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 项目2的演示模态框 -->
+    <div class="modal fade" id="projectDemo2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">海底世界动画 - 运行效果</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="project-demo">
+                        <div class="demo-video-container mb-3">
+                            <!-- 修改后的B站视频嵌入代码 - 海底世界动画 -->
+                            <iframe src="//player.bilibili.com/player.html?aid=359542188&bvid=BV1aX4y1c7po&cid=1033346127&page=1&autoplay=0&muted=1&danmaku=0&high_quality=1&as_wide=1&t=0" 
+                                    scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" allow="autoplay"
+                                    class="bilibili-video w-100" style="aspect-ratio: 16/9; height: 360px;" id="video-iframe-2"></iframe>
+                            
+                            <!-- 添加自定义播放覆盖层 -->
+                            <div class="video-play-overlay">
+                                <i class="bi bi-play-circle-fill"></i>
+                                <span>点击播放视频</span>
+                            </div>
+                        </div>
+                        <div class="project-description">
+                            <h5>项目说明</h5>
+                            <p>一个精美的海底世界动画短片，讲述了小鱼历险记的故事。通过角色交互、场景切换和对话系统展示了故事讲述能力。</p>
+                            <h5>学习要点</h5>
+                            <ul>
+                                <li>角色动画与造型切换</li>
+                                <li>场景转换与故事情节设计</li>
+                                <li>对话系统与互动效果</li>
+                                <li>音效应用与背景音乐</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 项目3的代码模态框 -->
+    <div class="modal fade" id="projectCode3" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">音乐创作工具 - 代码展示</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="character-selector">
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <ul class="character-tabs">
+                                    <li class="active" data-character="piano">
+                                        <img src="images/course/scratch/sprites/piano.png" alt="钢琴角色">
+                                        <span>钢琴</span>
+                                    </li>
+                                    <li data-character="drum">
+                                        <img src="images/course/scratch/sprites/drum.png" alt="鼓角色">
+                                        <span>鼓</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-code">
+                        <div class="character-code" id="piano-code" style="display: block;">
+                            <div class="code-header">
+                                <h5 class="mb-3">钢琴角色代码</h5>
+                                <p class="code-description">钢琴角色负责播放不同的音符，通过点击触发不同的音乐效果，可以组合成旋律。</p>
+                            </div>
+                            <img src="images/course/scratch/code/code3-piano.png" alt="钢琴代码" class="img-fluid code-image rounded zoomable-image">
+                        </div>
+                        
+                        <div class="character-code" id="drum-code" style="display: none;">
+                            <div class="code-header">
+                                <h5 class="mb-3">鼓角色代码</h5>
+                                <p class="code-description">鼓角色提供节奏支持，可以产生多种打击乐效果，结合钢琴角色创造完整的音乐。</p>
+                            </div>
+                            <img src="images/course/scratch/code/code3-drum.png" alt="鼓代码" class="img-fluid code-image rounded zoomable-image">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 项目3的演示模态框 -->
+    <div class="modal fade" id="projectDemo3" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">音乐创作工具 - 运行效果</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="project-demo">
+                        <div class="demo-video-container mb-3">
+                            <!-- 修改后的B站视频嵌入代码 - 音乐创作工具 -->
+                            <iframe src="//player.bilibili.com/player.html?aid=828876305&bvid=BV15g4y1F7hm&cid=1041110736&page=1&autoplay=0&muted=1&danmaku=0&high_quality=1&as_wide=1&t=0" 
+                                    scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" allow="autoplay"
+                                    class="bilibili-video w-100" style="aspect-ratio: 16/9; height: 360px;" id="video-iframe-3"></iframe>
+                            
+                            <!-- 添加自定义播放覆盖层 -->
+                            <div class="video-play-overlay">
+                                <i class="bi bi-play-circle-fill"></i>
+                                <span>点击播放视频</span>
+                            </div>
+                        </div>
+                        <div class="project-description">
+                            <h5>项目说明</h5>
+                            <p>这是一个创新的音乐创作平台，用户可以通过点击不同的图形元素创作音乐。项目展示了声音处理和事件触发的高级应用。</p>
+                            <h5>学习要点</h5>
+                            <ul>
+                                <li>声音模块与音效处理</li>
+                                <li>事件触发与交互设计</li>
+                                <li>变量应用与音乐记录</li>
+                                <li>用户界面设计与易用性</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 代码图片放大模态框 -->
+    <div class="modal fade" id="imageZoomModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">代码详情</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="" alt="放大查看代码" id="zoomedImage" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 常见问题 -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h2>常见问题</h2>
+                <p>关于Scratch编程课程的常见疑问解答</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="faq-box">
+                        <div class="faq-question">孩子没有编程基础，能学习Scratch吗？</div>
+                        <div class="faq-answer">
+                            <p>Scratch专为零基础儿童设计，采用图形化编程方式，无需输入代码，通过简单的拖拽操作即可创建程序。课程从最基础的概念开始，循序渐进地引导孩子学习，非常适合没有编程经验的孩子入门学习。</p>
+                        </div>
+                    </div>
+                    <div class="faq-box">
+                        <div class="faq-question">Scratch适合多大年龄的孩子学习？</div>
+                        <div class="faq-answer">
+                            <p>Scratch课程主要面向6-12岁的儿童，这个年龄段的孩子具备基本的逻辑思维能力和学习能力，能够理解编程的基本概念。我们会根据不同年龄段孩子的特点，调整教学内容和方法，确保每个孩子都能够愉快地学习。</p>
+                        </div>
+                    </div>
+                    <div class="faq-box">
+                        <div class="faq-question">学习Scratch对孩子有什么好处？</div>
+                        <div class="faq-answer">
+                            <p>学习Scratch能够培养孩子的计算思维和问题解决能力，提升逻辑思维和创造力。通过编程，孩子们学会将复杂问题分解为可管理的小步骤，养成结构化思考的习惯。此外，Scratch的项目式学习方法也能增强孩子的自信心和成就感，提高学习积极性。</p>
+                        </div>
+                    </div>
+                    <div class="faq-box">
+                        <div class="faq-question">课程需要家长陪同学习吗？</div>
+                        <div class="faq-answer">
+                            <p>课程不要求家长全程陪同，我们的专业教师会在课堂上给予孩子充分的指导和帮助。不过，我们鼓励家长了解孩子的学习内容和进度，在家中可以适当督促和鼓励孩子完成课后练习，共同分享孩子的学习成果。</p>
+                        </div>
+                    </div>
+                    <div class="faq-box">
+                        <div class="faq-question">学习Scratch后可以继续学习什么课程？</div>
+                        <div class="faq-answer">
+                            <p>掌握Scratch基础后，孩子可以根据兴趣和年龄选择进阶课程。我们提供Python编程入门课程，适合10岁以上已掌握Scratch的学生，帮助他们过渡到文本型编程语言；也提供更高级的Scratch创意编程和游戏设计课程，深化学生的项目开发能力。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 行动号召 -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>开启孩子的编程之旅</h2>
+            <p>立即报名参加免费试听课，体验Scratch编程的乐趣和魅力</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#trialModal">预约免费试听</a>
+                <a href="contact.html" class="btn btn-outline-light">联系咨询</a>
+            </div>
+        </div>
+        <!-- 波浪效果 -->
+        <div class="cta-wave wave1"></div>
+        <div class="cta-wave wave2"></div>
+    </section>
+
+    <!-- 试听预约模态框 -->
+    <div class="modal fade" id="trialModal" tabindex="-1" aria-labelledby="trialModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="trialModalLabel">预约免费试听课</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="trial-form" action="https://formsubmit.co/yi_coder@163.com" method="POST">
+                        <input type="hidden" name="_subject" value="壹零贰肆少儿编程 - 试听预约">
+                        <input type="hidden" name="_cc" value="info@weilaima.com">
+                        <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
+                        <input type="hidden" name="_captcha" value="false">
+                        <div class="mb-3">
+                            <label class="form-label">孩子姓名</label>
+                            <input type="text" name="child_name" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">孩子年龄</label>
+                            <input type="number" name="child_age" class="form-control" min="5" max="16" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">家长姓名</label>
+                            <input type="text" name="parent_name" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">联系电话</label>
+                            <input type="tel" name="phone" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">感兴趣的课程</label>
+                            <select name="course_type" class="form-select" required>
+                                <option selected value="Scratch编程启蒙">Scratch编程启蒙</option>
+                                <option>Scratch创意编程</option>
+                                <option>Python少儿编程</option>
+                                <option>C++编程</option>
+                                <option>竞赛课程</option>
+                                <option>其他课程</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">预约时间</label>
+                            <input type="date" name="preferred_date" class="form-control" min="2023-03-22" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="submit" form="trial-form" class="btn btn-primary">提交预约</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer-section">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+                        <div class="footer-widget">
+                            <h4>关于我们</h4>
+                            <p>壹零贰肆少儿编程致力于为6-18岁青少年提供优质的编程教育，培养孩子的逻辑思维、解决问题的能力和创造力。</p>
+                            
+                            <div class="mt-4">
+                                <h4>扫码关注</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="text-center">
+                                            <h5>关注公众号</h5>
+                                            <img src="images/qrcode/qrcode.jpg" alt="公众号二维码" class="img-fluid" style="max-width: 150px;">
+                                            <p>获取最新资讯、课程优惠与教育干货</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="text-center">
+                                            <h5>微信客服</h5>
+                                            <img src="images/qrcode/wechat.jpg" alt="微信二维码" class="img-fluid" style="max-width: 150px;">
+                                            <p>添加微信客服咨询课程详情</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
+                        <div class="footer-widget">
+                            <h4>快捷导航</h4>
+                            <div class="row">
+                                <div class="col-6">
+                                    <ul class="footer-links">
+                                        <li><a href="index.html">首页</a></li>
+                                        <li><a href="courses.html">课程体系</a></li>
+                                        <li><a href="scratch.html">Scratch编程</a></li>
+                                        <li><a href="python.html">Python编程</a></li>
+                                        <li><a href="cpp.html">C++编程</a></li>
+                                        <li><a href="competition.html">赛事活动</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul class="footer-links">
+                                        <li><a href="showcase.html">学生作品</a></li>
+                                        <li><a href="news.html">新闻动态</a></li>
+                                        <li><a href="teachers.html">师资力量</a></li>
+                                        <li><a href="about.html">机构介绍</a></li>
+                                        <li><a href="about.html#vision">教学理念</a></li>
+                                        <li><a href="contact.html">联系我们</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="copyright">
+                            <p>© 2023 壹零贰肆少儿编程 版权所有 | 京ICP备12345678号-1</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-menu">
+                            <a href="privacy-policy.html">隐私政策</a>
+                            <a href="terms-of-service.html">服务条款</a>
+                            <a href="careers.html">招贤纳士</a>
+                            <a href="sitemap.html">网站地图</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 回到顶部 -->
+    <a href="#" class="back-to-top">
+        <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <!-- JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/scratch.js"></script>
+    <script>
+        // 等待DOM加载完成
+        document.addEventListener('DOMContentLoaded', function() {
+            // 代码图片点击放大功能
+            const zoomableImages = document.querySelectorAll('.zoomable-image');
+            const zoomModal = document.getElementById('imageZoomModal');
+            const zoomedImage = document.getElementById('zoomedImage');
+            
+            zoomableImages.forEach(img => {
+                img.style.cursor = 'zoom-in'; // 设置鼠标样式为放大镜
+                img.addEventListener('click', function() {
+                    zoomedImage.src = this.src;
+                    zoomedImage.alt = this.alt;
+                    new bootstrap.Modal(zoomModal).show();
+                });
+            });
+            
+            // 确保视频真正处于暂停状态
+            function pauseAllVideos() {
+                const videos = document.querySelectorAll('.bilibili-video');
+                videos.forEach(video => {
+                    // 必须在iframe加载后才能发送消息
+                    video.onload = function() {
+                        // 发送暂停消息到B站播放器
+                        try {
+                            video.contentWindow.postMessage('{"method":"pause"}', '*');
+                        } catch(e) {
+                            console.log('无法暂停视频:', e);
+                        }
+                    };
+                });
+                
+                // 确保HTML5视频也处于暂停状态
+                document.querySelectorAll('.html5-video').forEach(video => {
+                    video.pause();
+                });
+                
+                // 确保YouTube视频也处于暂停状态
+                document.querySelectorAll('.youtube-video').forEach(video => {
+                    try {
+                        video.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+                    } catch(e) {
+                        console.log('无法暂停YouTube视频:', e);
+                    }
+                });
+            }
+            
+            // 页面加载后暂停所有视频
+            pauseAllVideos();
+            
+            // 修改：处理视频覆盖层的功能
+            document.querySelectorAll('.video-play-overlay').forEach(overlay => {
+                overlay.addEventListener('click', function() {
+                    // 获取当前视频容器
+                    const container = this.closest('.demo-video-container');
+                    
+                    // 隐藏覆盖层，但不完全移除，稍后可以再次显示
+                    this.style.opacity = '0';
+                    this.style.display = 'none';
+                    
+                    // 检查是否是YouTube视频
+                    const youtubeVideo = container.querySelector('.youtube-video');
+                    if (youtubeVideo) {
+                        try {
+                            // 重新加载iframe，强制重新播放
+                            let originalSrc = youtubeVideo.src;
+                            youtubeVideo.src = originalSrc.split('?')[0] + '?enablejsapi=1&controls=1&autoplay=1&mute=0';
+                        } catch(e) {
+                            console.log('无法重新播放YouTube视频:', e);
+                        }
+                        return;
+                    }
+                    
+                    // 检查是否是B站视频
+                    const bilibiliVideo = container.querySelector('.bilibili-video');
+                    if (bilibiliVideo) {
+                        try {
+                            // 重新加载iframe，强制重新播放
+                            let originalSrc = bilibiliVideo.src;
+                            bilibiliVideo.src = originalSrc.split('?')[0] + '?autoplay=1&muted=0&danmaku=0&high_quality=1&as_wide=1&t=0';
+                        } catch(e) {
+                            console.log('无法重新播放B站视频:', e);
+                        }
+                        return;
+                    }
+                    
+                    // 检查是否是HTML5视频
+                    const html5Video = container.querySelector('.html5-video');
+                    if (html5Video) {
+                        try {
+                            // 重置视频到开始并播放
+                            html5Video.currentTime = 0;
+                            html5Video.play();
+                        } catch(e) {
+                            console.log('无法重新播放HTML5视频:', e);
+                        }
+                    }
+                });
+            });
+            
+            // 添加视频结束监听，当视频结束时显示覆盖层
+            document.querySelectorAll('.youtube-video').forEach(video => {
+                video.addEventListener('load', function() {
+                    try {
+                        // 监听YouTube视频消息
+                        window.addEventListener('message', function(event) {
+                            try {
+                                const data = JSON.parse(event.data);
+                                // 状态0表示视频结束
+                                if (data.event === 'onStateChange' && data.info === 0) {
+                                    // 获取对应的覆盖层并显示
+                                    const container = video.closest('.demo-video-container');
+                                    const overlay = container.querySelector('.video-play-overlay');
+                                    if (overlay) {
+                                        overlay.style.display = 'flex';
+                                        overlay.style.opacity = '1';
+                                    }
+                                }
+                            } catch(e) {
+                                // 解析失败，忽略
+                            }
+                        });
+                    } catch(e) {
+                        console.log('无法设置YouTube视频结束监听:', e);
+                    }
+                });
+            });
+            
+            // 为B站视频添加模态框关闭时的处理
+            const demoModals = document.querySelectorAll('[id^="projectDemo"]');
+            demoModals.forEach(modal => {
+                modal.addEventListener('hidden.bs.modal', function() {
+                    // 恢复所有该模态框内的视频覆盖层
+                    const overlays = this.querySelectorAll('.video-play-overlay');
+                    overlays.forEach(overlay => {
+                        overlay.style.display = 'flex';
+                        overlay.style.opacity = '1';
+                    });
+                    
+                    // 重置所有B站视频
+                    const bilibiliVideos = this.querySelectorAll('.bilibili-video');
+                    bilibiliVideos.forEach(video => {
+                        try {
+                            // 截取原始URL，移除自动播放参数
+                            let originalSrc = video.src;
+                            let baseSrc = originalSrc.split('?')[0];
+                            video.src = baseSrc + '?autoplay=0&muted=1&danmaku=0&high_quality=1&as_wide=1&t=0';
+                        } catch(e) {
+                            console.log('无法重置B站视频:', e);
+                        }
+                    });
+                    
+                    // 重置所有YouTube视频
+                    const youtubeVideos = this.querySelectorAll('.youtube-video');
+                    youtubeVideos.forEach(video => {
+                        try {
+                            let originalSrc = video.src;
+                            let baseSrc = originalSrc.split('?')[0];
+                            video.src = baseSrc + '?enablejsapi=1&controls=1&autoplay=0&mute=1';
+                        } catch(e) {
+                            console.log('无法重置YouTube视频:', e);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

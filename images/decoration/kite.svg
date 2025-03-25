@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M20,5 L35,20 L20,35 L5,20 L20,5 Z" fill="#8368D3" transform="rotate(15, 20, 20)"/>
+        <path d="M20,8 L20,32" stroke="#FF9BD2" stroke-width="2" stroke-dasharray="4"/>
+        <path d="M8,20 L32,20" stroke="#FF9BD2" stroke-width="2" stroke-dasharray="4"/>
+        <path d="M20,35 L25,38" stroke="#8368D3" stroke-width="1"/>
+        <path d="M25,38 L28,37" stroke="#8368D3" stroke-width="1"/>
+    </g>
+</svg> 

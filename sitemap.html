@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网站地图 - 壹零贰肆少儿编程</title>
+    <meta name="description" content="浏览壹零贰肆少儿编程网站的完整结构，快速找到您需要的信息。">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/policies.css">
+    <!-- 网站图标 -->
+    <link rel="icon" href="images/favicon.ico">
+    <style>
+        .sitemap-section {
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .sitemap-section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(67, 97, 238, 0.05);
+            z-index: -1;
+        }
+        
+        .sitemap-section::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(76, 201, 240, 0.05);
+            z-index: -1;
+        }
+        
+        .sitemap-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .sitemap-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .sitemap-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .sitemap-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .sitemap-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .sitemap-list li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .sitemap-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+        }
+        
+        .sitemap-list a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .sitemap-list a:hover {
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+        
+        .sitemap-list .sub-list {
+            list-style: none;
+            padding-left: 15px;
+            margin-top: 10px;
+        }
+        
+        .sitemap-list .sub-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+        }
+        
+        .sitemap-list .sub-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: var(--gray-color);
+        }
+        
+        .sitemap-icon {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <div class="logo-container">
+                        <span class="logo-text">壹零贰肆</span>
+                        <span class="logo-tagline">少儿编程教育</span>
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> 首页</a>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="courses.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-book"></i> 课程体系
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="scratch.html">Scratch编程</a></li>
+                                <li><a class="dropdown-item" href="python.html">Python编程</a></li>
+                                <li><a class="dropdown-item" href="cpp.html">C++编程</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="courses.html">全部课程</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-collection"></i> 资讯中心
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="showcase.html">学生作品</a></li>
+                                <li><a class="dropdown-item" href="competition.html">赛事活动</a></li>
+                                <li><a class="dropdown-item" href="news.html">新闻动态</a></li>
+                                <li><a class="dropdown-item" href="faq.html">常见问题</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-info-circle"></i> 关于我们
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="about.html">机构介绍</a></li>
+                                <li><a class="dropdown-item" href="teachers.html">师资力量</a></li>
+                                <li><a class="dropdown-item" href="about.html#vision">教学理念</a></li>
+                                <li><a class="dropdown-item" href="about.html#history">发展历程</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="contact.html">联系我们</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-primary btn-sm ms-2 px-3" href="#" data-bs-toggle="modal" data-bs-target="#trialModal">
+                                <i class="bi bi-calendar-check"></i> 预约试听
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 页面头部 -->
+    <section class="page-header">
+        <!-- 浮动装饰元素 -->
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-center">
+                        <h2>网站地图</h2>
+                        <p>浏览我们网站的完整结构，快速找到您需要的信息</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 网站地图内容 -->
+    <section class="sitemap-section policy-content">
+        <div class="container">
+            <div class="row g-3">
+                <!-- 主要页面 -->
+                <div class="col-lg-3 col-md-6 mb-3">
+                    <div class="sitemap-card policy-card">
+                        <h3>主要页面</h3>
+                        <ul class="sitemap-list">
+                            <li>
+                                <a href="index.html"><i class="bi bi-house-door sitemap-icon"></i>首页</a>
+                            </li>
+                            <li>
+                                <a href="about.html"><i class="bi bi-info-circle sitemap-icon"></i>关于我们</a>
+                                <ul class="sub-list">
+                                    <li><a href="about.html#vision">教学理念</a></li>
+                                    <li><a href="about.html#mission">使命与愿景</a></li>
+                                    <li><a href="about.html#history">发展历程</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="courses.html"><i class="bi bi-book sitemap-icon"></i>课程体系</a>
+                                <ul class="sub-list">
+                                    <li><a href="scratch.html">Scratch编程</a></li>
+                                    <li><a href="python.html">Python编程</a></li>
+                                    <li><a href="cpp.html">C++编程</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="teachers.html"><i class="bi bi-people sitemap-icon"></i>师资力量</a>
+                            </li>
+                            <li>
+                                <a href="showcase.html"><i class="bi bi-award sitemap-icon"></i>学生作品</a>
+                            </li>
+                            <li>
+                                <a href="news.html"><i class="bi bi-newspaper sitemap-icon"></i>新闻动态</a>
+                            </li>
+                            <li>
+                                <a href="contact.html"><i class="bi bi-geo-alt sitemap-icon"></i>联系我们</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 课程与活动 -->
+                <div class="col-lg-3 col-md-6 mb-3">
+                    <div class="sitemap-card policy-card">
+                        <h3>课程与活动</h3>
+                        <ul class="sitemap-list">
+                            <li>
+                                <a href="scratch.html"><i class="bi bi-code-slash sitemap-icon"></i>Scratch编程</a>
+                                <ul class="sub-list">
+                                    <li><a href="scratch.html#intro">课程介绍</a></li>
+                                    <li><a href="scratch.html#modules">课程模块</a></li>
+                                    <li><a href="scratch.html#age-groups">适合年龄</a></li>
+                                    <li><a href="scratch.html#benefits">学习收益</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="python.html"><i class="bi bi-code-slash sitemap-icon"></i>Python编程</a>
+                                <ul class="sub-list">
+                                    <li><a href="python.html#intro">课程介绍</a></li>
+                                    <li><a href="python.html#modules">课程模块</a></li>
+                                    <li><a href="python.html#age-groups">适合年龄</a></li>
+                                    <li><a href="python.html#benefits">学习收益</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="cpp.html"><i class="bi bi-code-slash sitemap-icon"></i>C++编程</a>
+                                <ul class="sub-list">
+                                    <li><a href="cpp.html#intro">课程介绍</a></li>
+                                    <li><a href="cpp.html#modules">课程模块</a></li>
+                                    <li><a href="cpp.html#age-groups">适合年龄</a></li>
+                                    <li><a href="cpp.html#benefits">学习收益</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="competition.html"><i class="bi bi-trophy sitemap-icon"></i>赛事活动</a>
+                                <ul class="sub-list">
+                                    <li><a href="competition.html#upcoming">即将举行的比赛</a></li>
+                                    <li><a href="competition.html#preparation">比赛准备</a></li>
+                                    <li><a href="competition.html#history">历届比赛回顾</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="camp.html"><i class="bi bi-calendar-event sitemap-icon"></i>编程夏令营</a>
+                            </li>
+                            <li>
+                                <a href="workshop.html"><i class="bi bi-laptop sitemap-icon"></i>编程工作坊</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 学生与家长 -->
+                <div class="col-lg-3 col-md-6 mb-3">
+                    <div class="sitemap-card policy-card">
+                        <h3>学生与家长</h3>
+                        <ul class="sitemap-list">
+                            <li>
+                                <a href="showcase.html"><i class="bi bi-easel sitemap-icon"></i>学生作品展示</a>
+                            </li>
+                            <li>
+                                <a href="testimonials.html"><i class="bi bi-chat-quote sitemap-icon"></i>学员反馈</a>
+                            </li>
+                            <li>
+                                <a href="faq.html"><i class="bi bi-question-circle sitemap-icon"></i>常见问题</a>
+                                <ul class="sub-list">
+                                    <li><a href="faq.html#courses">关于课程</a></li>
+                                    <li><a href="faq.html#payment">关于付款</a></li>
+                                    <li><a href="faq.html#learning">关于学习</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="parent-guide.html"><i class="bi bi-file-text sitemap-icon"></i>家长指南</a>
+                            </li>
+                            <li>
+                                <a href="resources.html"><i class="bi bi-journal-text sitemap-icon"></i>学习资源</a>
+                            </li>
+                            <li>
+                                <a href="blog.html"><i class="bi bi-pencil sitemap-icon"></i>编程博客</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 关于我们 -->
+                <div class="col-lg-3 col-md-6 mb-3">
+                    <div class="sitemap-card policy-card">
+                        <h3>关于我们</h3>
+                        <ul class="sitemap-list">
+                            <li>
+                                <a href="about.html"><i class="bi bi-building sitemap-icon"></i>机构介绍</a>
+                            </li>
+                            <li>
+                                <a href="teachers.html"><i class="bi bi-person-badge sitemap-icon"></i>师资团队</a>
+                            </li>
+                            <li>
+                                <a href="campus.html"><i class="bi bi-geo-alt sitemap-icon"></i>校区分布</a>
+                            </li>
+                            <li>
+                                <a href="careers.html"><i class="bi bi-briefcase sitemap-icon"></i>招贤纳士</a>
+                            </li>
+                            <li>
+                                <a href="news.html"><i class="bi bi-newspaper sitemap-icon"></i>新闻与活动</a>
+                            </li>
+                            <li>
+                                <a href="partners.html"><i class="bi bi-people sitemap-icon"></i>合作伙伴</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 支持与服务 -->
+                <div class="col-lg-3 col-md-6 mb-3">
+                    <div class="sitemap-card policy-card">
+                        <h3>支持与服务</h3>
+                        <ul class="sitemap-list">
+                            <li>
+                                <a href="contact.html"><i class="bi bi-headset sitemap-icon"></i>联系我们</a>
+                            </li>
+                            <li>
+                                <a href="feedback.html"><i class="bi bi-chat sitemap-icon"></i>意见反馈</a>
+                            </li>
+                            <li>
+                                <a href="help-center.html"><i class="bi bi-question-circle sitemap-icon"></i>帮助中心</a>
+                            </li>
+                            <li>
+                                <a href="appointment.html"><i class="bi bi-calendar-check sitemap-icon"></i>预约试听</a>
+                            </li>
+                            <li>
+                                <a href="business.html"><i class="bi bi-briefcase sitemap-icon"></i>商务合作</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 法律与政策 -->
+                <div class="col-lg-3 col-md-6 mb-3">
+                    <div class="sitemap-card policy-card">
+                        <h3>法律与政策</h3>
+                        <ul class="sitemap-list">
+                            <li>
+                                <a href="privacy-policy.html"><i class="bi bi-shield-check sitemap-icon"></i>隐私政策</a>
+                            </li>
+                            <li>
+                                <a href="terms-of-service.html"><i class="bi bi-file-earmark-text sitemap-icon"></i>服务条款</a>
+                            </li>
+                            <li>
+                                <a href="copyright.html"><i class="bi bi-c-circle sitemap-icon"></i>版权声明</a>
+                            </li>
+                            <li>
+                                <a href="refund-policy.html"><i class="bi bi-currency-exchange sitemap-icon"></i>退款政策</a>
+                            </li>
+                            <li>
+                                <a href="sitemap.html"><i class="bi bi-diagram-3 sitemap-icon"></i>网站地图</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer-section">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+                        <div class="footer-widget">
+                            <h4>关于我们</h4>
+                            <p>壹零贰肆少儿编程致力于为6-18岁青少年提供优质的编程教育，培养孩子的逻辑思维、解决问题的能力和创造力。</p>
+                            
+                            <div class="mt-4">
+                                <h4>扫码关注</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="text-center">
+                                            <h5>关注公众号</h5>
+                                            <img src="images/qrcode/qrcode.jpg" alt="公众号二维码" class="img-fluid" style="max-width: 150px;">
+                                            <p>获取最新资讯、课程优惠与教育干货</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="text-center">
+                                            <h5>微信客服</h5>
+                                            <img src="images/qrcode/wechat.jpg" alt="微信二维码" class="img-fluid" style="max-width: 150px;">
+                                            <p>添加微信客服咨询课程详情</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
+                        <div class="footer-widget">
+                            <h4>快捷导航</h4>
+                            <div class="row">
+                                <div class="col-6">
+                                    <ul class="footer-links">
+                                        <li><a href="index.html">首页</a></li>
+                                        <li><a href="courses.html">课程体系</a></li>
+                                        <li><a href="scratch.html">Scratch编程</a></li>
+                                        <li><a href="python.html">Python编程</a></li>
+                                        <li><a href="cpp.html">C++编程</a></li>
+                                        <li><a href="competition.html">赛事活动</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul class="footer-links">
+                                        <li><a href="showcase.html">学生作品</a></li>
+                                        <li><a href="news.html">新闻动态</a></li>
+                                        <li><a href="teachers.html">师资力量</a></li>
+                                        <li><a href="about.html">机构介绍</a></li>
+                                        <li><a href="about.html#vision">教学理念</a></li>
+                                        <li><a href="contact.html">联系我们</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="copyright">
+                            <p>© 2023 壹零贰肆少儿编程 版权所有 | 京ICP备12345678号-1</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-menu">
+                            <a href="privacy-policy.html">隐私政策</a>
+                            <a href="terms-of-service.html">服务条款</a>
+                            <a href="careers.html">招贤纳士</a>
+                            <a href="sitemap.html">网站地图</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- 免费试听模态框 -->
+    <div class="modal fade" id="trialModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">预约免费试听课</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="trial-form" id="trial-form" action="https://formsubmit.co/yi_coder@163.com" method="POST">
+                        <input type="hidden" name="_subject" value="壹零贰肆少儿编程 - 试听预约">
+                        <input type="hidden" name="_cc" value="info@weilaima.com">
+                        <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
+                        <input type="hidden" name="_captcha" value="false">
+                        <div class="mb-3">
+                            <label class="form-label">孩子姓名</label>
+                            <input type="text" name="child_name" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">孩子年龄</label>
+                            <input type="number" name="child_age" class="form-control" min="5" max="16" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">家长姓名</label>
+                            <input type="text" name="parent_name" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">联系电话</label>
+                            <input type="tel" name="phone" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">感兴趣的课程</label>
+                            <select name="course_type" class="form-select" required>
+                                <option selected disabled value="">请选择课程</option>
+                                <option>Scratch编程启蒙</option>
+                                <option>Python少儿编程</option>
+                                <option>C++编程</option>
+                                <option>竞赛课程</option>
+                                <option>其他课程</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">预约时间</label>
+                            <input type="date" name="preferred_date" class="form-control" min="2023-03-22" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="submit" form="trial-form" class="btn btn-primary">提交预约</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 回到顶部 -->
+    <a href="#" class="back-to-top">
+        <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <!-- JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/policies.js"></script>
+</body>
+</html> 
