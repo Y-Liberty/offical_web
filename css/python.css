@@ -846,13 +846,13 @@
 /* 课程特点样式 */
 .course-features {
     background-color: #f9fafc;
-    padding: 90px 0;
+    padding: 60px 0;
     position: relative;
     overflow: hidden;
 }
 
 .course-features .section-title {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
 .course-features .section-title p {
@@ -870,15 +870,20 @@
 
 .feature-box {
     background-color: #fff;
-    border-radius: 15px;
-    padding: 40px 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 10px 30px rgba(75, 139, 190, 0.08);
+    border-radius: 12px;
+    padding: 30px 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(75, 139, 190, 0.05);
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
     z-index: 1;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid rgba(75, 139, 190, 0.08);
+    background: linear-gradient(to bottom, #ffffff 0%, #f9fbff 100%);
 }
 
 .feature-box::before {
@@ -892,12 +897,13 @@
     z-index: -1;
     opacity: 0;
     transition: all 0.4s ease;
-    border-radius: 15px;
+    border-radius: 12px;
 }
 
 .feature-box:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 15px 35px rgba(75, 139, 190, 0.15);
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(75, 139, 190, 0.12);
+    border-color: rgba(75, 139, 190, 0.15);
 }
 
 .feature-box:hover::before {
@@ -905,18 +911,22 @@
 }
 
 .feature-icon {
-    font-size: 40px;
-    width: 90px;
-    height: 90px;
+    font-size: 32px;
+    width: 70px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    margin-bottom: 25px;
-    background-color: var(--python-light);
-    color: var(--python-primary);
+    margin-bottom: 20px;
+    background-color: var(--python-primary);
+    color: white;
     position: relative;
     transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(75, 139, 190, 0.15);
+    border: 2px solid rgba(75, 139, 190, 0.2);
+    text-shadow: 0 2px 5px rgba(75, 139, 190, 0.2);
+    font-weight: bold;
 }
 
 .feature-icon::after {
@@ -930,13 +940,17 @@
     background: rgba(75, 139, 190, 0.05);
     transform: scale(1.2);
     z-index: -1;
-    opacity: 0.5;
+    opacity: 0.7;
     transition: all 0.3s ease;
 }
 
 .feature-box:hover .feature-icon {
     color: white;
     background: var(--python-gradient);
+    box-shadow: 0 8px 20px rgba(75, 139, 190, 0.25);
+    border-color: transparent;
+    transform: scale(1.05);
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
 }
 
 .feature-box:hover .feature-icon::after {
@@ -945,10 +959,24 @@
 }
 
 .feature-box h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: var(--python-accent);
+    transition: all 0.3s ease;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.feature-box h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(to right, var(--python-primary), rgba(75, 139, 190, 0.5));
+    border-radius: 3px;
     transition: all 0.3s ease;
 }
 
@@ -956,16 +984,45 @@
     color: var(--python-primary);
 }
 
+.feature-box:hover h3::after {
+    width: 60px;
+}
+
 .feature-box p {
-    font-size: 1.05rem;
-    line-height: 1.7;
+    font-size: 1rem;
+    line-height: 1.6;
     color: #505965;
     margin-bottom: 0;
 }
 
+/* 添加"了解更多"链接样式 */
+.feature-link {
+    margin-top: 15px;
+}
+
+.feature-link a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--python-primary);
+    transition: all 0.3s ease;
+}
+
+.feature-link a:hover {
+    color: var(--python-accent);
+}
+
+.feature-link a i {
+    transition: transform 0.3s ease;
+}
+
+.feature-link a:hover i {
+    transform: translateX(5px);
+}
+
 /* 项目展示 */
 .project-showcase {
-    padding: 90px 0;
+    padding: 60px 0;
     background-color: #f5f9fd;
     position: relative;
     overflow: hidden;
@@ -983,7 +1040,7 @@
 }
 
 .project-showcase .section-title {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .project-showcase .section-title h2::after {
@@ -1000,14 +1057,16 @@
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 15px 35px rgba(75, 139, 190, 0.1);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     transition: all 0.4s ease;
     position: relative;
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-box:hover {
-    transform: translateY(-15px);
+    transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(75, 139, 190, 0.2);
 }
 
@@ -1018,7 +1077,7 @@
 
 .project-image {
     width: 100%;
-    height: 250px;
+    height: 220px;
     object-fit: cover;
     transition: all 0.5s ease;
 }
@@ -1049,6 +1108,9 @@
     text-align: center;
     transform: translateY(20px);
     transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .project-box:hover .overlay-content {
@@ -1059,22 +1121,28 @@
     background-color: white;
     color: var(--python-accent);
     border: none;
-    padding: 10px 25px;
+    padding: 8px 20px;
     border-radius: 30px;
     font-weight: 600;
     transition: all 0.3s ease;
+    width: 120px;
+    margin: 0 auto;
 }
 
 .overlay-content .btn:hover {
     background-color: var(--python-secondary);
     transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .project-content {
-    padding: 25px;
+    padding: 20px;
     position: relative;
     z-index: 1;
     background-color: white;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-content::after {
@@ -1083,7 +1151,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 5px;
+    height: 3px;
     background: linear-gradient(to right, var(--python-primary), var(--python-accent));
     transform: scaleX(0);
     transform-origin: right;
@@ -1096,9 +1164,9 @@
 }
 
 .project-content h3 {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     color: var(--python-accent);
     transition: all 0.3s ease;
 }
@@ -1109,12 +1177,12 @@
 
 .project-content .student-info {
     display: block;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     color: #6c757d;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-style: italic;
     border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
+    padding-bottom: 12px;
 }
 
 .project-content .student-info i {
@@ -1122,37 +1190,30 @@
     margin-right: 5px;
 }
 
-.project-content p {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #505965;
-    margin-bottom: 20px;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+/* 项目按钮 */
+.project-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
 }
 
-.project-content .btn-outline-primary {
-    border-color: var(--python-primary);
-    color: var(--python-primary);
-    padding: 8px 20px;
+.project-buttons .btn {
+    flex: 1;
+    text-align: center;
+    font-size: 0.85rem;
+    padding: 8px 0;
     border-radius: 30px;
-    font-size: 0.9rem;
-    font-weight: 600;
     transition: all 0.3s ease;
 }
 
-.project-content .btn-outline-primary:hover {
-    background-color: var(--python-primary);
-    color: white;
+.project-buttons .btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(75, 139, 190, 0.2);
 }
 
+/* 查看更多按钮 */
 .project-showcase .text-center {
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .project-showcase .pulse-animation {
@@ -1161,6 +1222,101 @@
 
 .project-showcase .pulse-animation:hover {
     animation: none;
+}
+
+/* 项目模态框样式 */
+.modal-content {
+    border-radius: 15px;
+    border: none;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    background: var(--python-gradient);
+    color: white;
+    padding: 15px 20px;
+    border-bottom: none;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    border-top: none;
+    padding: 15px 20px;
+}
+
+/* 代码模态框样式 */
+#codeModal1 .modal-dialog,
+#codeModal2 .modal-dialog,
+#codeModal3 .modal-dialog {
+    max-width: 800px;
+}
+
+/* 代码图片容器样式 */
+.code-image-container {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.code-image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+    display: block;
+}
+
+.code-caption {
+    padding: 15px 20px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #eaeaea;
+    border-radius: 0 0 8px 8px;
+}
+
+.code-caption h5 {
+    color: var(--python-accent);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.code-caption p {
+    margin-bottom: 0;
+    color: #505965;
+    line-height: 1.6;
+}
+
+/* 效果展示模态框样式 */
+#demoModal1 .modal-body,
+#demoModal2 .modal-body,
+#demoModal3 .modal-body {
+    padding: 25px;
+}
+
+#demoModal1 h5,
+#demoModal2 h5,
+#demoModal3 h5 {
+    color: var(--python-accent);
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#demoModal1 ul,
+#demoModal2 ul,
+#demoModal3 ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+#demoModal1 li,
+#demoModal2 li,
+#demoModal3 li {
+    margin-bottom: 5px;
 }
 
 /* 装饰元素 */
@@ -1181,18 +1337,18 @@
 }
 
 .circle-5 {
-    width: 100px;
-    height: 100px;
-    top: 10%;
+    width: 80px;
+    height: 80px;
+    top: 15%;
     right: 5%;
     animation: float 8s ease-in-out infinite;
     animation-delay: 0.5s;
 }
 
 .circle-6 {
-    width: 70px;
-    height: 70px;
-    bottom: 15%;
+    width: 60px;
+    height: 60px;
+    bottom: 20%;
     left: 8%;
     animation: float 6s ease-in-out infinite;
     animation-delay: 1s;
@@ -1200,8 +1356,8 @@
 
 /* FAQ部分 */
 .faq-section {
-    padding: 90px 0;
-    background-color: #fff;
+    padding: 60px 0;
+    background-color: #f8f9fa;
     position: relative;
 }
 
@@ -1248,17 +1404,14 @@
 }
 
 .faq-answer {
-    padding: 0 25px;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.5s ease;
-    opacity: 0;
+    padding: 15px 25px;
     background-color: white;
     border-radius: 0 0 10px 10px;
     margin-top: -10px;
     box-shadow: 0 10px 20px rgba(75, 139, 190, 0.05);
     border: 1px solid rgba(75, 139, 190, 0.05);
     border-top: none;
+    transition: all 0.3s ease;
 }
 
 .faq-question.active {
@@ -1874,4 +2027,126 @@
     font-style: italic;
     background-color: #f0f8ff;
     border-left: 3px solid #6c757d;
+}
+
+/* 课程大纲手风琴样式 */
+.outline-accordion {
+    margin-top: 30px;
+}
+
+.outline-item {
+    border: none;
+    background: transparent;
+    margin-bottom: 15px;
+}
+
+.outline-item .accordion-header {
+    margin: 0;
+}
+
+.outline-item .accordion-button {
+    background: linear-gradient(to right, var(--python-light), #f9fbff);
+    border-radius: 12px;
+    padding: 15px 20px;
+    box-shadow: 0 4px 15px rgba(75, 139, 190, 0.08);
+    font-weight: 700;
+    color: var(--python-accent);
+    border: 1px solid rgba(75, 139, 190, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.outline-item .accordion-button:not(.collapsed) {
+    background: linear-gradient(to right, var(--python-primary), #4785b7);
+    color: white;
+    box-shadow: 0 8px 20px rgba(75, 139, 190, 0.15);
+    border-radius: 12px 12px 0 0;
+}
+
+.outline-item .accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23306998'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    transition: all 0.3s ease;
+}
+
+.outline-item .accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    transform: rotate(-180deg);
+}
+
+.outline-item .accordion-button:focus {
+    box-shadow: 0 8px 20px rgba(75, 139, 190, 0.15);
+    border-color: rgba(75, 139, 190, 0.2);
+}
+
+.outline-item .accordion-body {
+    background-color: white;
+    border: 1px solid rgba(75, 139, 190, 0.1);
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    padding: 20px 25px;
+    color: #505965;
+}
+
+.stage-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: rgba(75, 139, 190, 0.15);
+    color: var(--python-primary);
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 0.8rem;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) .stage-badge {
+    background-color: white;
+    color: var(--python-primary);
+}
+
+.stage-title {
+    flex: 1;
+    font-size: 1.15rem;
+}
+
+.stage-details ul {
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+.stage-details li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 5px;
+    list-style-type: none;
+}
+
+.stage-details li::before {
+    content: "•";
+    color: var(--python-primary);
+    font-weight: bold;
+    position: absolute;
+    left: -15px;
+}
+
+/* 响应式样式 */
+@media (max-width: 768px) {
+    .outline-item .accordion-button {
+        padding: 12px 15px;
+    }
+    
+    .stage-badge {
+        width: 28px;
+        height: 28px;
+        font-size: 0.75rem;
+        margin-right: 10px;
+    }
+    
+    .stage-title {
+        font-size: 1rem;
+    }
 } 

@@ -310,13 +310,25 @@
 - [ ] 修改课程介绍部分的内容（什么是Python编程）
 - [ ] 更新课程特点内容（实践驱动、逻辑思维、AI与数据、实用工具、渐进式学习、竞赛导向）
 - [ ] 更新课程大纲内容（五个阶段的描述）
-- [ ] 更新学生作品展示内容：
+
+## 学生作品展示
+- [ ] 核对并更新学生作品展示内容：
   ```html
   <h3>数据可视化项目</h3>
   <p class="student-info">王小明 | 15岁 | 学习Python 6个月</p>
   ```
-- [ ] 更新代码示例部分
-- [ ] 更新FAQ问答内容
+- [ ] 更新项目核心代码图片：
+  - `images/course/python/projects/code/code1.jpg`
+  - `images/course/python/projects/code/code2.jpg`
+  - `images/course/python/projects/code/code3.jpg`
+- [ ] 更新项目效果展示图片：
+  - `images/course/python/projects/project1_demo.jpg`
+  - `images/course/python/projects/project2_demo.jpg`
+  - `images/course/python/projects/project3_demo.jpg`
+- [ ] 修改项目代码说明和技术亮点
+
+## 常见问题
+- [ ] 更新FAQ问答内容（学习基础、适合年龄、学习好处、硬件要求、课程特色）
 
 ## 图片资源
 - [ ] Python横幅图片：`images/course/python/basic.jpg`
@@ -326,10 +338,6 @@
   - `images/course/python/projects/project1.jpg`
   - `images/course/python/projects/project2.jpg`
   - `images/course/python/projects/project3.jpg`
-  - `images/course/python/projects/project4.jpg`
-
-## 统计数据
-- [ ] 更新统计数据（3000+Python学员、150+项目案例、95%学员满意度、30+竞赛获奖）
 
 ## 课程详情
 - [ ] 检查课程适合年龄（10-16岁）

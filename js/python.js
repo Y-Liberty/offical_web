@@ -14,30 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // 初始化窗口滚动时触发一次，确保正确应用样式
     window.dispatchEvent(new Event('scroll'));
 
-    // FAQ 折叠效果
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', function() {
-            // 关闭其他所有已打开的FAQ
-            faqQuestions.forEach(item => {
-                if (item !== question) {
-                    item.classList.remove('active');
-                    const answer = item.nextElementSibling;
-                    if (answer && answer.classList.contains('faq-answer')) {
-                        answer.style.display = 'none';
-                    }
-                }
-            });
-
-            // 切换当前FAQ的状态
-            this.classList.toggle('active');
-            const answer = this.nextElementSibling;
-            if (answer && answer.classList.contains('faq-answer')) {
-                answer.style.display = this.classList.contains('active') ? 'block' : 'none';
-            }
-        });
-    });
-
     // 平滑滚动到锚点位置
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -215,24 +191,52 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 初始化猜数字游戏
     initNumberGuessGame();
+
+    // 初始化课程大纲手风琴
+    initOutlineAccordion();
+    
+    // 初始化代码高亮显示
+    initCodeHighlighting();
 });
 
 // 常见问题折叠功能
 function initFAQAccordion() {
     const faqQuestions = document.querySelectorAll('.faq-question');
+    const faqAnswers = document.querySelectorAll('.faq-answer');
     
-    faqQuestions.forEach(question => {
+    // 确保初始状态正确
+    faqAnswers.forEach((answer, index) => {
+        // 默认隐藏所有答案，除了第一个
+        if (index === 0) {
+            answer.style.display = 'block';
+            faqQuestions[index].classList.add('active');
+        } else {
+            answer.style.display = 'none';
+            faqQuestions[index].classList.remove('active');
+        }
+    });
+    
+    // 给每个问题添加点击事件
+    faqQuestions.forEach((question, index) => {
         question.addEventListener('click', function() {
-            // 切换当前项的活动状态
-            this.classList.toggle('active');
-            
-            // 获取对应的回答元素
+            const isActive = this.classList.contains('active');
             const answer = this.nextElementSibling;
             
-            // 如果回答当前可见，则隐藏它，否则显示它
-            if (answer.style.display === 'block') {
+            // 如果当前激活，就关闭它
+            if (isActive) {
+                this.classList.remove('active');
                 answer.style.display = 'none';
             } else {
+                // 否则关闭所有其他的，打开当前的
+                faqQuestions.forEach((q, i) => {
+                    if (i !== index) {
+                        q.classList.remove('active');
+                        faqAnswers[i].style.display = 'none';
+                    }
+                });
+                
+                // 打开当前问题的答案
+                this.classList.add('active');
                 answer.style.display = 'block';
             }
         });
@@ -286,7 +290,7 @@ function initCountAnimation() {
 
 // 滚动动画
 function initScrollAnimations() {
-    const elements = document.querySelectorAll('.feature-box, .project-box, .intro-image, .outline-list li');
+    const elements = document.querySelectorAll('.feature-box, .project-box, .intro-image, .outline-item');
     
     const checkScroll = () => {
         elements.forEach(element => {
@@ -431,6 +435,9 @@ function initNumberGuessGame() {
         userGuessInput.value = '';
         guessFeedback.innerHTML = '';
         
+        // 重置输入框提示文本
+        userGuessInput.placeholder = '输入1-100的数字';
+        
         // 启用输入和提交按钮
         userGuessInput.disabled = false;
         submitBtn.disabled = false;
@@ -489,6 +496,8 @@ function initNumberGuessGame() {
         // 验证输入
         if (isNaN(guess) || guess < 1 || guess > 100) {
             guessFeedback.textContent = '请输入1到100之间的有效数字！';
+            userGuessInput.value = ''; // 清空无效输入
+            userGuessInput.focus();
             return;
         }
         
@@ -553,4 +562,77 @@ function initNumberGuessGame() {
     
     // 初始化游戏
     initGame();
+}
+
+// 初始化课程大纲手风琴
+function initOutlineAccordion() {
+    const accordionItems = document.querySelectorAll('.outline-item');
+    const accordionButtons = document.querySelectorAll('.outline-item .accordion-button');
+    
+    if (accordionButtons.length === 0) return;
+    
+    // 为每个手风琴按钮添加动画效果
+    accordionButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            // 按钮已经通过bootstrap处理折叠逻辑，这里只添加额外效果
+            const isCollapsed = button.classList.contains('collapsed');
+            const accordionBody = button.closest('.accordion-item').querySelector('.accordion-collapse');
+            
+            // 添加淡入效果
+            if (!isCollapsed) {
+                setTimeout(() => {
+                    if (accordionBody.classList.contains('show')) {
+                        accordionBody.style.opacity = '0';
+                        setTimeout(() => {
+                            accordionBody.style.transition = 'opacity 0.5s ease';
+                            accordionBody.style.opacity = '1';
+                        }, 50);
+                    }
+                }, 300);
+            }
+        });
+    });
+    
+    // 默认展开第一个
+    if (accordionItems.length > 0) {
+        // Bootstrap已处理默认展开，此处添加初始可见性
+        const firstAccordionBody = accordionItems[0].querySelector('.accordion-collapse');
+        if (firstAccordionBody && firstAccordionBody.classList.contains('show')) {
+            firstAccordionBody.style.opacity = '1';
+        }
+    }
+}
+
+// 初始化代码高亮显示
+function initCodeHighlighting() {
+    // 获取所有模态框中的代码示例
+    const modalCodeExamples = document.querySelectorAll('.modal .code-example pre code');
+    
+    if (modalCodeExamples.length > 0) {
+        modalCodeExamples.forEach(codeBlock => {
+            // 处理代码高亮
+            let codeText = codeBlock.innerHTML;
+            
+            // 处理注释
+            codeText = codeText.replace(/(#.+)$/gm, '<span style="color:#6a9955;">$1</span>');
+            
+            // 处理关键字
+            const keywords = ['def', 'class', 'import', 'from', 'if', 'else', 'elif', 'for', 'while', 'return', 'True', 'False', 'None', 'and', 'or', 'not', 'in', 'is', 'try', 'except', 'finally', 'with', 'as', 'break', 'continue', 'pass'];
+            keywords.forEach(keyword => {
+                const regex = new RegExp(`\\b(${keyword})\\b`, 'g');
+                codeText = codeText.replace(regex, '<span style="color:#569cd6;">$1</span>');
+            });
+            
+            // 处理字符串
+            codeText = codeText.replace(/(['"])(.*?)(\1)/g, '<span style="color:#ce9178;">$1$2$1</span>');
+            
+            // 处理函数
+            codeText = codeText.replace(/\b(\w+)(?=\()/g, '<span style="color:#dcdcaa;">$1</span>');
+            
+            // 处理数字
+            codeText = codeText.replace(/\b(\d+)\b/g, '<span style="color:#b5cea8;">$1</span>');
+            
+            codeBlock.innerHTML = codeText;
+        });
+    }
 } 
