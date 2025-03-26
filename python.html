@@ -169,13 +169,13 @@
         <div class="container">
             <div class="section-title text-center mb-4">
                 <h2>Python代码示例</h2>
-                <p>简洁易读的Python代码，让编程变得简单有趣</p>
+                <p style="position: relative; z-index: 10;">简洁易读的Python代码，让编程变得简单有趣</p>
             </div>
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="code-example" style="background-color:#282c34;border-radius:8px;margin-bottom:20px;overflow:hidden;">
-                        <h5 style="color:#fff;margin:0;padding:15px 20px;background-color:#3B4252;font-weight:600;">简单的猜数字游戏</h5>
-                        <div style="padding:20px;font-family:'Source Code Pro',monospace;font-size:14px;line-height:1.6;overflow-x:auto;color:#E5E9F0;white-space:pre;">
+                    <div class="code-example" style="background-color:#282c34; border-radius:8px; margin-bottom:20px; overflow:hidden; position:relative; z-index:5;">
+                        <h5 style="color:#fff; margin:0; padding:15px 20px; background-color:#3B4252; font-weight:600; position:relative; z-index:6;">简单的猜数字游戏</h5>
+                        <div style="padding:20px; font-family:'Source Code Pro',monospace; font-size:14px; line-height:1.6; overflow-x:auto; color:#E5E9F0; white-space:pre; position:relative; z-index:6; user-select:text;">
 <span style="color:#81A1C1;">import</span> <span style="color:#8FBCBB;">random</span>
 
 <span style="color:#81A1C1;">def</span> <span style="color:#88C0D0;">guess_game</span>():
@@ -212,8 +212,8 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="game-simulation">
-                        <div class="game-window">
+                    <div class="game-simulation" style="position:relative; z-index:5;">
+                        <div class="game-window" style="position:relative; z-index:6;">
                             <div class="game-header">
                                 <span class="window-btn red"></span>
                                 <span class="window-btn yellow"></span>
@@ -221,18 +221,23 @@
                                 <span class="window-title">Python猜数字游戏</span>
                             </div>
                             <div class="game-body">
-                                <div class="game-output" id="game-output">
-                                    <!-- 输出内容将通过JavaScript动态添加 -->
+                                <div class="game-output" id="game-output" style="background-color: #fff; color: #333; padding: 15px; height: 300px; overflow-y: auto; border: 1px solid #e0e0e0; border-radius: 4px; font-family: 'Consolas', monospace; font-size: 14px; line-height: 1.6; position: relative; z-index: 10;">
+                                    <!-- 预设的静态内容 -->
+                                    <p style="margin-bottom: 10px; padding: 8px 12px; border-radius: 6px; background-color: #f8f9fa; max-width: 95%; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">欢迎来到猜数字游戏！</p>
+                                    <p style="margin-bottom: 10px; padding: 8px 12px; border-radius: 6px; background-color: #f8f9fa; max-width: 95%; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">我想了一个1到100之间的数字，你有10次机会猜出它。</p>
+                                    <p style="margin-bottom: 10px; padding: 8px 12px; border-radius: 6px; background-color: #f8f9fa; max-width: 95%; border-left: 3px solid #6c757d; color: #6c757d; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">请输入1到100之间的有效数字！</p>
                                 </div>
-                                <div class="game-input-area">
-                                    <div class="d-flex justify-content-between align-items-center mb-0">
-                                        <div class="input-group" style="width: 70%;">
-                                            <input type="number" id="user-guess" class="form-control" min="1" max="100" placeholder="输入1-100的数字">
-                                            <button id="submit-guess" class="btn btn-primary game-btn">提交</button>
+                                <div class="game-input-area" style="position:relative; z-index:11;">
+                                    <div class="d-flex justify-content-center align-items-center mb-2">
+                                        <div class="input-group" style="width: 60%; margin-right: 10px;">
+                                            <input type="number" id="user-guess" class="form-control text-center" min="1" max="100" placeholder="输入1-100的数字">
                                         </div>
-                                        <button id="restart-game" class="btn btn-primary game-btn">重新开始</button>
                                     </div>
-                                    <div id="guess-feedback"></div>
+                                    <div class="d-flex justify-content-center align-items-center mb-0">
+                                        <button onclick="guessNumber()" class="btn btn-primary game-btn mx-2" style="width: 100px;">提交</button>
+                                        <button onclick="resetGame()" class="btn btn-primary game-btn mx-2" style="width: 100px;">重新开始</button>
+                                    </div>
+                                    <div id="guess-feedback" class="text-center" style="min-height: 20px; margin-top: 10px;"></div>
                                 </div>
                             </div>
                         </div>
@@ -937,5 +942,162 @@
             </div>
         </div>
     </div>
+
+    <script>
+    // 删除现有代码，重写猜数字游戏
+    document.addEventListener('DOMContentLoaded', function() {
+        // 游戏变量初始化
+        let secretNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 0;
+        const maxAttempts = 10;
+        let gameActive = true;
+        
+        // 游戏初始消息
+        const gameOutput = document.getElementById('game-output');
+        gameOutput.innerHTML = `
+            <p style="margin-bottom: 10px; padding: 8px 12px; border-radius: 6px; background-color: #f8f9fa; max-width: 95%; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">欢迎来到猜数字游戏！</p>
+            <p style="margin-bottom: 10px; padding: 8px 12px; border-radius: 6px; background-color: #f8f9fa; max-width: 95%; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">我想了一个1到100之间的数字，你有10次机会猜出它。</p>
+            <p style="margin-bottom: 10px; padding: 8px 12px; border-radius: 6px; background-color: #f8f9fa; max-width: 95%; border-left: 3px solid #6c757d; color: #6c757d; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">请输入1到100之间的有效数字！</p>
+        `;
+        
+        // 获取DOM元素
+        const userGuessInput = document.getElementById('user-guess');
+        const guessFeedback = document.getElementById('guess-feedback');
+        const guessButton = document.querySelector('.game-btn');
+        const resetButton = document.querySelectorAll('.game-btn')[1];
+        
+        // 猜数字功能
+        function guessNumber() {
+            if (!gameActive) return;
+            
+            const guess = parseInt(userGuessInput.value);
+            
+            // 验证输入
+            if (isNaN(guess) || guess < 1 || guess > 100) {
+                guessFeedback.innerHTML = '<span style="color: #dc3545;">请输入1到100之间的有效数字！</span>';
+                userGuessInput.value = "";
+                userGuessInput.focus();
+                return;
+            }
+            
+            // 清空反馈和输入
+            guessFeedback.textContent = "";
+            userGuessInput.value = "";
+            
+            // 增加尝试次数
+            attempts++;
+            
+            // 添加用户猜测消息
+            addGameMessage(`第${attempts}次猜测: ${guess}`, 'normal');
+            
+            // 检查猜测结果
+            if (guess < secretNumber) {
+                addGameMessage("太小了！再试一次。", 'info');
+            } else if (guess > secretNumber) {
+                addGameMessage("太大了！再试一次。", 'warning');
+            } else {
+                // 猜对了
+                addGameMessage(`恭喜你猜对了！答案是${secretNumber}。`, 'success');
+                addGameMessage(`你用了${attempts}次尝试。`, 'success');
+                endGame(true);
+                return;
+            }
+            
+            // 检查是否达到最大尝试次数
+            if (attempts >= maxAttempts) {
+                addGameMessage(`游戏结束！正确答案是${secretNumber}。`, 'error');
+                endGame(false);
+            } else {
+                userGuessInput.placeholder = `还有${maxAttempts - attempts}次机会`;
+                userGuessInput.focus();
+            }
+        }
+        
+        // 添加消息到游戏输出区域
+        function addGameMessage(message, type) {
+            const messageElem = document.createElement('p');
+            messageElem.textContent = message;
+            
+            // 基本样式
+            messageElem.style.marginBottom = "10px";
+            messageElem.style.padding = "8px 12px";
+            messageElem.style.borderRadius = "6px";
+            messageElem.style.maxWidth = "95%";
+            messageElem.style.boxShadow = "0 1px 3px rgba(0,0,0,0.05)";
+            
+            // 根据类型设置不同样式
+            if (type === 'success') {
+                messageElem.style.color = "#28a745";
+                messageElem.style.backgroundColor = "#e8f5e9";
+                messageElem.style.borderLeft = "3px solid #28a745";
+            } else if (type === 'error') {
+                messageElem.style.color = "#dc3545";
+                messageElem.style.backgroundColor = "#feebed";
+                messageElem.style.borderLeft = "3px solid #dc3545";
+            } else if (type === 'warning') {
+                messageElem.style.color = "#fd7e14";
+                messageElem.style.backgroundColor = "#fff3e6";
+                messageElem.style.borderLeft = "3px solid #fd7e14";
+            } else if (type === 'info') {
+                messageElem.style.color = "#0d6efd";
+                messageElem.style.backgroundColor = "#e6f2ff";
+                messageElem.style.borderLeft = "3px solid #0d6efd";
+            } else {
+                messageElem.style.backgroundColor = "#f8f9fa";
+            }
+            
+            gameOutput.appendChild(messageElem);
+            gameOutput.scrollTop = gameOutput.scrollHeight; // 滚动到底部
+        }
+        
+        // 结束游戏
+        function endGame(isWin) {
+            gameActive = false;
+            userGuessInput.disabled = true;
+            
+            if (isWin) {
+                guessFeedback.innerHTML = '<span style="color: #28a745; font-weight: bold;">恭喜你赢了！点击"重新开始"再玩一次。</span>';
+            } else {
+                guessFeedback.innerHTML = '<span style="color: #dc3545; font-weight: bold;">很遗憾，你没有猜对。点击"重新开始"再玩一次。</span>';
+            }
+        }
+        
+        // 重置游戏
+        function resetGame() {
+            secretNumber = Math.floor(Math.random() * 100) + 1;
+            attempts = 0;
+            gameActive = true;
+            
+            userGuessInput.disabled = false;
+            userGuessInput.value = '';
+            userGuessInput.placeholder = '输入1-100的数字';
+            guessFeedback.textContent = '';
+            
+            // 清空游戏输出区域
+            gameOutput.innerHTML = '';
+            
+            // 添加新游戏消息
+            addGameMessage('新游戏已开始!', 'normal');
+            addGameMessage(`我想了一个1到100之间的数字，你有${maxAttempts}次机会猜出它。`, 'normal');
+            
+            userGuessInput.focus();
+        }
+        
+        // 事件绑定
+        // 提交按钮点击事件
+        guessButton.onclick = guessNumber;
+        
+        // 重置按钮点击事件
+        resetButton.onclick = resetGame;
+        
+        // 支持Enter键提交
+        userGuessInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                guessNumber();
+            }
+        });
+    });
+    </script>
 </body>
 </html> 
