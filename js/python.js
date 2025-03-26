@@ -401,13 +401,62 @@ function createFloatingElements() {
 
 // 猜数字游戏模拟
 function initNumberGuessGame() {
+    console.log('开始初始化猜数字游戏...'); // 调试用
+    
     const restartBtn = document.getElementById('restart-game');
     const submitBtn = document.getElementById('submit-guess');
     const userGuessInput = document.getElementById('user-guess');
     const gameOutput = document.getElementById('game-output');
     const guessFeedback = document.getElementById('guess-feedback');
     
-    if (!restartBtn || !submitBtn || !userGuessInput || !gameOutput) return;
+    // 检查所有必要元素是否存在
+    if (!restartBtn) console.error('重新开始按钮未找到!');
+    if (!submitBtn) console.error('提交按钮未找到!');
+    if (!userGuessInput) console.error('用户输入框未找到!');
+    if (!gameOutput) console.error('游戏输出区域未找到!');
+    if (!guessFeedback) console.error('反馈区域未找到!');
+    
+    if (!restartBtn || !submitBtn || !userGuessInput || !gameOutput) {
+        console.error('猜数字游戏元素未找到，无法初始化游戏!');
+        return;
+    }
+    
+    console.log('游戏元素检查通过，继续初始化...'); // 调试用
+    
+    // 为测试按钮添加点击事件
+    const testOutputBtn = document.getElementById('test-output');
+    if (testOutputBtn) {
+        console.log('找到测试按钮，添加点击事件');
+        testOutputBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('测试按钮被点击');
+            
+            // 直接添加一条测试消息到游戏输出区域
+            try {
+                const testMsg = document.createElement('p');
+                testMsg.textContent = '这是一条测试消息，时间: ' + new Date().toLocaleTimeString();
+                testMsg.style.backgroundColor = '#f0f7ff';
+                testMsg.style.color = '#0066cc';
+                testMsg.style.padding = '8px 12px';
+                testMsg.style.borderRadius = '6px';
+                testMsg.style.marginBottom = '10px';
+                testMsg.style.borderLeft = '3px solid #0066cc';
+                testMsg.style.boxShadow = '0 1px 3px rgba(0,0,0,0.1)';
+                testMsg.style.maxWidth = '95%';
+                
+                gameOutput.appendChild(testMsg);
+                console.log('测试消息已添加到游戏输出区域');
+                
+                // 滚动到底部
+                gameOutput.scrollTop = gameOutput.scrollHeight;
+            } catch (error) {
+                console.error('添加测试消息时出错:', error);
+                alert('添加测试消息失败: ' + error.message);
+            }
+        });
+    } else {
+        console.error('测试按钮未找到!');
+    }
     
     let secretNumber = 0;
     let attempts = 0;
@@ -416,16 +465,29 @@ function initNumberGuessGame() {
     
     // 初始化游戏
     function initGame() {
-        // 清空游戏输出区域，只保留欢迎信息
-        gameOutput.innerHTML = '';
-        
-        // 添加欢迎信息
-        addMessage('欢迎来到猜数字游戏！', 'normal');
-        addMessage(`我想了一个1到100之间的数字，你有${maxAttempts}次机会猜出它。`, 'normal');
-        addMessage('请输入1到100之间的有效数字！', 'hint');
+        // 清空游戏输出区域，但保留欢迎消息
+        if (gameOutput) {
+            // 查找既有的消息（已经添加的静态欢迎消息）
+            const existingMessages = gameOutput.querySelectorAll('p');
+            
+            // 如果没有任何消息，我们添加欢迎消息
+            if (existingMessages.length === 0) {
+                addMessage('欢迎来到猜数字游戏！', 'normal');
+                addMessage(`我想了一个1到100之间的数字，你有${maxAttempts}次机会猜出它。`, 'normal');
+                addMessage('请输入1到100之间的有效数字！', 'hint');
+            } else {
+                // 如果已经有静态消息，只需添加一条新的游戏开始消息
+                addMessage('新游戏已开始!', 'normal');
+                addMessage(`我想了一个1到100之间的数字，你有${maxAttempts}次机会猜出它。`, 'normal');
+            }
+        }
         
         // 生成1到100之间的随机数
         secretNumber = Math.floor(Math.random() * 100) + 1;
+        console.log('生成的随机数:', secretNumber); // 调试用
+        
+        // 强制设置secretNumber为50（测试用，实际使用时请注释掉这行）
+        // secretNumber = 50;
         
         // 重置游戏状态
         attempts = 0;
@@ -444,38 +506,91 @@ function initNumberGuessGame() {
         
         // 设置焦点到输入框
         userGuessInput.focus();
+        
+        // 确保滚动到顶部
+        gameOutput.scrollTop = 0;
+        
+        console.log('游戏初始化完成，随机数:', secretNumber, '游戏状态:', gameActive);
     }
     
     // 添加消息到游戏输出区域
     function addMessage(message, type = 'normal') {
-        const messageElem = document.createElement('p');
+        console.log('添加消息:', message, type); // 调试用
         
-        switch(type) {
-            case 'success':
-                messageElem.classList.add('success-message');
-                break;
-            case 'lose':
-                messageElem.classList.add('lose-message');
-                break;
-            case 'too-small':
-                messageElem.classList.add('too-small');
-                break;
-            case 'too-large':
-                messageElem.classList.add('too-large');
-                break;
-            case 'hint':
-                messageElem.classList.add('hint-message');
-                break;
-            default:
-                // 默认样式不添加特殊类
-                break;
+        try {
+            const messageElem = document.createElement('p');
+            
+            switch(type) {
+                case 'success':
+                    messageElem.classList.add('success-message');
+                    messageElem.style.color = '#28a745';
+                    messageElem.style.fontWeight = '500';
+                    messageElem.style.backgroundColor = '#e8f5e9';
+                    messageElem.style.borderLeft = '3px solid #28a745';
+                    break;
+                case 'lose':
+                    messageElem.classList.add('lose-message');
+                    messageElem.style.color = '#dc3545';
+                    messageElem.style.fontWeight = '500';
+                    messageElem.style.backgroundColor = '#feebed';
+                    messageElem.style.borderLeft = '3px solid #dc3545';
+                    break;
+                case 'too-small':
+                    messageElem.classList.add('too-small');
+                    messageElem.style.color = '#0d6efd';
+                    messageElem.style.backgroundColor = '#e6f2ff';
+                    messageElem.style.borderLeft = '3px solid #0d6efd';
+                    break;
+                case 'too-large':
+                    messageElem.classList.add('too-large');
+                    messageElem.style.color = '#fd7e14';
+                    messageElem.style.backgroundColor = '#fff3e6';
+                    messageElem.style.borderLeft = '3px solid #fd7e14';
+                    break;
+                case 'hint':
+                    messageElem.classList.add('hint-message');
+                    messageElem.style.color = '#6c757d';
+                    messageElem.style.backgroundColor = '#f8f9fa';
+                    messageElem.style.borderLeft = '3px solid #6c757d';
+                    break;
+                default:
+                    // 默认样式设置
+                    messageElem.style.backgroundColor = '#f8f9fa';
+                    messageElem.style.padding = '8px 12px';
+                    messageElem.style.borderRadius = '6px';
+                    messageElem.style.marginBottom = '10px';
+                    break;
+            }
+            
+            // 应用通用样式
+            messageElem.style.padding = '8px 12px';
+            messageElem.style.borderRadius = '6px';
+            messageElem.style.marginBottom = '10px';
+            messageElem.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.05)';
+            messageElem.style.maxWidth = '95%';
+            messageElem.style.wordWrap = 'break-word';
+            
+            messageElem.textContent = message;
+            
+            // 确保输出区域存在
+            if (!gameOutput) {
+                console.error('游戏输出区域不存在!');
+                return;
+            }
+            
+            // 直接使用innerHTML添加一个测试（如果appendChild不起作用）
+            // const testHtml = `<p style="color: red; background-color: #ffeeee; padding: 8px; margin: 5px 0; border-radius: 4px;">测试消息: ${message}</p>`;
+            // gameOutput.innerHTML += testHtml;
+            
+            // 添加到DOM
+            gameOutput.appendChild(messageElem);
+            console.log('消息已添加到游戏输出区域'); // 调试用
+            
+            // 确保滚动到最新消息
+            scrollOutputToBottom();
+        } catch (error) {
+            console.error('添加消息时出错:', error);
         }
-        
-        messageElem.textContent = message;
-        gameOutput.appendChild(messageElem);
-        
-        // 确保滚动到最新消息
-        scrollOutputToBottom();
     }
     
     // 滚动输出区域到底部
@@ -488,14 +603,22 @@ function initNumberGuessGame() {
     
     // 处理用户猜测
     function handleGuess() {
-        if (!gameActive) return;
+        console.log('执行handleGuess函数'); // 调试用
+        
+        if (!gameActive) {
+            console.log('游戏不活跃，无法处理猜测'); // 调试用
+            return;
+        }
         
         // 获取用户输入
         const guess = parseInt(userGuessInput.value);
+        console.log('用户猜测:', guess); // 调试用
         
         // 验证输入
         if (isNaN(guess) || guess < 1 || guess > 100) {
+            console.log('无效输入:', guess); // 调试用
             guessFeedback.textContent = '请输入1到100之间的有效数字！';
+            guessFeedback.style.color = '#dc3545';
             userGuessInput.value = ''; // 清空无效输入
             userGuessInput.focus();
             return;
@@ -507,31 +630,36 @@ function initNumberGuessGame() {
         
         // 增加尝试次数
         attempts++;
+        console.log(`第${attempts}次尝试，猜测: ${guess}, 正确答案: ${secretNumber}`); // 调试用
         
-        // 添加用户猜测消息
-        addMessage(`第${attempts}次猜测: ${guess}`, 'normal');
-        
-        // 根据猜测结果添加响应
-        if (guess < secretNumber) {
-            addMessage('太小了！再试一次。', 'too-small');
-        } else if (guess > secretNumber) {
-            addMessage('太大了！再试一次。', 'too-large');
-        } else {
-            // 猜对了
-            addMessage(`恭喜你猜对了！答案是${secretNumber}。`, 'success');
-            addMessage(`你用了${attempts}次尝试。`, 'success');
-            endGame(true);
-            return;
-        }
-        
-        // 检查是否达到最大尝试次数
-        if (attempts >= maxAttempts) {
-            addMessage(`游戏结束！正确答案是${secretNumber}。`, 'lose');
-            endGame(false);
-        } else {
-            // 给用户提示还剩余多少次
-            userGuessInput.placeholder = `还有${maxAttempts - attempts}次机会`;
-            userGuessInput.focus();
+        try {
+            // 添加用户猜测消息
+            addMessage(`第${attempts}次猜测: ${guess}`, 'normal');
+            
+            // 根据猜测结果添加响应
+            if (guess < secretNumber) {
+                addMessage('太小了！再试一次。', 'too-small');
+            } else if (guess > secretNumber) {
+                addMessage('太大了！再试一次。', 'too-large');
+            } else {
+                // 猜对了
+                addMessage(`恭喜你猜对了！答案是${secretNumber}。`, 'success');
+                addMessage(`你用了${attempts}次尝试。`, 'success');
+                endGame(true);
+                return;
+            }
+            
+            // 检查是否达到最大尝试次数
+            if (attempts >= maxAttempts) {
+                addMessage(`游戏结束！正确答案是${secretNumber}。`, 'lose');
+                endGame(false);
+            } else {
+                // 给用户提示还剩余多少次
+                userGuessInput.placeholder = `还有${maxAttempts - attempts}次机会`;
+                userGuessInput.focus();
+            }
+        } catch (error) {
+            console.error('处理猜测时出错:', error); // 调试用
         }
     }
     
@@ -549,19 +677,76 @@ function initNumberGuessGame() {
     }
     
     // 按钮事件处理
-    restartBtn.addEventListener('click', initGame);
+    if (restartBtn) {
+        restartBtn.addEventListener('click', function(e) {
+            e.preventDefault(); // 防止表单提交
+            initGame();
+        });
+    }
     
-    submitBtn.addEventListener('click', handleGuess);
+    if (submitBtn) {
+        submitBtn.addEventListener('click', function(e) {
+            e.preventDefault(); // 防止表单提交
+            console.log('提交按钮被点击'); // 调试用
+            handleGuess();
+        });
+    }
     
     // 支持回车键提交
-    userGuessInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
+    if (userGuessInput) {
+        userGuessInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault(); // 防止表单提交
+                console.log('按下回车键'); // 调试用
+                handleGuess();
+            }
+        });
+    }
+    
+    // 额外添加直接点击事件监听（确保事件绑定）
+    document.addEventListener('click', function(e) {
+        if (e.target === submitBtn) {
+            console.log('通过文档捕获的提交按钮点击事件'); // 调试用
+            e.preventDefault();
+            e.stopPropagation();
             handleGuess();
         }
     });
     
     // 初始化游戏
-    initGame();
+    console.log('初始化猜数字游戏'); // 调试用
+    
+    // 使用延迟启动游戏，确保DOM已完全加载
+    setTimeout(() => {
+        try {
+            console.log('延迟启动游戏...');
+            
+            // 不再清空游戏输出区域，而是保留预先设置的静态欢迎消息
+            console.log('保留预设的欢迎消息');
+            
+            // 启动游戏
+            initGame();
+            console.log('游戏已初始化完成');
+            
+            // 额外调试 - 检查游戏状态
+            console.log('游戏状态:', {
+                active: gameActive,
+                secretNumber: secretNumber,
+                attempts: attempts,
+                maxAttempts: maxAttempts
+            });
+        } catch (error) {
+            console.error('初始化游戏时发生错误:', error);
+            
+            // 尝试显示错误信息
+            if (gameOutput) {
+                const errorMsg = document.createElement('p');
+                errorMsg.textContent = '游戏初始化失败，请刷新页面重试。';
+                errorMsg.style.color = 'red';
+                gameOutput.appendChild(errorMsg);
+            }
+        }
+    }, 500);
 }
 
 // 初始化课程大纲手风琴

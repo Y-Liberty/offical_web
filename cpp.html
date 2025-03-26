@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++编程课程 - 壹零贰肆少儿编程教育</title>
+    <meta name="description" content="壹零贰肆少儿编程C++课程，专为12-18岁青少年设计，培养算法思维和高级编程能力，为升学和竞赛打下坚实基础">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cpp.css">
+    <!-- 添加highlight.js的CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+    <!-- 顶部红色条 -->
+    <div class="top-bar"></div>
+
+    <!-- 导航栏 -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <div class="logo-container">
+                        <span class="logo-text">壹零贰肆</span>
+                        <span class="logo-tagline">少儿编程教育</span>
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> 首页</a>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="courses.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-book"></i> 课程体系
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="scratch.html">Scratch编程</a></li>
+                                <li><a class="dropdown-item" href="python.html">Python编程</a></li>
+                                <li><a class="dropdown-item active" href="cpp.html">C++编程</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="courses.html">全部课程</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-collection"></i> 资讯中心
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="showcase.html">学生作品</a></li>
+                                <li><a class="dropdown-item" href="competition.html">赛事活动</a></li>
+                                <li><a class="dropdown-item" href="news.html">新闻动态</a></li>
+                                <li><a class="dropdown-item" href="faq.html">常见问题</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-info-circle"></i> 关于我们
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="about.html">机构介绍</a></li>
+                                <li><a class="dropdown-item" href="teachers.html">师资力量</a></li>
+                                <li><a class="dropdown-item" href="about.html#vision">教学理念</a></li>
+                                <li><a class="dropdown-item" href="about.html#history">发展历程</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="contact.html">联系我们</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-primary btn-sm ms-2 px-3" href="#" data-bs-toggle="modal" data-bs-target="#trialModal">
+                                <i class="bi bi-calendar-check"></i> 预约试听
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- C++横幅 -->
+    <section class="cpp-banner">
+        <div class="banner-decoration">
+            <div class="decoration-circle circle-1"></div>
+            <div class="decoration-circle circle-2"></div>
+            <div class="decoration-circle circle-3"></div>
+            <div class="decoration-circle circle-4"></div>
+            <div class="decoration-line line-1"></div>
+            <div class="decoration-line line-2"></div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="banner-content">
+                        <h1>C++ <span class="highlight">编程进阶</span></h1>
+                        <p>专为12-18岁青少年设计的高级编程课程，培养算法思维和编程能力，为升学和竞赛打下坚实基础</p>
+                        <div class="banner-buttons">
+                            <a href="#course-intro" class="btn btn-primary me-3">了解课程</a>
+                            <a href="#" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#trialModal">免费试听</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="images/course/cpp/basic.jpg" alt="C++编程" class="banner-image">
+    </section>
+
+    <!-- 课程介绍 -->
+    <section id="course-intro" class="course-intro">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="images/course/cpp/algorithm.jpg" alt="C++算法编程" class="img-fluid intro-image">
+                </div>
+                <div class="col-lg-6">
+                    <div class="intro-content">
+                        <h2>什么是 <span class="highlight">C++</span> 编程?</h2>
+                        <p>C++是一种强大的通用编程语言，结合了高级语言特性和底层系统编程的能力。它被广泛应用于游戏开发、操作系统、嵌入式系统、高性能计算以及各类专业软件开发领域。</p>
+                        <p>C++以其卓越的性能、精确的内存控制和丰富的编程范式支持（面向对象、函数式、泛型编程）而闻名，是全球最受欢迎的编程语言之一。</p>
+                        <p>在我们的C++课程中，学生将从基础语法开始，逐步掌握数据结构与算法、面向对象编程、标准模板库(STL)等重要概念，通过丰富的实践项目培养编程能力和解决问题的思维方式。</p>
+                        <div class="mt-4">
+                            <a href="#course-features" class="btn btn-primary">课程特点</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 代码示例 -->
+    <section id="code-example" class="code-example-section">
+        <div class="container">
+            <h2>C++代码示例</h2>
+            <p class="section-description">通过实际编写和运行C++代码，掌握编程基础概念</p>
+            
+            <div class="code-editor">
+                <div class="code-editor-header">
+                    <div class="code-editor-tab active">main.cpp</div>
+                    <div class="code-editor-tab">output</div>
+                </div>
+                <div class="code-editor-content">
+                    <div class="code-editor-code">
+#include <iostream>
+<span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;
+
+<span class="code-keyword">int</span> <span class="code-variable">main</span>() {
+    <span class="code-variable">cout</span> << <span class="code-string">"Hello C++ World!"</span> << endl;
+    
+    <span class="code-keyword">int</span> <span class="code-variable">a</span> = <span class="code-number">5</span>;
+    <span class="code-keyword">int</span> <span class="code-variable">b</span> = <span class="code-number">3</span>;
+    
+    <span class="code-comment">// 这里计算并输出a+b的值</span>
+    <span class="code-variable">cout</span> << <span class="code-string">"a + b = "</span> << a + b << endl;
+    <span class="code-variable">cout</span> << <span class="code-string">"a - b = "</span> << a - b << endl;
+    
+    <span class="code-keyword">return</span> <span class="code-number">0</span>;
+}
+                    </div>
+                    <div class="code-editor-output">
+Hello C++ World!
+a + b = 8
+a - b = 2
+
+<div class="code-scroll-controls">
+    <button class="code-scroll-button">▲</button>
+    <button class="code-scroll-button">▼</button>
+</div>
+                    </div>
+                </div>
+                <button class="code-editor-run">运行</button>
+            </div>
+
+            <div class="example-explanation">
+                <h4>代码说明</h4>
+                <p>上面的代码展示了C++的基本语法，包括：</p>
+                <ul>
+                    <li><strong>引入头文件</strong>: 使用<code>#include</code>引入输入输出库</li>
+                    <li><strong>命名空间</strong>: 使用<code>using namespace std</code>简化代码</li>
+                    <li><strong>主函数</strong>: 所有C++程序的入口点</li>
+                    <li><strong>变量声明</strong>: 使用类型关键字如<code>int</code>声明变量</li>
+                    <li><strong>运算符</strong>: 使用算术运算符进行计算</li>
+                    <li><strong>输出</strong>: 使用<code>cout</code>和<code><<</code>操作符输出内容</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 排序算法示例部分 -->
+    <section class="sorting-algorithm-section py-5 bg-light">
+        <div class="container">
+            <h2>简单的排序算法示例</h2>
+            <div class="code-display">
+                <pre class="code-block"><code>
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+// 冒泡排序函数
+void bubbleSort(vector&lt;int&gt;& arr) {
+    int n = arr.size();
+    for (int i = 0; i < n-1; i++) {
+        for (int j = 0; j < n-i-1; j++) {
+            if (arr[j] > arr[j+1]) {
+                // 交换元素
+                swap(arr[j], arr[j+1]);
+            }
+        }
+    }
+}
+
+int main() {
+    // 创建一个整数向量
+    vector&lt;int&gt; numbers = {64, 34, 25, 12, 22, 11, 90};
+    
+    cout << "排序前: ";
+    for (int num : numbers) {
+        cout << num << " ";
+    }
+    cout << endl;
+    
+    // 使用冒泡排序
+    bubbleSort(numbers);
+    
+    cout << "排序后: ";
+    for (int num : numbers) {
+        cout << num << " ";
+    }
+    cout << endl;
+    
+    return 0;
+}
+                </code></pre>
+            </div>
+            <div class="algorithm-explanation mt-4">
+                <h4>算法解释</h4>
+                <p>冒泡排序是一种简单的排序算法，它通过重复遍历要排序的数列，比较相邻的两个数，如果顺序错误就把它们交换过来。</p>
+                <p>算法的主要特点：</p>
+                <ul>
+                    <li>简单易实现，适合初学者理解排序原理</li>
+                    <li>时间复杂度为O(n²)，空间复杂度为O(1)</li>
+                    <li>稳定排序算法，相等元素的相对位置不会改变</li>
+                    <li>是C++算法学习的基础，为理解更复杂的排序算法打下基础</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 课程特点 -->
+    <section id="course-features" class="course-features">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h2>课程特点</h2>
+                <p>高效学习C++编程，打造扎实的编程基础和竞争优势</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-code-square"></i>
+                        </div>
+                        <h3>系统化学习</h3>
+                        <p>从C++基础语法到高级特性，循序渐进，构建完整的知识体系，确保学生掌握编程核心概念</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-cpu"></i>
+                        </div>
+                        <h3>算法思维</h3>
+                        <p>通过经典算法学习和问题求解训练，培养学生的逻辑思维和解决复杂问题的能力</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-lightning-charge"></i>
+                        </div>
+                        <h3>高效编程</h3>
+                        <p>学习C++性能优化技巧和内存管理知识，理解计算机底层原理，写出高效稳定的代码</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-trophy"></i>
+                        </div>
+                        <h3>竞赛导向</h3>
+                        <p>针对信息学奥赛(NOI/NOIP)和蓝桥杯等编程竞赛，提供专业的辅导和训练，助力学生在比赛中脱颖而出</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-mortarboard"></i>
+                        </div>
+                        <h3>升学助力</h3>
+                        <p>C++是大学计算机专业的重要基础课程，提前学习有助于学生在升学和自主招生中获得优势</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-puzzle"></i>
+                        </div>
+                        <h3>项目实战</h3>
+                        <p>通过开发游戏、数据分析工具等实际项目，将理论知识转化为实际应用能力，增强学习成就感</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 课程大纲 -->
+    <section id="course-outline" class="course-outline-section">
+        <div class="container">
+            <h2>课程大纲</h2>
+            <p class="section-description">我们的C++课程分为五个阶段，循序渐进地带领学生掌握C++编程技能</p>
+            
+            <div class="course-outline">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <div class="d-flex align-items-center">
+                            <div class="stage-number">01</div>
+                            第一阶段：C++基础入门
+                        </div>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p>掌握C++编程的基本语法和概念，包括变量、数据类型、运算符、控制流程等，建立编程思维的基础</p>
+                            <ul>
+                                <li>开发环境搭建与入门</li>
+                                <li>C++基本语法结构</li>
+                                <li>变量与数据类型</li>
+                                <li>运算符与表达式</li>
+                                <li>条件语句与循环结构</li>
+                                <li>函数定义与调用</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <div class="d-flex align-items-center">
+                            <div class="stage-number">02</div>
+                            第二阶段：数组与指针
+                        </div>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p>深入学习C++中的数组操作、指针概念和内存管理，为掌握更复杂的数据结构打下基础</p>
+                            <ul>
+                                <li>一维数组和多维数组</li>
+                                <li>指针的基本概念与应用</li>
+                                <li>引用类型与指针区别</li>
+                                <li>动态内存分配</li>
+                                <li>指针与数组的关系</li>
+                                <li>字符串处理</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <div class="d-flex align-items-center">
+                            <div class="stage-number">03</div>
+                            第三阶段：面向对象编程
+                        </div>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p>学习C++的核心特性——面向对象编程，包括类与对象、封装、继承和多态等概念</p>
+                            <ul>
+                                <li>类与对象的基本概念</li>
+                                <li>构造函数与析构函数</li>
+                                <li>封装与访问控制</li>
+                                <li>继承与派生类</li>
+                                <li>多态与虚函数</li>
+                                <li>抽象类与接口</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <div class="d-flex align-items-center">
+                            <div class="stage-number">04</div>
+                            第四阶段：标准模板库(STL)
+                        </div>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p>掌握C++标准模板库的使用，包括容器、迭代器、算法等，提高编程效率与代码质量</p>
+                            <ul>
+                                <li>STL概述与基本组件</li>
+                                <li>常用容器（vector, list, map等）</li>
+                                <li>迭代器与泛型编程</li>
+                                <li>函数对象与算法</li>
+                                <li>字符串处理与流操作</li>
+                                <li>模板与泛型编程</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <div class="d-flex align-items-center">
+                            <div class="stage-number">05</div>
+                            第五阶段：数据结构与算法
+                        </div>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p>结合C++实现经典的数据结构与算法，培养问题解决能力与算法思维，为参加信息学竞赛打下基础</p>
+                            <ul>
+                                <li>基本数据结构（栈、队列、链表等）</li>
+                                <li>树与图的实现与应用</li>
+                                <li>排序与搜索算法</li>
+                                <li>递归与分治策略</li>
+                                <li>动态规划入门</li>
+                                <li>竞赛算法专题</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 学生作品展示 -->
+    <section id="student-projects" class="projects-section">
+        <div class="container">
+            <h2>学生作品展示</h2>
+            <p class="section-description">看看我们的学生使用C++创建的精彩项目</p>
+            
+            <div class="project-cards">
+                <!-- 项目1 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="images/course/cpp/projects/project1.jpg" alt="俄罗斯方块游戏">
+                    </div>
+                    <div class="project-tabs">
+                        <div class="project-tab active">核心代码</div>
+                        <div class="project-tab">效果展示</div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">俄罗斯方块游戏</h3>
+                        <div class="project-meta">
+                            <i class="bi bi-person-circle"></i> 陈小明 | 16岁 | 学习C++ 8个月
+                        </div>
+                        <p>基于C++和SDL库开发的经典俄罗斯方块游戏，实现了完整的游戏功能，包括不同形状方块的旋转、移动、消除行和计分系统。</p>
+                        <div class="project-actions">
+                            <a href="#" class="project-btn project-btn-outline" data-bs-toggle="modal" data-bs-target="#codeModal1">查看代码</a>
+                            <a href="#" class="project-btn project-btn-primary" data-bs-toggle="modal" data-bs-target="#demoModal1">效果演示</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 项目2 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="images/course/cpp/projects/project2.jpg" alt="迷宫寻路算法">
+                    </div>
+                    <div class="project-tabs">
+                        <div class="project-tab active">核心代码</div>
+                        <div class="project-tab">效果展示</div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">迷宫寻路算法</h3>
+                        <div class="project-meta">
+                            <i class="bi bi-person-circle"></i> 李小华 | 15岁 | 学习C++ 6个月
+                        </div>
+                        <p>使用C++实现的迷宫生成与寻路算法，包括BFS和A*算法的比较，可自动生成随机迷宫并可视化显示路径搜索过程。</p>
+                        <div class="project-actions">
+                            <a href="#" class="project-btn project-btn-outline" data-bs-toggle="modal" data-bs-target="#codeModal2">查看代码</a>
+                            <a href="#" class="project-btn project-btn-primary" data-bs-toggle="modal" data-bs-target="#demoModal2">效果演示</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 项目3 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="images/course/cpp/projects/project3.jpg" alt="数据可视化工具">
+                    </div>
+                    <div class="project-tabs">
+                        <div class="project-tab active">核心代码</div>
+                        <div class="project-tab">效果展示</div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">数据可视化工具</h3>
+                        <div class="project-meta">
+                            <i class="bi bi-person-circle"></i> 张小方 | 17岁 | 学习C++ 10个月
+                        </div>
+                        <p>基于C++和Qt框架开发的数据可视化应用，支持从CSV文件导入数据，生成多种图表类型，实现了数据分析和可视化展示功能。</p>
+                        <div class="project-actions">
+                            <a href="#" class="project-btn project-btn-outline" data-bs-toggle="modal" data-bs-target="#codeModal3">查看代码</a>
+                            <a href="#" class="project-btn project-btn-primary" data-bs-toggle="modal" data-bs-target="#demoModal3">效果演示</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="showcase.html" class="view-more-projects">
+                查看更多作品 <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2>常见问题</h2>
+            <p class="section-description">关于C++编程课程的常见问题解答</p>
+            
+            <div class="faq-container">
+                <!-- 问题1 -->
+                <div class="faq-item">
+                    <div class="faq-question">C++适合多大年龄的孩子学习？</div>
+                    <div class="faq-answer">
+                        <p>我们的C++课程主要针对<span class="faq-highlight">12-18岁的青少年</span>设计。由于C++语法相对复杂，理解指针和内存管理等概念需要一定的逻辑思维能力，因此我们通常建议：</p>
+                        <ul>
+                            <li>12-14岁：建议先学习Scratch和Python打好编程基础，再过渡到C++</li>
+                            <li>14-16岁：可以直接开始学习C++基础，循序渐进</li>
+                            <li>16-18岁：可以深入学习C++高级特性，包括数据结构、算法和STL应用</li>
+                        </ul>
+                        <p>当然，每个孩子的学习能力不同，我们会根据孩子的实际情况制定个性化的学习计划。</p>
+                    </div>
+                </div>
+                
+                <!-- 问题2 -->
+                <div class="faq-item">
+                    <div class="faq-question">学习C++需要什么基础？</div>
+                    <div class="faq-answer">
+                        <p>学习C++不需要特别的编程背景，但需要具备以下基本能力：</p>
+                        <ul>
+                            <li>基本的数学知识和逻辑思维能力</li>
+                            <li>良好的阅读理解能力和耐心</li>
+                            <li>对计算机和编程的兴趣</li>
+                        </ul>
+                        <p>如果孩子之前学习过Python或其他编程语言，会更容易理解C++的概念。我们的课程从零基础开始教授，会确保每位学生都能逐步掌握必要的知识和技能。</p>
+                    </div>
+                </div>
+                
+                <!-- 问题3 -->
+                <div class="faq-item">
+                    <div class="faq-question">为什么要选择学习C++而不是其他语言？</div>
+                    <div class="faq-answer">
+                        <p>C++是一种强大而灵活的编程语言，具有以下优势：</p>
+                        <ul>
+                            <li><span class="faq-highlight">性能卓越</span>：被广泛用于游戏开发、操作系统、嵌入式系统等需要高性能的场景</li>
+                            <li><span class="faq-highlight">语言特性丰富</span>：支持多种编程范式，包括面向过程、面向对象和泛型编程</li>
+                            <li><span class="faq-highlight">深入理解计算机原理</span>：学习C++可以深入理解计算机原理和内存管理</li>
+                            <li><span class="faq-highlight">竞赛语言</span>：C++是信息学奥赛(NOI/NOIP)和蓝桥杯等重要编程竞赛的主要语言</li>
+                            <li><span class="faq-highlight">大学核心课程</span>：许多高校计算机专业的核心课程使用C++授课</li>
+                        </ul>
+                        <p>总之，掌握C++为学生提供了更广阔的发展空间，无论是参加竞赛、升学还是未来的职业发展。</p>
+                    </div>
+                </div>
+                
+                <!-- 问题4 -->
+                <div class="faq-item">
+                    <div class="faq-question">C++课程与信息学竞赛有什么关系？</div>
+                    <div class="faq-answer">
+                        <p>C++是信息学竞赛的首选语言，我们的课程与竞赛有以下关联：</p>
+                        <ul>
+                            <li>课程第四、五阶段重点讲解STL和算法，这些是竞赛中的核心内容</li>
+                            <li>我们提供专门的竞赛训练课程，针对NOI/NOIP和蓝桥杯等比赛</li>
+                            <li>课程中包含大量算法解题技巧和竞赛真题分析</li>
+                            <li>我们的教师团队包括多位曾获得省级以上竞赛奖项的指导老师</li>
+                        </ul>
+                        <p>通过系统学习C++课程，学生将掌握参加各类信息学竞赛所需的语言基础和算法思维。</p>
+                    </div>
+                </div>
+                
+                <!-- 问题5 -->
+                <div class="faq-item">
+                    <div class="faq-question">学习C++对升学有什么帮助？</div>
+                    <div class="faq-answer">
+                        <p>掌握C++对升学有多方面的帮助：</p>
+                        <ul>
+                            <li><span class="faq-highlight">提升竞赛成绩</span>：在信息学竞赛中取得好成绩可增加自主招生机会</li>
+                            <li><span class="faq-highlight">丰富学生简历</span>：C++项目经验和作品可以丰富学生的个人简历</li>
+                            <li><span class="faq-highlight">计算机专业优势</span>：申请计算机科学等相关专业时具有显著优势</li>
+                            <li><span class="faq-highlight">培养逻辑思维</span>：编程训练培养的逻辑思维和问题解决能力有助于其他学科学习</li>
+                        </ul>
+                        <p>我们的许多学员已通过信息学竞赛成绩或者优秀的编程能力，获得了名校的提前录取机会。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 行动号召 -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>开启C++编程之旅</h2>
+            <p>立即报名参加免费试听课，探索C++编程的无限可能</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#trialModal">预约免费试听</a>
+                <a href="contact.html" class="btn btn-outline-light">联系咨询</a>
+            </div>
+        </div>
+        <div class="cta-wave">
+            <div class="wave1"></div>
+            <div class="wave2"></div>
+        </div>
+    </section>
+
+    <!-- 底部红色条 -->
+    <div class="bottom-bar"></div>
+
+    <!-- 试听预约模态框 -->
+    <div class="modal fade" id="trialModal" tabindex="-1" aria-labelledby="trialModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="trialModalLabel">预约免费试听课</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="trial-form" action="https://formsubmit.co/yi_coder@163.com" method="POST">
+                        <input type="hidden" name="_subject" value="壹零贰肆少儿编程 - 试听预约">
+                        <input type="hidden" name="_cc" value="info@weilaima.com">
+                        <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
+                        <input type="hidden" name="_captcha" value="false">
+                        <div class="mb-3">
+                            <label class="form-label">孩子姓名</label>
+                            <input type="text" name="child_name" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">孩子年龄</label>
+                            <input type="number" name="child_age" class="form-control" min="5" max="18" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">家长姓名</label>
+                            <input type="text" name="parent_name" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">联系电话</label>
+                            <input type="tel" name="phone" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">感兴趣的课程</label>
+                            <select name="course_type" class="form-select" required>
+                                <option>Scratch编程启蒙</option>
+                                <option>Scratch创意编程</option>
+                                <option>Python少儿编程</option>
+                                <option selected value="C++编程">C++编程</option>
+                                <option>竞赛课程</option>
+                                <option>其他课程</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">预约时间</label>
+                            <input type="date" name="preferred_date" class="form-control" min="2023-03-22" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="submit" form="trial-form" class="btn btn-primary">提交预约</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 项目模态框 -->
+    <!-- 项目1的模态框 -->
+    <div class="modal fade" id="codeModal1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">俄罗斯方块游戏 - 核心代码</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="code-image-container">
+                        <img src="images/course/cpp/projects/code/code1.jpg" alt="俄罗斯方块游戏代码" class="img-fluid rounded">
+                        <div class="code-caption mt-3">
+                            <h5>代码说明</h5>
+                            <p>这段代码实现了俄罗斯方块游戏的核心逻辑，包括方块的生成、旋转、移动和消除行的判定，使用C++的面向对象特性和游戏循环设计，支持键盘控制和分数计算。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="demoModal1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">俄罗斯方块游戏 - 效果展示</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <img src="images/course/cpp/projects/project1_demo.jpg" alt="俄罗斯方块游戏效果" class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-4">
+                            <h5>项目说明</h5>
+                            <p>这是一个基于C++和SDL库开发的俄罗斯方块游戏，具有完整的游戏功能，包括分数计算、等级提升和游戏难度调整。</p>
+                            <h5>技术亮点</h5>
+                            <ul>
+                                <li>图形界面设计</li>
+                                <li>碰撞检测算法</li>
+                                <li>游戏状态管理</li>
+                                <li>键盘事件响应</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 项目2的模态框 -->
+    <div class="modal fade" id="codeModal2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">迷宫寻路算法 - 核心代码</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="code-image-container">
+                        <img src="images/course/cpp/projects/code/code2.jpg" alt="迷宫寻路算法代码" class="img-fluid rounded">
+                        <div class="code-caption mt-3">
+                            <h5>代码说明</h5>
+                            <p>这段代码使用广度优先搜索(BFS)和A*算法实现迷宫寻路，包括迷宫生成、路径搜索和结果可视化，展示了数据结构和算法在实际问题中的应用。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="demoModal2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">迷宫寻路算法 - 效果展示</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <img src="images/course/cpp/projects/project2_demo.jpg" alt="迷宫寻路算法效果" class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-4">
+                            <h5>项目说明</h5>
+                            <p>这个项目实现了自动生成迷宫和多种寻路算法的比较，用户可以选择不同的算法并可视化搜索过程，比较算法效率。</p>
+                            <h5>技术亮点</h5>
+                            <ul>
+                                <li>广度优先搜索(BFS)</li>
+                                <li>A*寻路算法</li>
+                                <li>迷宫随机生成</li>
+                                <li>算法性能分析</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 项目3的模态框 -->
+    <div class="modal fade" id="codeModal3" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">数据可视化工具 - 核心代码</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="code-image-container">
+                        <img src="images/course/cpp/projects/code/code3.jpg" alt="数据可视化工具代码" class="img-fluid rounded">
+                        <div class="code-caption mt-3">
+                            <h5>代码说明</h5>
+                            <p>这段代码使用C++和Qt框架开发了一个数据可视化工具，可以读取CSV文件并生成多种图表，包括折线图、柱状图和饼图，实现了数据处理和图形界面的结合。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="demoModal3" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">数据可视化工具 - 效果展示</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <img src="images/course/cpp/projects/project3_demo.jpg" alt="数据可视化工具效果" class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-4">
+                            <h5>项目说明</h5>
+                            <p>这是一个基于C++和Qt开发的数据可视化应用，可以导入数据、进行简单分析并生成多种类型的图表，适合数据展示和简单的数据分析。</p>
+                            <h5>技术亮点</h5>
+                            <ul>
+                                <li>Qt界面设计</li>
+                                <li>文件I/O操作</li>
+                                <li>数据处理算法</li>
+                                <li>图表生成技术</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer-section">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+                        <div class="footer-widget">
+                            <h4>关于我们</h4>
+                            <p>壹零贰肆少儿编程致力于为6-18岁青少年提供优质的编程教育，培养孩子的逻辑思维、解决问题的能力和创造力。</p>
+                            
+                            <div class="mt-4">
+                                <h4>扫码关注</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="text-center">
+                                            <h5>关注公众号</h5>
+                                            <img src="images/qrcode/qrcode.jpg" alt="公众号二维码" class="img-fluid" style="max-width: 150px;">
+                                            <p>获取最新资讯、课程优惠与教育干货</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="text-center">
+                                            <h5>微信客服</h5>
+                                            <img src="images/qrcode/wechat.jpg" alt="微信二维码" class="img-fluid" style="max-width: 150px;">
+                                            <p>添加微信客服咨询课程详情</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
+                        <div class="footer-widget">
+                            <h4>快捷导航</h4>
+                            <div class="row">
+                                <div class="col-6">
+                                    <ul class="footer-links">
+                                        <li><a href="index.html">首页</a></li>
+                                        <li><a href="courses.html">课程体系</a></li>
+                                        <li><a href="scratch.html">Scratch编程</a></li>
+                                        <li><a href="python.html">Python编程</a></li>
+                                        <li><a href="cpp.html">C++编程</a></li>
+                                        <li><a href="competition.html">赛事活动</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul class="footer-links">
+                                        <li><a href="showcase.html">学生作品</a></li>
+                                        <li><a href="news.html">新闻动态</a></li>
+                                        <li><a href="teachers.html">师资力量</a></li>
+                                        <li><a href="about.html">机构介绍</a></li>
+                                        <li><a href="about.html#vision">教学理念</a></li>
+                                        <li><a href="contact.html">联系我们</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="copyright">
+                            <p>© 2023 壹零贰肆少儿编程 版权所有 | 京ICP备12345678号-1</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-menu">
+                            <a href="privacy-policy.html">隐私政策</a>
+                            <a href="terms-of-service.html">服务条款</a>
+                            <a href="careers.html">招贤纳士</a>
+                            <a href="sitemap.html">网站地图</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 回到顶部 -->
+    <a href="#" class="back-to-top">
+        <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <!-- JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/cpp.js"></script>
+</body>
+</html> 
