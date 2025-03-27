@@ -349,6 +349,134 @@
 - [ ] 确认"感兴趣的课程"下拉菜单选项是否默认选中"Python少儿编程"
 - [ ] 更新页面标题和META描述
 
+# 学生作品展示页面 (showcase.html)
+
+## 页面内容调整
+
+### 筛选功能
+- [ ] 根据实际需求修改筛选按钮：
+  ```html
+  <button class="filter-btn active" data-filter="all">全部</button>
+  <button class="filter-btn" data-filter="scratch"><i class="bi bi-puzzle"></i> Scratch</button>
+  <button class="filter-btn" data-filter="python"><i class="bi bi-code-slash"></i> Python</button>
+  <button class="filter-btn" data-filter="cpp"><i class="bi bi-cpu"></i> C++</button>
+  <button class="filter-btn" data-filter="award"><i class="bi bi-trophy"></i> 获奖作品</button>
+  ```
+  可按需添加更多分类按钮，如按年龄分类、按难度分类等
+
+### 学生作品展示项
+- [ ] 更新每个展示项的内容，包括：
+  - 学生姓名
+  - 年龄
+  - 项目名称
+  - 项目类型
+  - 获奖情况
+  - 项目图片
+
+- [ ] 修改作品项示例：
+  ```html
+  <div class="col-lg-4 col-md-6 mb-4 showcase-item-wrapper" data-category="scratch award">
+      <div class="showcase-item" id="project1">
+          <div class="showcase-img">
+              <img src="images/showcase/project1.jpg" alt="太空冒险游戏" class="img-fluid">
+              <div class="showcase-overlay">
+                  <div class="overlay-content">
+                      <span class="project-category">Scratch作品</span>
+                      <h4>太空冒险游戏</h4>
+                      <p class="project-author">张小明 | 10岁</p>
+                      <a href="#" class="btn btn-view" data-bs-toggle="modal" data-bs-target="#projectModal1">
+                          查看详情 <i class="bi bi-arrow-right"></i>
+                      </a>
+                  </div>
+              </div>
+          </div>
+          <div class="showcase-info">
+              <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                      <h5>太空冒险游戏</h5>
+                      <p class="mb-0">Scratch | 游戏开发</p>
+                  </div>
+                  <div class="showcase-badge">
+                      <span class="badge bg-success"><i class="bi bi-trophy"></i> 获奖</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  ```
+
+### 项目详情模态框
+- [ ] 更新项目详情模态框内容：
+  - 项目标题
+  - 大图展示
+  - 演示视频链接（YouTube/BiliBili等，根据情况修改）
+  - 作者信息
+  - 项目描述
+  - 技术要点
+  - 获奖情况
+  - 老师评语
+
+- [ ] 模态框内容示例：
+  ```html
+  <div class="modal-body">
+      <div class="row">
+          <div class="col-lg-8">
+              <div class="project-showcase">
+                  <img src="images/showcase/project1.jpg" alt="太空冒险游戏" class="img-fluid rounded">
+                  <div class="project-video mt-3">
+                      <div class="ratio ratio-16x9">
+                          <!-- 替换为实际视频链接 -->
+                          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="项目演示视频" allowfullscreen></iframe>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4">
+              <div class="project-details">
+                  <!-- 替换为实际项目信息 -->
+                  <div class="project-info-item">
+                      <h6>作者信息</h6>
+                      <p>张小明 | 10岁 | 三年级</p>
+                  </div>
+                  <!-- 其他项目详情... -->
+              </div>
+          </div>
+      </div>
+  </div>
+  ```
+
+### 参与创作区块
+- [ ] 更新参与创作区块的内容，包括文案和图片：
+  ```html
+  <div class="join-content">
+      <h2>也想展示你的作品？</h2>
+      <p>如果你是我们的学员，并且完成了一个优秀的编程项目，欢迎向老师提交你的作品，有机会在这里展示！</p>
+      <!-- 其他内容... -->
+  </div>
+  ```
+
+## 图片资源
+
+### 学生作品展示图片
+- [ ] 准备学生作品缩略图（推荐尺寸：400px×300px）：
+  - `images/showcase/project1.jpg`
+  - `images/showcase/project2.jpg`
+  - `images/showcase/project3.jpg`
+  - 等更多作品图片
+
+### 参与创作区块图片
+- [ ] 准备参与创作区块的图片（推荐尺寸：500px×400px）：
+  - `images/showcase/join-showcase.jpg`
+
+## JavaScript功能定制
+
+### 筛选功能
+- [ ] 如需修改筛选逻辑，编辑 `js/showcase.js` 中的 `initFilterButtons()` 函数
+
+### 加载更多功能
+- [ ] 如需连接实际后端加载更多作品，修改 `js/showcase.js` 中的 `initLoadMore()` 函数
+- [ ] 可以根据实际情况修改加载作品的数量和行为
+
 ---
 
 完成上述修改后，请全面检查网站，确保所有"未来码少儿编程"的引用都已更新为"壹零贰肆少儿编程"，所有图片资源都已替换，所有联系信息都已更新为正确信息。 
