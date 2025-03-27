@@ -565,11 +565,6 @@
             transition: all 0.3s ease;
         }
         
-        .faq-item.active .faq-question {
-            color: #c62828;
-            background-color: #fff5f5;
-        }
-        
         .faq-question::after {
             content: '\f282';
             font-family: 'Bootstrap-icons';
@@ -585,22 +580,27 @@
             content: '\f286';
         }
         
+        .faq-item.active .faq-question {
+            color: #c62828;
+            background-color: #fff5f5;
+        }
+        
         .faq-answer {
-            padding: 0 25px;
-            max-height: 0;
+            padding: 0;
+            height: 0;
             overflow: hidden;
-            transition: all 0.3s ease-in-out;
+            transition: all 0.5s ease;
             opacity: 0;
             visibility: hidden;
         }
         
         .faq-item.active .faq-answer {
             padding: 15px 25px 25px;
-            max-height: 1000px;
+            height: auto;
             opacity: 1;
             visibility: visible;
         }
-
+        
         .faq-highlight {
             color: #c62828;
             font-weight: 600;
@@ -1822,73 +1822,70 @@
                 }, 100);
             }
         });
-
-        // 移除FAQ手风琴效果，让所有问题都显示答案
+        
+        // FAQ手风琴效果
         document.addEventListener('DOMContentLoaded', function() {
             const faqItems = document.querySelectorAll('.faq-item');
             
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                
-                // 只保留点击时的高亮效果
-                question.addEventListener('click', function() {
-                    // 移除其他项的高亮效果
-                    faqItems.forEach(faqItem => {
-                        if (faqItem !== item) {
-                            faqItem.style.borderLeftWidth = '3px';
-                            const q = faqItem.querySelector('.faq-question');
-                            q.style.fontWeight = '600';
-                        }
-                    });
-                    
-                    // 增强当前项的高亮效果
-                    item.style.borderLeftWidth = '5px';
-                    question.style.fontWeight = '700';
-                });
-            });
-        });
-
-        // FAQ点击展开收起效果
-        document.addEventListener('DOMContentLoaded', function() {
-            const faqItems = document.querySelectorAll('.faq-item');
-            
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                
-                question.addEventListener('click', function() {
-                    item.classList.toggle('active');
-                });
-            });
-        });
-
-        // FAQ点击展开收起效果
-        document.addEventListener('DOMContentLoaded', function() {
-            const faqItems = document.querySelectorAll('.faq-item');
-            
-            // 清除之前的监听器
-            document.querySelectorAll('.faq-question').forEach(question => {
-                const clone = question.cloneNode(true);
-                question.parentNode.replaceChild(clone, question);
-            });
-            
-            // 重新添加事件监听
             faqItems.forEach(item => {
                 const question = item.querySelector('.faq-question');
                 
                 question.addEventListener('click', function() {
                     const isActive = item.classList.contains('active');
                     
-                    // 关闭所有其他问题
+                    // 如果当前项已经是活动状态，不做任何改变
+                    if (isActive) {
+                        return;
+                    }
+                    
+                    // 先关闭所有项，确保样式完全重置
                     faqItems.forEach(faqItem => {
+                        // 移除活动状态类
                         faqItem.classList.remove('active');
+                        
+                        // 重置答案区域样式
+                        const answer = faqItem.querySelector('.faq-answer');
+                        if (answer) {
+                            answer.style.display = '';
+                            answer.style.opacity = '';
+                            answer.style.maxHeight = '';
+                            answer.style.padding = '';
+                            answer.style.visibility = '';
+                        }
                     });
                     
-                    // 如果当前项之前不是活动状态，则激活它
-                    if (!isActive) {
-                        item.classList.add('active');
+                    // 打开当前项
+                    item.classList.add('active');
+                    
+                    // 确保当前项的答案区域样式正确
+                    const currentAnswer = item.querySelector('.faq-answer');
+                    if (currentAnswer) {
+                        currentAnswer.style.display = 'block';
+                        currentAnswer.style.visibility = 'visible';
+                        // 使用延时确保过渡效果正确
+                        setTimeout(() => {
+                            currentAnswer.style.opacity = '1';
+                            currentAnswer.style.maxHeight = '2000px';
+                            currentAnswer.style.padding = '15px 25px 25px';
+                        }, 10);
                     }
                 });
             });
+            
+            // 默认打开第一个FAQ项
+            if (faqItems.length > 0) {
+                faqItems[0].classList.add('active');
+                
+                // 确保第一个问题的答案区域可见
+                const firstAnswer = faqItems[0].querySelector('.faq-answer');
+                if (firstAnswer) {
+                    firstAnswer.style.display = 'block';
+                    firstAnswer.style.visibility = 'visible';
+                    firstAnswer.style.opacity = '1';
+                    firstAnswer.style.maxHeight = '2000px';
+                    firstAnswer.style.padding = '15px 25px 25px';
+                }
+            }
         });
     </script>
 </body>
