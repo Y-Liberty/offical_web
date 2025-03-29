@@ -1,0 +1,595 @@
+/* 赛事活动页面样式 */
+
+/* ===== 页面横幅部分 ===== */
+.page-banner {
+    position: relative;
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, #4a6bfd, #6a3aef);
+    color: #fff;
+    overflow: hidden;
+}
+
+.page-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/patterns/dots.svg');
+    background-size: 30px;
+    opacity: 0.1;
+}
+
+.page-banner .banner-content {
+    position: relative;
+    z-index: 2;
+}
+
+.page-banner h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    animation: fadeInDown 0.8s ease;
+}
+
+.page-banner p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+    animation: fadeInUp 0.8s ease;
+}
+
+.page-banner .breadcrumb {
+    background: transparent;
+    display: inline-flex;
+    padding: 8px 16px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.page-banner .breadcrumb-item,
+.page-banner .breadcrumb-item a {
+    color: #fff;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.page-banner .breadcrumb-item.active {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.page-banner .breadcrumb-item + .breadcrumb-item::before {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* 动态波浪效果 */
+.banner-shape {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat-x;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+}
+
+.wave1 {
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,192L48,202.7C96,213,192,235,288,229.3C384,224,480,192,576,181.3C672,171,768,181,864,197.3C960,213,1056,235,1152,240C1248,245,1344,235,1392,229.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" fill="%23FFFFFF" opacity=".7"/></svg>');
+    z-index: 3;
+    opacity: 0.9;
+    animation: wave-animation-1 18s linear infinite;
+}
+
+.wave2 {
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,96L48,128C96,160,192,224,288,229.3C384,235,480,181,576,144C672,107,768,85,864,90.7C960,96,1056,128,1152,149.3C1248,171,1344,181,1392,186.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" fill="%23FFFFFF" opacity=".5"/></svg>');
+    z-index: 2;
+    opacity: 0.5;
+    animation: wave-animation-2 15s linear infinite;
+}
+
+.wave3 {
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,224L48,213.3C96,203,192,181,288,154.7C384,128,480,96,576,90.7C672,85,768,107,864,128C960,149,1056,171,1152,165.3C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" fill="%23FFFFFF" opacity=".3"/></svg>');
+    z-index: 1;
+    opacity: 0.3;
+    animation: wave-animation-3 12s linear infinite;
+}
+
+@keyframes wave-animation-1 {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    50% {
+        transform: translateX(-25%) translateY(3px);
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes wave-animation-2 {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    50% {
+        transform: translateX(-25%) translateY(-3px);
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes wave-animation-3 {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    50% {
+        transform: translateX(-25%) translateY(2px);
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* 赛事展示区域样式 */
+.competitions-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 赛事卡片样式 */
+.competition-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    height: 100%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.competition-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #4a6bfd, #6a3aef);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.competition-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.competition-card:hover::before {
+    transform: scaleX(1);
+}
+
+.competition-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #4a6bfd, #6a3aef);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.competition-icon i {
+    font-size: 24px;
+    color: #fff;
+}
+
+.competition-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.competition-card p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.competition-details {
+    display: flex;
+    gap: 15px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.competition-details span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.competition-details i {
+    color: #4a6bfd;
+}
+
+/* 动画效果 */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 响应式调整 */
+@media (max-width: 991px) {
+    .page-banner h1 {
+        font-size: 2.4rem;
+    }
+    
+    .competition-card {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .page-banner {
+        padding: 100px 0 60px;
+    }
+    
+    .page-banner h1 {
+        font-size: 2rem;
+    }
+    
+    .page-banner p {
+        font-size: 1rem;
+    }
+    
+    .competition-card {
+        padding: 20px;
+    }
+    
+    .competition-card h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .page-banner h1 {
+        font-size: 1.8rem;
+    }
+    
+    .competition-details {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* 查看详情按钮样式 */
+.competition-btn {
+    width: 100%;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    background: linear-gradient(to right, #4a6bfd, #6a3aef);
+    border: none;
+    box-shadow: 0 4px 15px rgba(74, 107, 253, 0.3);
+}
+
+.competition-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(74, 107, 253, 0.4);
+}
+
+.competition-btn i {
+    margin-left: 5px;
+    transition: all 0.3s ease;
+}
+
+.competition-btn:hover i {
+    transform: translateX(3px);
+}
+
+/* 赛事详情模态框样式 */
+.competition-modal .modal-content {
+    border-radius: 15px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.competition-modal .modal-header {
+    background: linear-gradient(135deg, #4a6bfd, #6a3aef);
+    color: #fff;
+    border-bottom: none;
+    padding: 20px 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.competition-modal .modal-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1" fill="white" opacity="0.3"/></svg>');
+    background-size: 20px 20px;
+    opacity: 0.2;
+}
+
+.competition-modal .modal-title {
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-left: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.competition-modal .modal-title::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 70%;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+.competition-modal .modal-body {
+    padding: 30px;
+    background-color: #fff;
+    position: relative;
+}
+
+.competition-table {
+    margin-bottom: 0;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+}
+
+.competition-table tr {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.competition-table tr:hover {
+    background-color: rgba(74, 107, 253, 0.03);
+}
+
+.competition-table th {
+    width: 150px;
+    color: #444;
+    font-weight: 600;
+    vertical-align: top;
+    padding: 16px 20px 16px 0;
+    border: none;
+    position: relative;
+}
+
+.competition-table th i {
+    margin-right: 8px;
+    font-size: 1.1rem;
+    width: 22px;
+    text-align: center;
+    vertical-align: middle;
+    color: #4a6bfd;
+    transition: all 0.3s ease;
+}
+
+.competition-table tr:hover th i {
+    transform: scale(1.1);
+}
+
+/* 各类图标特殊样式 */
+.competition-table th i.bi-globe {
+    color: #1e88e5;
+}
+
+.competition-table th i.bi-info-circle {
+    color: #7e57c2;
+}
+
+.competition-table th i.bi-building-fill {
+    color: #4a6bfd;
+    font-size: 1.2rem;
+}
+
+.competition-table th i.bi-code-slash {
+    color: #ff5722;
+}
+
+.competition-table th i.bi-calendar-event {
+    color: #43a047;
+}
+
+.competition-table th i.bi-trophy {
+    color: #fb8c00;
+}
+
+.competition-table th i.bi-lightbulb {
+    color: #ffc107;
+}
+
+.competition-table td {
+    color: #555;
+    padding: 16px 10px;
+    border: none;
+    line-height: 1.6;
+}
+
+.competition-table td a {
+    color: #4a6bfd;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.competition-table td a:hover {
+    color: #3250d4;
+    transform: translateX(3px);
+}
+
+.competition-table ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+    list-style-type: none;
+}
+
+.competition-table ul li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.competition-table ul li:last-child {
+    margin-bottom: 0;
+}
+
+.competition-table ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background-color: #4a6bfd;
+    border-radius: 50%;
+}
+
+.competition-modal .modal-footer {
+    border-top: 1px solid #eee;
+    padding: 20px 25px;
+    background-color: #f9fafc;
+}
+
+.competition-modal .btn-secondary {
+    background-color: #f0f2f5;
+    color: #555;
+    border: none;
+    font-weight: 500;
+    border-radius: 30px;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+}
+
+.competition-modal .btn-secondary:hover {
+    background-color: #e4e6ea;
+    transform: translateY(-2px);
+}
+
+.competition-modal .btn-primary {
+    background: linear-gradient(to right, #4a6bfd, #6a3aef);
+    border: none;
+    font-weight: 500;
+    border-radius: 30px;
+    padding: 8px 20px;
+    box-shadow: 0 4px 10px rgba(74, 107, 253, 0.2);
+    transition: all 0.3s ease;
+}
+
+.competition-modal .btn-primary:hover {
+    box-shadow: 0 6px 15px rgba(74, 107, 253, 0.3);
+    transform: translateY(-2px);
+}
+
+.competition-modal .btn-primary i {
+    margin-left: 5px;
+}
+
+/* 官网链接样式 */
+.competition-table td a.website-link {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(74, 107, 253, 0.1);
+    padding: 5px 12px;
+    border-radius: 20px;
+}
+
+.competition-table td a.website-link:hover {
+    background-color: rgba(74, 107, 253, 0.2);
+}
+
+/* 赛事简介样式 */
+.competition-table tr.intro-row td {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #444;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgba(74, 107, 253, 0.03);
+    border-radius: 8px;
+}
+
+/* 主办方样式 */
+.competition-table tr.organizer-row td {
+    font-weight: 500;
+    color: #333;
+}
+
+/* 编程语言样式 */
+.competition-table .language-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    margin: 2px 4px 2px 0;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    background-color: rgba(74, 107, 253, 0.1);
+    color: #4a6bfd;
+}
+
+@media (max-width: 767px) {
+    .competition-table th {
+        width: 100px;
+        padding: 12px 10px 12px 0;
+    }
+    
+    .competition-modal .modal-title {
+        font-size: 1.2rem;
+    }
+    
+    .competition-table td, 
+    .competition-table th {
+        padding: 12px 8px;
+    }
+    
+    .competition-table ul li {
+        padding-left: 15px;
+    }
+} 

@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赛事活动 - 壹零贰肆少儿编程教育</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/competition.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <div class="logo-container">
+                        <span class="logo-text">壹零贰肆</span>
+                        <span class="logo-tagline">少儿编程教育</span>
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> 首页</a>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="courses.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-book"></i> 课程体系
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="scratch.html">Scratch编程</a></li>
+                                <li><a class="dropdown-item" href="python.html">Python编程</a></li>
+                                <li><a class="dropdown-item" href="cpp.html">C++编程</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="courses.html">全部课程</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-collection"></i> 资讯中心
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item active" href="showcase.html">学生作品</a></li>
+                                <li><a class="dropdown-item" href="competition.html">赛事活动</a></li>
+                                <li><a class="dropdown-item" href="news.html">新闻动态</a></li>
+                                <li><a class="dropdown-item" href="faq.html">常见问题</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-info-circle"></i> 关于我们
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="about.html">机构介绍</a></li>
+                                <li><a class="dropdown-item" href="teachers.html">师资力量</a></li>
+                                <li><a class="dropdown-item" href="about.html#vision">教学理念</a></li>
+                                <li><a class="dropdown-item" href="about.html#history">发展历程</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="contact.html">联系我们</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-primary btn-sm ms-2 px-3" href="#" data-bs-toggle="modal" data-bs-target="#trialModal">
+                                <i class="bi bi-calendar-check"></i> 预约试听
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 页面横幅 -->
+    <section class="page-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="banner-content text-center">
+                        <h1>赛事活动介绍</h1>
+                        <p>参与各类编程竞赛，展示你的才华</p>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="index.html">首页</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">赛事活动</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="banner-shape">
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+        </div>
+    </section>
+
+    <!-- 赛事展示区域 -->
+    <section class="competitions-section">
+        <div class="container">
+            <div class="row">
+                <!-- NOI系列赛事 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="competition-card">
+                        <div class="competition-icon">
+                            <i class="bi bi-trophy"></i>
+                        </div>
+                        <h3>NOI系列赛事</h3>
+                        <p>全国青少年信息学奥林匹克竞赛，是国内最具影响力的信息学竞赛之一。</p>
+                        <div class="competition-details">
+                            <span><i class="bi bi-calendar"></i> 每年举办</span>
+                            <span><i class="bi bi-people"></i> 面向中学生</span>
+                        </div>
+                        <button class="btn btn-primary mt-3 competition-btn" data-bs-toggle="modal" data-bs-target="#noiModal">
+                            查看详情 <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CSP系列认证 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="competition-card">
+                        <div class="competition-icon">
+                            <i class="bi bi-award"></i>
+                        </div>
+                        <h3>CSP系列认证</h3>
+                        <p>计算机软件能力认证，是衡量编程能力的重要标准。</p>
+                        <div class="competition-details">
+                            <span><i class="bi bi-calendar"></i> 每年多次</span>
+                            <span><i class="bi bi-people"></i> 面向所有学生</span>
+                        </div>
+                        <button class="btn btn-primary mt-3 competition-btn" data-bs-toggle="modal" data-bs-target="#cspModal">
+                            查看详情 <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 蓝桥杯青少年组 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="competition-card">
+                        <div class="competition-icon">
+                            <i class="bi bi-cup"></i>
+                        </div>
+                        <h3>蓝桥杯青少年组</h3>
+                        <p>全国性的青少年编程竞赛，培养创新思维和实践能力。</p>
+                        <div class="competition-details">
+                            <span><i class="bi bi-calendar"></i> 每年举办</span>
+                            <span><i class="bi bi-people"></i> 面向青少年</span>
+                        </div>
+                        <button class="btn btn-primary mt-3 competition-btn" data-bs-toggle="modal" data-bs-target="#lanqiaoModal">
+                            查看详情 <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 全国青少年科技教育成果展示大赛 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="competition-card">
+                        <div class="competition-icon">
+                            <i class="bi bi-lightbulb"></i>
+                        </div>
+                        <h3>全国青少年科技教育成果展示大赛</h3>
+                        <p>展示青少年科技创新成果的重要平台。</p>
+                        <div class="competition-details">
+                            <span><i class="bi bi-calendar"></i> 每年举办</span>
+                            <span><i class="bi bi-people"></i> 面向青少年</span>
+                        </div>
+                        <button class="btn btn-primary mt-3 competition-btn" data-bs-toggle="modal" data-bs-target="#techExpoModal">
+                            查看详情 <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- WRC青少年机器人设计大赛 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="competition-card">
+                        <div class="competition-icon">
+                            <i class="bi bi-robot"></i>
+                        </div>
+                        <h3>WRC青少年机器人设计大赛</h3>
+                        <p>培养青少年机器人编程和设计能力的专业赛事。</p>
+                        <div class="competition-details">
+                            <span><i class="bi bi-calendar"></i> 每年举办</span>
+                            <span><i class="bi bi-people"></i> 面向青少年</span>
+                        </div>
+                        <button class="btn btn-primary mt-3 competition-btn" data-bs-toggle="modal" data-bs-target="#wrcModal">
+                            查看详情 <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 全国青少年信息素养大赛 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="competition-card">
+                        <div class="competition-icon">
+                            <i class="bi bi-laptop"></i>
+                        </div>
+                        <h3>全国青少年信息素养大赛</h3>
+                        <p>提升青少年信息素养和编程能力的综合性赛事。</p>
+                        <div class="competition-details">
+                            <span><i class="bi bi-calendar"></i> 每年举办</span>
+                            <span><i class="bi bi-people"></i> 面向青少年</span>
+                        </div>
+                        <button class="btn btn-primary mt-3 competition-btn" data-bs-toggle="modal" data-bs-target="#infoLiteracyModal">
+                            查看详情 <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- icode系列赛事 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="competition-card">
+                        <div class="competition-icon">
+                            <i class="bi bi-code-square"></i>
+                        </div>
+                        <h3>ICode系列赛事</h3>
+                        <p>国际青少年编程竞赛，培养国际化视野。</p>
+                        <div class="competition-details">
+                            <span><i class="bi bi-calendar"></i> 每年举办</span>
+                            <span><i class="bi bi-people"></i> 面向青少年</span>
+                        </div>
+                        <button class="btn btn-primary mt-3 competition-btn" data-bs-toggle="modal" data-bs-target="#icodeModal">
+                            查看详情 <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer-section">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+                        <div class="footer-widget">
+                            <h4>关于我们</h4>
+                            <p>壹零贰肆少儿编程致力于为6-18岁青少年提供优质的编程教育，培养孩子的逻辑思维、解决问题的能力和创造力。</p>
+                            
+                            <div class="mt-4">
+                                <h4>扫码关注</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="text-center">
+                                            <h5>关注公众号</h5>
+                                            <img src="images/qrcode/qrcode.jpg" alt="公众号二维码" class="img-fluid" style="max-width: 150px;">
+                                            <p>获取最新资讯、课程优惠与教育干货</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="text-center">
+                                            <h5>微信客服</h5>
+                                            <img src="images/qrcode/wechat.jpg" alt="微信二维码" class="img-fluid" style="max-width: 150px;">
+                                            <p>添加微信客服咨询课程详情</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
+                        <div class="footer-widget">
+                            <h4>快捷导航</h4>
+                            <div class="row">
+                                <div class="col-6">
+                                    <ul class="footer-links">
+                                        <li><a href="index.html">首页</a></li>
+                                        <li><a href="courses.html">课程体系</a></li>
+                                        <li><a href="scratch.html">Scratch编程</a></li>
+                                        <li><a href="python.html">Python编程</a></li>
+                                        <li><a href="cpp.html">C++编程</a></li>
+                                        <li><a href="competition.html">赛事活动</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul class="footer-links">
+                                        <li><a href="showcase.html">学生作品</a></li>
+                                        <li><a href="news.html">新闻动态</a></li>
+                                        <li><a href="teachers.html">师资力量</a></li>
+                                        <li><a href="about.html">机构介绍</a></li>
+                                        <li><a href="about.html#vision">教学理念</a></li>
+                                        <li><a href="contact.html">联系我们</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="copyright">
+                            <p>© 2023 壹零贰肆少儿编程 版权所有 | 京ICP备12345678号-1</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-menu">
+                            <a href="privacy-policy.html">隐私政策</a>
+                            <a href="terms-of-service.html">服务条款</a>
+                            <a href="careers.html">招贤纳士</a>
+                            <a href="sitemap.html">网站地图</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 回到顶部按钮 -->
+    <a href="#" class="back-to-top">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <!-- 预约试听模态框 -->
+    <div class="modal fade" id="trialModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">预约免费试听</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="trialForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">姓名</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">联系电话</label>
+                            <input type="tel" class="form-control" id="phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="age" class="form-label">孩子年龄</label>
+                            <input type="number" class="form-control" id="age" min="6" max="18" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="course" class="form-label">感兴趣的课程</label>
+                            <select class="form-select" id="course" required>
+                                <option value="">请选择课程</option>
+                                <option value="scratch">Scratch少儿编程</option>
+                                <option value="python">Python少儿编程</option>
+                                <option value="cpp">C++算法进阶</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">留言</label>
+                            <textarea class="form-control" id="message" rows="3"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="submit" form="trialForm" class="btn btn-primary">提交预约</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 赛事详情模态框 -->
+    <!-- NOI详情模态框 -->
+    <div class="modal fade competition-modal" id="noiModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">NOI系列赛事详情</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table competition-table">
+                                <tbody>
+                                    <tr>
+                                        <th><i class="bi bi-globe"></i> 赛事官网</th>
+                                        <td><a href="http://www.noi.cn/" target="_blank" class="website-link">http://www.noi.cn/ <i class="bi bi-box-arrow-up-right"></i></a></td>
+                                    </tr>
+                                    <tr class="intro-row">
+                                        <th><i class="bi bi-info-circle"></i> 赛事简介</th>
+                                        <td>NOI（National Olympiad in Informatics）全国青少年信息学奥林匹克竞赛是面向中小学生的信息学竞赛，旨在培养青少年的创新思维和解决问题的能力。它是中国选拔参加国际信息学奥林匹克竞赛的重要途径。</td>
+                                    </tr>
+                                    <tr class="organizer-row">
+                                        <th><i class="bi bi-building-fill"></i> 主办单位</th>
+                                        <td>中国计算机学会（CCF）</td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="bi bi-code-slash"></i> 编程语言</th>
+                                        <td>
+                                            <span class="language-tag">C/C++</span>
+                                            <span class="language-tag">Pascal（历史支持）</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="bi bi-calendar-event"></i> 赛程安排</th>
+                                        <td>
+                                            <ul>
+                                                <li>NOIP（初赛和复赛）：每年10-11月</li>
+                                                <li>NOI：通常在每年7-8月举行</li>
+                                                <li>省队选拔：3-5月</li>
+                                                <li>国际信息学奥林匹克（IOI）：每年7-8月</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="bi bi-trophy"></i> 获奖比例</th>
+                                        <td>
+                                            <ul>
+                                                <li>NOIP：一等奖约5%，二等奖约10%，三等奖约20%</li>
+                                                <li>NOI：金牌约8%，银牌约16%，铜牌约25%</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="bi bi-lightbulb"></i> 参赛建议</th>
+                                        <td>
+                                            <ul>
+                                                <li>扎实掌握C/C++编程基础</li>
+                                                <li>深入学习数据结构与算法</li>
+                                                <li>定期参加模拟训练和竞赛</li>
+                                                <li>建议初中开始准备，循序渐进</li>
+                                                <li>关注往年真题，掌握解题思路</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                    <a href="http://www.noi.cn/" target="_blank" class="btn btn-primary">访问官网 <i class="bi bi-box-arrow-up-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CSP详情模态框 -->
+    <div class="modal fade competition-modal" id="cspModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">CSP系列认证详情</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table competition-table">
+                                <tbody>
+                                    <tr>
+                                        <th><i class="bi bi-globe"></i> 赛事官网</th>
+                                        <td><a href="https://csp.ccf.org.cn/" target="_blank" class="website-link">https://csp.ccf.org.cn/ <i class="bi bi-box-arrow-up-right"></i></a></td>
+                                    </tr>
+                                    <tr class="intro-row">
+                                        <th><i class="bi bi-info-circle"></i> 赛事简介</th>
+                                        <td>CSP（Certified Software Professional）是中国计算机学会推出的计算机软件能力认证，旨在为中小学生提供阶梯式的编程能力测评标准。它包括CSP-J（入门级）和CSP-S（提高级）两个级别。</td>
+                                    </tr>
+                                    <tr class="organizer-row">
+                                        <th><i class="bi bi-building-fill"></i> 主办单位</th>
+                                        <td>中国计算机学会（CCF）</td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="bi bi-code-slash"></i> 编程语言</th>
+                                        <td>
+                                            <span class="language-tag">C/C++</span>
+                                            <span class="language-tag">Python</span>
+                                            <span class="language-tag">Java</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="bi bi-calendar-event"></i> 赛程安排</th>
+                                        <td>
+                                            <ul>
+                                                <li>CSP-J/S：每年3月、9月、12月</li>
+                                                <li>认证全年可报名，定期考试</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="bi bi-trophy"></i> 认证等级</th>
+                                        <td>
+                                            <ul>
+                                                <li>CSP-J：400分满分，270分及格</li>
+                                                <li>CSP-S：500分满分，分为一到五级</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="bi bi-lightbulb"></i> 参赛建议</th>
+                                        <td>
+                                            <ul>
+                                                <li>初学者可从CSP-J开始</li>
+                                                <li>熟悉基础算法和数据结构</li>
+                                                <li>定期练习编程题目</li>
+                                                <li>CSP-J适合小学高年级和初中生</li>
+                                                <li>CSP-S适合有一定基础的初高中生</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                    <a href="https://csp.ccf.org.cn/" target="_blank" class="btn btn-primary">访问官网 <i class="bi bi-box-arrow-up-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 蓝桥杯详情模态框 -->
+    <div class="modal fade competition-modal" id="lanqiaoModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">蓝桥杯青少年组详情</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table competition-table">
+                                <tbody>
+                                    <tr>
+                                        <th><i class="bi bi-globe"></i> 赛事官网</th>
+                                        <td><a href="https://www.lanqiaoqingshao.cn/home" target="_blank" class="website-link">https://www.lanqiaoqingshao.cn/home <i class="bi bi-box-arrow-up-right"></i></a></td>
+                                    </tr>
+                                    <tr class="intro-row">
+                                        <th><i class="bi bi-info-circle"></i> 赛事简介</th>
+                                        <td>蓝桥杯全国软件和信息技术专业人才大赛设有青少年组，是面向全国青少年的综合性编程能力竞赛。竞赛注重培养实际编程能力和解决问题的创新思维。</td>
+                                    </tr>
+                                    <tr class="organizer-row">
+                                        <th><i class="bi bi-building-fill"></i> 主办单位</th>
+                                        <td>工业和信息化部人才交流中心</td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="bi bi-code-slash"></i> 编程语言</th>
+                                        <td>
+                                            <span class="language-tag">Python</span>
+                                            <span class="language-tag">C/C++</span>
+                                            <span class="language-tag">Java</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="bi bi-calendar-event"></i> 赛程安排</th>
+                                        <td>
+                                            <ul>
+                                                <li>初赛：每年3-4月</li>
+                                                <li>决赛：每年5-6月</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="bi bi-trophy"></i> 获奖比例</th>
+                                        <td>
+                                            <ul>
+                                                <li>初赛：一等奖10%，二等奖20%，三等奖30%</li>
+                                                <li>决赛：一等奖10%，二等奖20%，三等奖30%</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="bi bi-lightbulb"></i> 参赛建议</th>
+                                        <td>
+                                            <ul>
+                                                <li>熟练掌握至少一种编程语言</li>
+                                                <li>学习基本算法和数据结构</li>
+                                                <li>练习实际编程问题</li>
+                                                <li>注重项目实践能力</li>
+                                                <li>适合有一定编程基础的中小学生</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                    <a href="https://www.lanqiaoqingshao.cn/home" target="_blank" class="btn btn-primary">访问官网 <i class="bi bi-box-arrow-up-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 全国青少年科技教育成果展示大赛详情模态框 -->
+    <div class="modal fade competition-modal" id="techExpoModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">全国青少年科技教育成果展示大赛详情</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table competition-table">
+                                <tbody>
+                                    <tr>
+                                        <th><i class="bi bi-globe"></i> 赛事官网</th>
+                                        <td><a href="https://qgqks.cngef.org.cn/" target="_blank" class="website-link">https://qgqks.cngef.org.cn/ <i class="bi bi-box-arrow-up-right"></i></a></td>
+                                    </tr>
+                                    <tr class="intro-row">
+                                        <th><i class="bi bi-info-circle"></i> 赛事简介</th>
+                                        <td>全国青少年科技教育成果展示大赛是面向青少年的综合性科技创新竞赛，包括编程与人工智能、机器人、科学探究等多个项目。大赛旨在培养青少年的创新精神和实践能力。</td>
+                                    </tr>
+                                    <tr class="organizer-row">
+                                        <th><i class="bi bi-building-fill"></i> 主办单位</th>
+                                        <td>中国科协、教育部、科技部等</td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="bi bi-code-slash"></i> 编程语言</th>
+                                        <td>
+                                            <span class="language-tag">Scratch</span>
+                                            <span class="language-tag">Python</span>
+                                            <span class="language-tag">C/C++</span>
+                                            <span class="language-tag">积木编程</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="bi bi-calendar-event"></i> 赛程安排</th>
+                                        <td>
+                                            <ul>
+                                                <li>地区选拔：每年3-5月</li>
+                                                <li>省级决赛：每年6-7月</li>
+                                                <li>全国总决赛：每年8-9月</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="bi bi-trophy"></i> 获奖比例</th>
+                                        <td>
+                                            <ul>
+                                                <li>一等奖：约10%</li>
+                                                <li>二等奖：约20%</li>
+                                                <li>三等奖：约30%</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="bi bi-lightbulb"></i> 参赛建议</th>
+                                        <td>
+                                            <ul>
+                                                <li>选择感兴趣的科技项目</li>
+                                                <li>注重创新性和实用性</li>
+                                                <li>做好项目文档整理</li>
+                                                <li>提前准备演示和讲解</li>
+                                                <li>强调跨学科融合应用</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                    <a href="https://qgqks.cngef.org.cn/" target="_blank" class="btn btn-primary">访问官网 <i class="bi bi-box-arrow-up-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WRC青少年机器人设计大赛详情模态框 -->
+    <div class="modal fade competition-modal" id="wrcModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">WRC青少年机器人设计大赛详情</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table competition-table">
+                                <tbody>
+                                    <tr>
+                                        <th><i class="bi bi-globe"></i> 赛事官网</th>
+                                        <td><a href="https://www.worldrobotconference.com/" target="_blank" class="website-link">https://www.worldrobotconference.com/ <i class="bi bi-box-arrow-up-right"></i></a></td>
+                                    </tr>
+                                    <tr class="intro-row">
+                                        <th><i class="bi bi-info-circle"></i> 赛事简介</th>
+                                        <td>WRC青少年机器人设计大赛是面向青少年的机器人设计与编程竞赛，包括机器人创意设计、竞速、任务挑战等多个项目。大赛强调机器人编程与设计能力的培养。</td>
+                                    </tr>
+                                    <tr class="organizer-row">
+                                        <th><i class="bi bi-building-fill"></i> 主办单位</th>
+                                        <td>中国电子学会</td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="bi bi-code-slash"></i> 编程语言</th>
+                                        <td>
+                                            <span class="language-tag">图形化编程（Scratch）</span>
+                                            <span class="language-tag">MakeBlock</span>
+                                            <span class="language-tag">C/C++</span>
+                                            <span class="language-tag">Python</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="bi bi-calendar-event"></i> 赛程安排</th>
+                                        <td>
+                                            <ul>
+                                                <li>地区选拔赛：每年3-5月</li>
+                                                <li>区域决赛：每年6-7月</li>
+                                                <li>全国总决赛：每年8月</li>
+                                                <li>世界锦标赛：每年11-12月</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="bi bi-trophy"></i> 获奖比例</th>
+                                        <td>
+                                            <ul>
+                                                <li>一等奖：约15%</li>
+                                                <li>二等奖：约25%</li>
+                                                <li>三等奖：约35%</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="bi bi-lightbulb"></i> 参赛建议</th>
+                                        <td>
+                                            <ul>
+                                                <li>熟悉相关机器人平台的操作</li>
+                                                <li>掌握基础的编程技能</li>
+                                                <li>加强机械设计和结构学习</li>
+                                                <li>培养团队协作能力</li>
+                                                <li>注重创新性和实用性结合</li>
+                                                <li>针对比赛规则进行专项训练</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                    <a href="https://www.worldrobotconference.com/" target="_blank" class="btn btn-primary">访问官网 <i class="bi bi-box-arrow-up-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 全国青少年信息素养大赛详情模态框 -->
+    <div class="modal fade competition-modal" id="infoLiteracyModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">全国青少年信息素养大赛详情</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table competition-table">
+                                <tbody>
+                                    <tr>
+                                        <th><i class="bi bi-globe"></i> 赛事官网</th>
+                                        <td><a href="https://ceic.kpcb.org.cn/cms/" target="_blank" class="website-link">https://ceic.kpcb.org.cn/cms/ <i class="bi bi-box-arrow-up-right"></i></a></td>
+                                    </tr>
+                                    <tr class="intro-row">
+                                        <th><i class="bi bi-info-circle"></i> 赛事简介</th>
+                                        <td>全国青少年信息素养大赛是面向中小学生的综合性信息技术竞赛，包括编程、信息检索、网络应用、数据分析等多个项目。大赛旨在提升青少年的信息素养和计算思维能力。</td>
+                                    </tr>
+                                    <tr class="organizer-row">
+                                        <th><i class="bi bi-building-fill"></i> 主办单位</th>
+                                        <td>中国计算机学会、中国青少年科技辅导员协会</td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="bi bi-code-slash"></i> 编程语言</th>
+                                        <td>
+                                            <span class="language-tag">Scratch</span>
+                                            <span class="language-tag">Python</span>
+                                            <span class="language-tag">HTML/CSS</span>
+                                            <span class="language-tag">JavaScript</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="bi bi-calendar-event"></i> 赛程安排</th>
+                                        <td>
+                                            <ul>
+                                                <li>初赛：每年4-5月</li>
+                                                <li>复赛：每年6-7月</li>
+                                                <li>决赛：每年8月</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="bi bi-trophy"></i> 获奖比例</th>
+                                        <td>
+                                            <ul>
+                                                <li>一等奖：约10%</li>
+                                                <li>二等奖：约20%</li>
+                                                <li>三等奖：约30%</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="bi bi-lightbulb"></i> 参赛建议</th>
+                                        <td>
+                                            <ul>
+                                                <li>全面发展信息技术能力</li>
+                                                <li>熟练掌握相关编程技能</li>
+                                                <li>提高信息检索和筛选能力</li>
+                                                <li>培养数据分析思维</li>
+                                                <li>注重实际应用场景</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                    <a href="https://ceic.kpcb.org.cn/cms/" target="_blank" class="btn btn-primary">访问官网 <i class="bi bi-box-arrow-up-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- icode系列赛事详情模态框 -->
+    <div class="modal fade competition-modal" id="icodeModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">ICode系列赛事详情</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table competition-table">
+                                <tbody>
+                                    <tr>
+                                        <th><i class="bi bi-globe"></i> 赛事官网</th>
+                                        <td><a href="https://www.icode.org.cn/" target="_blank" class="website-link">https://www.icode.org.cn/ <i class="bi bi-box-arrow-up-right"></i></a></td>
+                                    </tr>
+                                    <tr class="intro-row">
+                                        <th><i class="bi bi-info-circle"></i> 赛事简介</th>
+                                        <td>ICode系列赛事是面向全球青少年的国际性编程竞赛，旨在培养青少年的国际化视野和编程能力。大赛涵盖App开发、人工智能应用、算法编程等多个领域。</td>
+                                    </tr>
+                                    <tr class="organizer-row">
+                                        <th><i class="bi bi-building-fill"></i> 主办单位</th>
+                                        <td>国际青少年编程协会（IYPA）</td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="bi bi-code-slash"></i> 编程语言</th>
+                                        <td>
+                                            <span class="language-tag">Python</span>
+                                            <span class="language-tag">Java</span>
+                                            <span class="language-tag">C/C++</span>
+                                            <span class="language-tag">App Inventor</span>
+                                            <span class="language-tag">Swift</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="bi bi-calendar-event"></i> 赛程安排</th>
+                                        <td>
+                                            <ul>
+                                                <li>在线初赛：每年3-4月</li>
+                                                <li>国家/地区赛：每年5-6月</li>
+                                                <li>全球总决赛：每年7-8月</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="bi bi-trophy"></i> 获奖比例</th>
+                                        <td>
+                                            <ul>
+                                                <li>金奖：约5%</li>
+                                                <li>银奖：约15%</li>
+                                                <li>铜奖：约25%</li>
+                                                <li>优秀奖：约30%</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="bi bi-lightbulb"></i> 参赛建议</th>
+                                        <td>
+                                            <ul>
+                                                <li>加强英语沟通能力</li>
+                                                <li>熟练掌握相关编程技能</li>
+                                                <li>关注国际前沿技术发展</li>
+                                                <li>培养创新思维和解决实际问题的能力</li>
+                                                <li>提前了解国际比赛规则和评分标准</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                    <a href="https://www.icode.org.cn/" target="_blank" class="btn btn-primary">访问官网 <i class="bi bi-box-arrow-up-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
