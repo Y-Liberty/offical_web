@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新闻动态 - 壹零贰肆少儿编程教育</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/news.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <div class="logo-container">
+                        <span class="logo-text">壹零贰肆</span>
+                        <span class="logo-tagline">少儿编程教育</span>
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> 首页</a>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="courses.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-book"></i> 课程体系
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="scratch.html">Scratch编程</a></li>
+                                <li><a class="dropdown-item" href="python.html">Python编程</a></li>
+                                <li><a class="dropdown-item" href="cpp.html">C++编程</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="courses.html">全部课程</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-collection"></i> 资讯中心
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="showcase.html">学生作品</a></li>
+                                <li><a class="dropdown-item" href="competition.html">赛事活动</a></li>
+                                <li><a class="dropdown-item active" href="news.html">新闻动态</a></li>
+                                <li><a class="dropdown-item" href="faq.html">常见问题</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-info-circle"></i> 关于我们
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="about.html">机构介绍</a></li>
+                                <li><a class="dropdown-item" href="teachers.html">师资力量</a></li>
+                                <li><a class="dropdown-item" href="about.html#vision">教学理念</a></li>
+                                <li><a class="dropdown-item" href="about.html#history">发展历程</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="contact.html">联系我们</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-primary btn-sm ms-2 px-3" href="#" data-bs-toggle="modal" data-bs-target="#trialModal">
+                                <i class="bi bi-calendar-check"></i> 预约试听
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 页面横幅 -->
+    <section class="page-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="banner-content text-center">
+                        <h1>新闻动态</h1>
+                        <p>了解我们的最新活动与教育资讯</p>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="index.html">首页</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">新闻动态</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="banner-shape">
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+        </div>
+    </section>
+
+    <!-- 新闻筛选区域 -->
+    <section class="news-filter-section">
+        <div class="container">
+            <div class="news-filter-container">
+                <div class="filter-label">筛选新闻：</div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-category="all">全部</button>
+                    <button class="filter-btn" data-category="课程活动">课程活动</button>
+                    <button class="filter-btn" data-category="竞赛成果">竞赛成果</button>
+                    <button class="filter-btn" data-category="机构动态">机构动态</button>
+                    <button class="filter-btn" data-category="教育资讯">教育资讯</button>
+                </div>
+                <div class="filter-search">
+                    <input type="text" id="news-search" placeholder="搜索新闻..." class="form-control">
+                    <button class="search-btn"><i class="bi bi-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 新闻内容区域 -->
+    <section class="news-section section-padding">
+        <div class="tech-particle"></div>
+        <div class="tech-particle"></div>
+        <div class="container">
+            <div class="row news-grid" id="newsContainer">
+                <!-- 新闻卡片1 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-category="课程活动">
+                    <div class="news-card" id="news1">
+                        <div class="news-image">
+                            <img src="images/news/news1.jpg" alt="暑期特别课程" class="img-fluid">
+                            <div class="news-date">2023-05-15</div>
+                            <div class="news-category">课程活动</div>
+                        </div>
+                        <div class="news-content">
+                            <h3>暑期特别课程招生开始</h3>
+                            <p>为期四周的暑期编程营即将开始，提供人工智能、游戏开发和机器人编程三大主题，让孩子度过一个充实而有趣的科技假期。本次暑期特别课程由经验丰富的一线教师授课，结合理论与实践，培养孩子编程思维。</p>
+                            <a href="javascript:void(0)" class="read-more" data-bs-toggle="modal" data-bs-target="#newsModal1">阅读更多 <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 新闻卡片2 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-category="竞赛成果">
+                    <div class="news-card" id="news2">
+                        <div class="news-image">
+                            <img src="images/news/news2.jpg" alt="编程大赛获奖" class="img-fluid">
+                            <div class="news-date">2023-04-28</div>
+                            <div class="news-category">竞赛成果</div>
+                        </div>
+                        <div class="news-content">
+                            <h3>学员在全国少儿编程大赛中获奖</h3>
+                            <p>我校学员李小华在全国少儿编程大赛中凭借作品《智能垃圾分类系统》获得一等奖，该项目运用了人工智能和图像识别技术，展示了孩子们卓越的创新能力和编程水平。</p>
+                            <a href="javascript:void(0)" class="read-more" data-bs-toggle="modal" data-bs-target="#newsModal2">阅读更多 <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 新闻卡片3 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-category="机构动态">
+                    <div class="news-card" id="news3">
+                        <div class="news-image">
+                            <img src="images/news/news3.jpg" alt="新校区开业" class="img-fluid">
+                            <div class="news-date">2023-04-10</div>
+                            <div class="news-category">机构动态</div>
+                        </div>
+                        <div class="news-content">
+                            <h3>科技创新中心新校区开业公告</h3>
+                            <p>为满足日益增长的教学需求，我们将于下月在高新区开设配备AR/VR实验室、机器人工作室和创客空间的全新校区，为孩子们提供更先进的教学设施和更舒适的学习环境。</p>
+                            <a href="javascript:void(0)" class="read-more" data-bs-toggle="modal" data-bs-target="#newsModal3">阅读更多 <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 新闻卡片4 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-category="教育资讯">
+                    <div class="news-card" id="news4">
+                        <div class="news-image">
+                            <img src="images/news/news4.jpg" alt="编程教育趋势" class="img-fluid">
+                            <div class="news-date">2023-03-20</div>
+                            <div class="news-category">教育资讯</div>
+                        </div>
+                        <div class="news-content">
+                            <h3>2023年少儿编程教育发展趋势分析</h3>
+                            <p>随着人工智能技术的快速发展，少儿编程教育正朝着更加智能化、个性化和实用化的方向发展。本文分析了2023年少儿编程教育的主要趋势及其对孩子未来发展的影响。</p>
+                            <a href="javascript:void(0)" class="read-more" data-bs-toggle="modal" data-bs-target="#newsModal4">阅读更多 <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 新闻卡片5 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-category="课程活动">
+                    <div class="news-card" id="news5">
+                        <div class="news-image">
+                            <img src="images/news/news5.jpg" alt="家长开放日活动" class="img-fluid">
+                            <div class="news-date">2023-03-05</div>
+                            <div class="news-category">课程活动</div>
+                        </div>
+                        <div class="news-content">
+                            <h3>春季学期家长开放日活动圆满结束</h3>
+                            <p>本周末举办的家长开放日活动圆满结束，家长们近距离了解了孩子们的学习成果和课程内容，参观了教学环境，并与老师进行了深入交流，获得了家长们的高度评价。</p>
+                            <a href="javascript:void(0)" class="read-more" data-bs-toggle="modal" data-bs-target="#newsModal5">阅读更多 <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 新闻卡片6 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-category="机构动态">
+                    <div class="news-card" id="news6">
+                        <div class="news-image">
+                            <img src="images/news/news6.jpg" alt="教师培训" class="img-fluid">
+                            <div class="news-date">2023-02-18</div>
+                            <div class="news-category">机构动态</div>
+                        </div>
+                        <div class="news-content">
+                            <h3>教师团队参加国际教育科技峰会</h3>
+                            <p>我校多位教师代表参加了在新加坡举办的国际教育科技峰会，学习了全球最新的教育理念和教学方法，为提升我校的教学质量和创新能力打下了坚实基础。</p>
+                            <a href="javascript:void(0)" class="read-more" data-bs-toggle="modal" data-bs-target="#newsModal6">阅读更多 <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 加载更多按钮 -->
+            <div class="text-center mt-4">
+                <button id="loadMoreBtn" class="btn-outline-primary">加载更多 <i class="bi bi-plus-circle"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 新闻模态框1 -->
+    <div class="modal fade news-modal" id="newsModal1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">暑期特别课程招生开始</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="news-modal-meta">
+                        <span class="news-modal-date"><i class="bi bi-calendar3"></i> 2023-05-15</span>
+                        <span class="news-modal-category"><i class="bi bi-tag"></i> 课程活动</span>
+                    </div>
+                    <div class="news-modal-image">
+                        <img src="images/news/news1.jpg" alt="暑期特别课程" class="img-fluid">
+                    </div>
+                    <div class="news-modal-content">
+                        <p>为期四周的暑期编程营即将开始，提供人工智能、游戏开发和机器人编程三大主题，让孩子度过一个充实而有趣的科技假期。</p>
+                        
+                        <h4>课程特色</h4>
+                        <ul>
+                            <li><strong>小班授课</strong> - 每班不超过12名学生，确保每位学员都能得到足够的关注</li>
+                            <li><strong>项目驱动</strong> - 通过完整项目的开发过程，锻炼实际编程能力</li>
+                            <li><strong>趣味教学</strong> - 采用游戏化教学方式，让学习变得有趣而高效</li>
+                            <li><strong>专业师资</strong> - 由经验丰富的一线教师授课，理论与实践相结合</li>
+                        </ul>
+                        
+                        <h4>课程安排</h4>
+                        <p>本次暑期特别课程分为三个主题方向：</p>
+                        <ol>
+                            <li><strong>人工智能入门（8-12岁）</strong><br>通过图形化编程工具学习AI基础知识，制作智能小游戏和简单的语音识别应用。</li>
+                            <li><strong>游戏开发进阶（10-14岁）</strong><br>学习Unity引擎基础，开发2D/3D游戏，掌握游戏设计的核心概念。</li>
+                            <li><strong>机器人编程精英（12-16岁）</strong><br>使用Arduino和Python进行机器人编程，完成自动驾驶小车等实际项目。</li>
+                        </ol>
+                        
+                        <h4>报名信息</h4>
+                        <p>课程时间：2023年7月10日 - 8月5日<br>
+                        招生对象：8-16岁对编程感兴趣的青少年<br>
+                        报名截止：2023年6月30日<br>
+                        咨询电话：400-123-4567</p>
+                        
+                        <div class="news-modal-cta">
+                            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#trialModal">立即报名</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-share"><i class="bi bi-share"></i> 分享</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部区域 -->
+    <footer class="footer-section">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+                        <div class="footer-widget">
+                            <h4>关于我们</h4>
+                            <p>壹零贰肆少儿编程致力于为6-18岁青少年提供优质的编程教育，培养孩子的逻辑思维、解决问题的能力和创造力。</p>
+                            
+                            <div class="mt-4">
+                                <h4>扫码关注</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="text-center">
+                                            <h5>关注公众号</h5>
+                                            <img src="images/qrcode/qrcode.jpg" alt="公众号二维码" class="img-fluid" style="max-width: 150px;">
+                                            <p>获取最新资讯、课程优惠与教育干货</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="text-center">
+                                            <h5>微信客服</h5>
+                                            <img src="images/qrcode/wechat.jpg" alt="微信二维码" class="img-fluid" style="max-width: 150px;">
+                                            <p>添加微信客服咨询课程详情</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
+                        <div class="footer-widget">
+                            <h4>快捷导航</h4>
+                            <div class="row">
+                                <div class="col-6">
+                                    <ul class="footer-links">
+                                        <li><a href="index.html">首页</a></li>
+                                        <li><a href="courses.html">课程体系</a></li>
+                                        <li><a href="scratch.html">Scratch编程</a></li>
+                                        <li><a href="python.html">Python编程</a></li>
+                                        <li><a href="cpp.html">C++编程</a></li>
+                                        <li><a href="competition.html">赛事活动</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul class="footer-links">
+                                        <li><a href="showcase.html">学生作品</a></li>
+                                        <li><a href="news.html">新闻动态</a></li>
+                                        <li><a href="teachers.html">师资力量</a></li>
+                                        <li><a href="about.html">机构介绍</a></li>
+                                        <li><a href="about.html#vision">教学理念</a></li>
+                                        <li><a href="contact.html">联系我们</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="copyright">
+                            <p>© 2023 壹零贰肆少儿编程 版权所有 | 京ICP备12345678号-1</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-menu">
+                            <a href="privacy-policy.html">隐私政策</a>
+                            <a href="terms-of-service.html">服务条款</a>
+                            <a href="careers.html">招贤纳士</a>
+                            <a href="sitemap.html">网站地图</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <a href="#" class="back-to-top"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- 试听预约模态框 -->
+    <div class="modal fade" id="trialModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">预约免费试听课</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="trialForm" class="contact-form">
+                        <div class="mb-3">
+                            <label for="studentName" class="form-label">孩子姓名</label>
+                            <input type="text" class="form-control" id="studentName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="studentAge" class="form-label">孩子年龄</label>
+                            <select class="form-select" id="studentAge" required>
+                                <option value="" selected disabled>请选择年龄段</option>
+                                <option value="6-8岁">6-8岁</option>
+                                <option value="9-11岁">9-11岁</option>
+                                <option value="12-14岁">12-14岁</option>
+                                <option value="15-18岁">15-18岁</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="courseInterest" class="form-label">感兴趣的课程</label>
+                            <select class="form-select" id="courseInterest" required>
+                                <option value="" selected disabled>请选择课程</option>
+                                <option value="Scratch启蒙">Scratch启蒙</option>
+                                <option value="Python基础">Python基础</option>
+                                <option value="C++进阶">C++进阶</option>
+                                <option value="人工智能">人工智能</option>
+                                <option value="机器人编程">机器人编程</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="parentPhone" class="form-label">家长手机</label>
+                            <input type="tel" class="form-control" id="parentPhone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="preferredTime" class="form-label">期望试听时间</label>
+                            <select class="form-select" id="preferredTime" required>
+                                <option value="" selected disabled>请选择时间段</option>
+                                <option value="周中下午">周中下午</option>
+                                <option value="周末上午">周末上午</option>
+                                <option value="周末下午">周末下午</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="submitTrialBtn">提交预约</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- 主JS文件 -->
+    <script src="js/main.js"></script>
+    <!-- 新闻页面JS -->
+    <script src="js/news.js"></script>
+</body>
+</html> 
