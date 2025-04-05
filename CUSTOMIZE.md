@@ -1,5 +1,407 @@
 # 网站自定义修改指南
 
+## 页面修改清单
+
+# index.html
+## 品牌标识
+- [ ] 网站标题：`<title>壹零贰肆 - 少儿编程教育</title>`
+- [ ] 导航栏品牌名称：`<span class="logo-text">壹零贰肆</span>`
+- [ ] 品牌标语：`<span class="logo-tagline">少儿编程教育</span>`
+
+## 页面内容
+- [ ] 首页横幅内容：
+  ```html
+  <h1 class="hero-title">培养孩子的<span class="highlight">编程思维</span>，开启未来无限可能</h1>
+  <p class="hero-subtitle">通过有趣的编程课程，激发孩子的创造力和解决问题的能力</p>
+  ```
+- [ ] 教学特色部分（3个特色卡片）
+- [ ] 热门课程内容（3个课程卡片）
+- [ ] 学生作品展示（4个作品展示）
+- [ ] 新闻动态（3条最新新闻）
+- [ ] 学生竞赛成果（4个获奖展示）
+- [ ] 统计数据（4个数据展示）
+
+## 联系信息
+- [ ] 联系我们部分：
+  ```html
+  <li><i class="bi bi-geo-alt-fill"></i> <span>地址：赛罕区双树街与汇成巷交叉口南50米首岛联合办公</span></li>
+  <li><i class="bi bi-telephone-fill"></i> <span>电话：150-4487-1232</span></li>
+  <li><i class="bi bi-envelope-fill"></i> <span>邮箱：yi_coder@163.com</span></li>
+  <li><i class="bi bi-clock-fill"></i> <span>工作时间：周一至周五 18:00-20:00，周六周日 8:30-20:00</span></li>
+  ```
+- [ ] 联系表单配置：
+  ```html
+  <form class="contact-form" action="https://formsubmit.co/yi_coder@163.com" method="POST">
+  <input type="hidden" name="_subject" value="壹零贰肆少儿编程 - 网站咨询">
+  <input type="hidden" name="_cc" value="yi_coder@163.com">
+  <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
+  ```
+- [ ] 免费试听表单配置：
+  ```html
+  <form class="trial-form" id="trial-form" action="https://formsubmit.co/yi_coder@163.com" method="POST">
+  <input type="hidden" name="_subject" value="壹零贰肆少儿编程 - 试听预约">
+  <input type="hidden" name="_cc" value="yi_coder@163.com">
+  <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
+  ```
+
+## 底部信息
+- [ ] 关于我们简介：
+  ```html
+  <p>壹零贰肆少儿编程致力于为6-18岁青少年提供优质的编程教育，培养孩子的逻辑思维、解决问题的能力和创造力。</p>
+  ```
+- [ ] 社交媒体链接：微信、QQ、微博、抖音、B站等
+- [ ] 二维码提示文字：
+  ```html
+  <p>获取最新资讯、课程优惠与教育干货</p>
+  <p>添加微信客服咨询课程详情</p>
+  ```
+- [ ] 版权信息：
+  ```html
+  <p>© 2024 壹零贰肆少儿编程 版权所有 | 蒙ICP备2024016867号-1</p>
+  ```
+- [ ] 底部菜单链接：隐私政策、服务条款、招贤纳士、网站地图
+
+# about.html
+## 页面内容
+- [ ] 公司简介：
+  ```html
+  <div class="about-intro">
+    <h2>关于壹零贰肆</h2>
+    <p>壹零贰肆少儿编程成立于2018年，专注于为6-18岁青少年提供专业的编程教育...</p>
+  </div>
+  ```
+- [ ] 发展历程时间线：
+  ```html
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">2018年</div>
+      <div class="timeline-content">
+        <h4>壹零贰肆少儿编程成立</h4>
+        <p>在北京成立第一家校区...</p>
+      </div>
+    </div>
+    <!-- 更多时间线项目 -->
+  </div>
+  ```
+- [ ] 公司愿景和使命：
+  ```html
+  <div class="vision-mission">
+    <h3>我们的愿景</h3>
+    <p>成为国内领先的少儿编程教育品牌...</p>
+    <h3>我们的使命</h3>
+    <p>让每个孩子都能享受编程的乐趣...</p>
+  </div>
+  ```
+- [ ] 荣誉和奖项展示（6个奖项）
+
+## 图片资源
+- [ ] 机构介绍图：`images/about/intro.jpg`（600px×400px）
+- [ ] 发展历程图：`images/about/history.jpg`（800px×500px）
+- [ ] 团队照片：`images/about/team.jpg`（800px×500px）
+
+# courses.html
+## 页面内容
+- [ ] 课程体系介绍：
+  ```html
+  <div class="course-system">
+    <h2>我们的课程体系</h2>
+    <p>壹零贰肆少儿编程提供完整的编程学习路径...</p>
+  </div>
+  ```
+- [ ] 课程分类说明（3个主要分类）
+- [ ] 课程筛选功能（年龄、难度、类型）
+- [ ] 课程卡片内容（9个课程展示）
+
+## 图片资源
+- [ ] 课程体系图：`images/course/system-diagram.jpg`（800px×600px）
+- [ ] 课程分类图片：
+  - Scratch：`images/course/scratch/category.jpg`（400px×300px）
+  - Python：`images/course/python/category.jpg`（400px×300px）
+  - C++：`images/course/cpp/category.jpg`（400px×300px）
+- [ ] 课程卡片图片（每个课程一张）
+
+# scratch.html
+## 页面内容
+- [ ] 横幅内容：
+  ```html
+  <h1>Scratch <span class="highlight">创意编程</span></h1>
+  <p>专为6-12岁儿童设计的图形化编程课程，激发创造力，培养逻辑思维和问题解决能力</p>
+  ```
+- [ ] 课程介绍：
+  ```html
+  <div class="course-intro">
+    <h2>什么是Scratch编程？</h2>
+    <p>Scratch是由麻省理工学院开发的图形化编程语言...</p>
+  </div>
+  ```
+- [ ] 课程特点（6个特点展示）
+- [ ] 课程大纲（5个阶段说明）
+- [ ] 学生作品展示（4个作品）
+- [ ] FAQ问答（8个常见问题）
+
+## 图片资源
+- [ ] 横幅图片：`images/course/scratch/banner.jpg`（1920px×400px）
+- [ ] 课程介绍图片：`images/course/scratch/intro.jpg`（600px×400px）
+- [ ] 课程大纲图片：`images/course/scratch/outline.jpg`（800px×600px）
+- [ ] 学生项目图片（4张）
+
+# python.html
+## 页面内容
+- [ ] 横幅内容：
+  ```html
+  <h1>Python <span class="highlight">少儿编程</span></h1>
+  <p>专为10-16岁青少年设计的编程课程，从基础入门到实际应用开发，培养编程思维和问题解决能力</p>
+  ```
+- [ ] 课程介绍：
+  ```html
+  <div class="course-intro">
+    <h2>为什么选择Python？</h2>
+    <p>Python是当今最受欢迎的编程语言之一...</p>
+  </div>
+  ```
+- [ ] 课程特点（6个特点展示）
+- [ ] 课程大纲（5个阶段说明）
+- [ ] 学生作品展示（4个作品）
+- [ ] 项目代码展示（3个代码示例）
+
+## 图片资源
+- [ ] 横幅图片：`images/course/python/banner.jpg`（1920px×400px）
+- [ ] 课程介绍图片：`images/course/python/intro.jpg`（600px×400px）
+- [ ] 课程大纲图片：`images/course/python/outline.jpg`（800px×600px）
+- [ ] 学生项目图片（4张）
+- [ ] 代码示例图片（3张）
+
+# cpp.html
+## 页面内容
+- [ ] 横幅内容：
+  ```html
+  <h1>C++ <span class="highlight">算法编程</span></h1>
+  <p>专为12-18岁青少年设计的高级编程课程，培养算法思维，为信息学竞赛打下坚实基础</p>
+  ```
+- [ ] 课程介绍：
+  ```html
+  <div class="course-intro">
+    <h2>C++编程的重要性</h2>
+    <p>C++是信息学竞赛的主要编程语言...</p>
+  </div>
+  ```
+- [ ] 课程特点（6个特点展示）
+- [ ] 课程大纲（5个阶段说明）
+- [ ] 算法学习内容（4个算法示例）
+- [ ] 竞赛指导内容（3个竞赛介绍）
+
+## 图片资源
+- [ ] 横幅图片：`images/course/cpp/banner.jpg`（1920px×400px）
+- [ ] 课程介绍图片：`images/course/cpp/intro.jpg`（600px×400px）
+- [ ] 课程大纲图片：`images/course/cpp/outline.jpg`（800px×600px）
+- [ ] 算法示例图片（4张）
+
+# showcase.html
+## 页面内容
+- [ ] 筛选功能按钮：
+  ```html
+  <div class="filter-buttons">
+    <button class="filter-btn active" data-filter="all">全部</button>
+    <button class="filter-btn" data-filter="scratch">Scratch</button>
+    <button class="filter-btn" data-filter="python">Python</button>
+    <button class="filter-btn" data-filter="cpp">C++</button>
+    <button class="filter-btn" data-filter="award">获奖作品</button>
+  </div>
+  ```
+- [ ] 学生作品展示项（12个作品）
+- [ ] 项目详情模态框（每个作品一个）
+- [ ] 参与创作区块：
+  ```html
+  <div class="join-showcase">
+    <h2>也想展示你的作品？</h2>
+    <p>如果你是我们的学员，并且完成了一个优秀的编程项目，欢迎向老师提交你的作品！</p>
+  </div>
+  ```
+
+## 图片资源
+- [ ] 学生作品缩略图：`images/showcase/thumbnails/`（400px×300px）
+- [ ] 作品详情图片：`images/showcase/details/`（800px×600px）
+- [ ] 参与创作区块图片：`images/showcase/join.jpg`（500px×400px）
+
+# teachers.html
+## 页面内容
+- [ ] 教师团队介绍：
+  ```html
+  <div class="teachers-intro">
+    <h2>我们的教师团队</h2>
+    <p>壹零贰肆拥有一支专业、热情、富有经验的教师团队...</p>
+  </div>
+  ```
+- [ ] 教师个人简介（6位教师）
+- [ ] 教学特色说明（4个特色）
+- [ ] 培训体系介绍：
+  ```html
+  <div class="training-system">
+    <h3>教师培训体系</h3>
+    <p>我们建立了完善的教师培训体系...</p>
+  </div>
+  ```
+
+## 图片资源
+- [ ] 教师照片：`images/teachers/team/`（250px×250px）
+- [ ] 团队合影：`images/teachers/team/group.jpg`（800px×500px）
+- [ ] 证书图片：`images/teachers/certs/`（300px×300px）
+- [ ] 培训系统图片：`images/teachers/training/system.jpg`（700px×500px）
+
+# competition.html
+## 页面内容
+- [ ] 竞赛介绍：
+  ```html
+  <div class="competition-intro">
+    <h2>编程竞赛</h2>
+    <p>壹零贰肆定期组织各类编程竞赛，为学生提供展示和交流的平台...</p>
+  </div>
+  ```
+- [ ] 竞赛规则（3个主要规则）
+- [ ] 参赛要求（4个要求）
+- [ ] 奖项设置（3个奖项等级）
+- [ ] 往届回顾（4届比赛）
+
+## 图片资源
+- [ ] 竞赛宣传图片：`images/competition/promo.jpg`（800px×500px）
+- [ ] 往届比赛照片：`images/competition/previous/`（600px×400px）
+- [ ] 获奖作品展示：`images/competition/awards/`（400px×300px）
+
+# news.html
+## 页面内容
+- [ ] 新闻列表（12条新闻）
+- [ ] 新闻详情（每个新闻一个页面）
+- [ ] 新闻分类（4个分类）
+- [ ] 新闻时间线（按月份组织）
+
+## 图片资源
+- [ ] 新闻配图：`images/news/`（400px×300px）
+- [ ] 新闻封面图：`images/news/covers/`（800px×400px）
+
+# faq.html
+## 页面内容
+- [ ] 常见问题列表（20个问题）
+- [ ] 问题分类（4个分类）
+- [ ] 问题解答（每个问题详细解答）
+- [ ] 联系咨询部分：
+  ```html
+  <div class="contact-consult">
+    <h3>还有问题？</h3>
+    <p>欢迎随时联系我们，我们的专业顾问将为您解答</p>
+  </div>
+  ```
+
+# contact.html
+## 页面内容
+- [ ] 联系表单：
+  ```html
+  <form class="contact-form" action="https://formsubmit.co/yi_coder@163.com" method="POST">
+    <input type="hidden" name="_subject" value="壹零贰肆少儿编程 - 网站咨询">
+    <input type="hidden" name="_cc" value="yi_coder@163.com">
+    <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
+  </form>
+  ```
+- [ ] 校区信息（3个校区）
+- [ ] 联系方式（电话、邮箱、微信）
+- [ ] 地图位置（3个校区地图）
+
+## 图片资源
+- [ ] 校区照片：`images/contact/campus/`（600px×400px）
+- [ ] 地图截图：`images/contact/maps/`（800px×500px）
+
+# resources.html
+## 页面内容
+- [ ] 资源分类（4个分类）
+- [ ] 资源列表（每个分类10个资源）
+- [ ] 资源描述（每个资源详细说明）
+- [ ] 下载链接（每个资源下载地址）
+
+## 图片资源
+- [ ] 资源封面图：`images/resources/covers/`（300px×400px）
+- [ ] 资源预览图：`images/resources/previews/`（600px×400px）
+
+# careers.html
+## 页面内容
+- [ ] 招聘职位（5个职位）
+- [ ] 职位要求（每个职位详细要求）
+- [ ] 福利待遇：
+  ```html
+  <div class="benefits">
+    <h3>我们提供</h3>
+    <ul>
+      <li>具有竞争力的薪资</li>
+      <li>完善的培训体系</li>
+      <li>良好的发展空间</li>
+    </ul>
+  </div>
+  ```
+- [ ] 应聘流程（4个步骤）
+
+# 通用修改项
+## 图片资源
+- [ ] Logo相关：
+  - 主要logo：`images/logo/logo-primary.png`（120px×40px）
+  - 白色logo：`images/logo/logo-white.png`（140px×45px）
+- [ ] 课程相关图片：
+  - Scratch课程：`images/course/scratch/`
+  - Python课程：`images/course/python/`
+  - C++课程：`images/course/cpp/`
+- [ ] 教师相关图片：`images/teachers/`
+- [ ] 首页和横幅图片：`images/hero/`和`images/banners/`
+- [ ] 关于我们页面图片：`images/about/`
+- [ ] 学生作品展示图片：`images/showcase/`
+- [ ] 其他资源图片：`images/ui/`
+
+## 联系信息
+- [ ] 地址与电话：
+  ```html
+  <address>
+    地址：赛罕区双树街与汇成巷交叉口南50米首岛联合办公<br>
+    电话：150-4487-1232<br>
+    邮箱：yi_coder@163.com
+  </address>
+  ```
+- [ ] 社交媒体链接：
+  ```html
+  <div class="social-links">
+    <a href="#"><i class="bi bi-wechat"></i></a>
+    <a href="#"><i class="bi bi-qq"></i></a>
+    <a href="#"><i class="bi bi-weibo"></i></a>
+  </div>
+  ```
+
+## 课程信息
+- [ ] 课程价格：
+  ```html
+  <div class="course-prices">
+    <div class="price-item">
+      <h4>Scratch启蒙编程</h4>
+      <p class="price">¥2,980</p>
+    </div>
+    <!-- 更多课程价格 -->
+  </div>
+  ```
+- [ ] 课程描述（每个课程详细描述）
+- [ ] 课程特色（每个课程3-4个特色）
+
+## 教师信息
+- [ ] 教师团队信息（6位教师）
+- [ ] 证书与资质（4个证书）
+
+## 其他
+- [ ] 常见问题(FAQs)（20个问题）
+- [ ] 版权信息：
+  ```html
+  <p>© 2024 壹零贰肆少儿编程 版权所有 | 蒙ICP备2024016867号-1</p>
+  ```
+- [ ] 导航菜单（所有页面统一）
+- [ ] SEO信息（所有页面meta标签）
+- [ ] 表单反馈（所有表单提交后页面）
+- [ ] 隐私政策：`privacy-policy.html`
+- [ ] 服务条款：`terms-of-service.html`
+
+# 网站自定义修改指南
+
 本文档列出了网站中需要手动修改的所有部分，包括图片资源、联系信息、内容细节等。按照以下指导完成修改后，网站将完全符合"壹零贰肆少儿编程"的品牌形象。
 
 ## index.html 需要修改的内容
@@ -33,23 +435,23 @@
 ### 联系信息
 - [ ] 更新联系我们部分：
   ```html
-  <li><i class="bi bi-geo-alt-fill"></i> <span>地址：科技园区创新路88号未来大厦15楼</span></li>
-  <li><i class="bi bi-telephone-fill"></i> <span>电话：400-123-4567</span></li>
-  <li><i class="bi bi-envelope-fill"></i> <span>邮箱：info@weilaima.com</span></li>
-  <li><i class="bi bi-clock-fill"></i> <span>工作时间：周一至周五 9:00-18:00，周六周日 10:00-17:00</span></li>
+  <li><i class="bi bi-geo-alt-fill"></i> <span>地址：赛罕区双树街与汇成巷交叉口南50米首岛联合办公</span></li>
+  <li><i class="bi bi-telephone-fill"></i> <span>电话：150-4487-1232</span></li>
+  <li><i class="bi bi-envelope-fill"></i> <span>邮箱：yi_coder@163.com</span></li>
+  <li><i class="bi bi-clock-fill"></i> <span>工作时间：周一至周五 18:00-20:00，周六周日 8:30-20:00</span></li>
   ```
 - [ ] 更新联系表单提交配置：
   ```html
   <form class="contact-form" action="https://formsubmit.co/yi_coder@163.com" method="POST">
   <input type="hidden" name="_subject" value="壹零贰肆少儿编程 - 网站咨询">
-  <input type="hidden" name="_cc" value="info@weilaima.com">
+  <input type="hidden" name="_cc" value="yi_coder@163.com">
   <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
   ```
 - [ ] 更新免费试听表单提交配置：
   ```html
   <form class="trial-form" id="trial-form" action="https://formsubmit.co/yi_coder@163.com" method="POST">
   <input type="hidden" name="_subject" value="壹零贰肆少儿编程 - 试听预约">
-  <input type="hidden" name="_cc" value="info@weilaima.com">
+  <input type="hidden" name="_cc" value="yi_coder@163.com">
   <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
   ```
 
@@ -66,7 +468,7 @@
   ```
 - [ ] 更新版权信息：
   ```html
-  <p>© 2023 壹零贰肆少儿编程 版权所有 | 京ICP备12345678号-1</p>
+  <p>© 2024 壹零贰肆少儿编程 版权所有 | 蒙ICP备2024016867号-1</p>
   ```
 - [ ] 更新底部菜单链接：隐私政策、服务条款、招贤纳士、网站地图
 
@@ -131,9 +533,9 @@
 ## 联系信息
 
 ### 地址与电话
-- [ ] 公司地址：目前为"科技园区创新路88号未来大厦15楼"
-- [ ] 联系电话：目前为"400-123-4567"
-- [ ] 电子邮箱：目前为"info@weilaima.com"
+- [ ] 公司地址：目前为"赛罕区双树街与汇成巷交叉口南50米首岛联合办公"
+- [ ] 联系电话：目前为"150-4487-1232"
+- [ ] 电子邮箱：目前为"yi_coder@163.com"
 
 ### 社交媒体链接
 - [ ] 微信公众号（更新二维码）
@@ -175,7 +577,7 @@
 
 ## 版权信息
 
-- [ ] 更新页脚版权信息："© 2023 壹零贰肆少儿编程 版权所有 | 京ICP备12345678号-1"
+- [ ] 更新页脚版权信息："© 2024 壹零贰肆少儿编程 版权所有 | 蒙ICP备2024016867号-1"
 - [ ] 更新年份（如需要）
 
 ## 页面内容检查清单
@@ -459,6 +861,7 @@
 
 ### 学生作品展示图片
 - [ ] 准备学生作品缩略图（推荐尺寸：400px×300px）：
+  - `
   - `images/showcase/project1.jpg`
   - `images/showcase/project2.jpg`
   - `images/showcase/project3.jpg`

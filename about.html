@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>关于我们 - 未来码少儿编程教育</title>
+    <title>关于我们 - 壹零贰肆少儿编程教育</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/about.css">
 </head>
+
 <body>
     <!-- 导航栏 -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <span class="logo-text">未来码</span>
-                <span class="logo-subtitle">少儿编程</span>
+                <div class="logo-container">
+                    <span class="logo-text">壹零贰肆</span>
+                    <span class="logo-tagline">少儿编程教育</span>
+                </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -22,41 +29,79 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">首页</a>
+                        <a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> 首页</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="about.html">关于我们</a>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="courses.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-book"></i> 课程体系
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="scratch.html">Scratch编程</a></li>
+                            <li><a class="dropdown-item" href="python.html">Python编程</a></li>
+                            <li><a class="dropdown-item" href="cpp.html">C++编程</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="courses.html">全部课程</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="courses.html">课程体系</a>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-collection"></i> 资讯中心
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="showcase.html">学生作品</a></li>
+                            <li><a class="dropdown-item" href="competition.html">赛事活动</a></li>
+                            <li><a class="dropdown-item" href="news.html">新闻动态</a></li>
+                            <li><a class="dropdown-item" href="faq.html">常见问题</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="teachers.html">师资力量</a>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-info-circle"></i> 了解我们
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="about.html" class="active">关于我们</a></li>
+                            <li><a class="dropdown-item" href="resources.html">编程资源</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="contact.html">联系方式</a></li>
+                        </ul>
                     </li>
+                    
                     <li class="nav-item">
-                        <a class="nav-link" href="showcase.html">学生作品</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="news.html">新闻动态</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">联系我们</a>
+                        <a class="nav-link btn btn-primary btn-sm ms-2 px-3" href="#" data-bs-toggle="modal" data-bs-target="#trialModal">
+                            <i class="bi bi-calendar-check"></i> 预约试听
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+</header> 
 
-    <!-- 页面标题 -->
-    <section class="page-title">
+    <!-- 页面横幅 -->
+    <section class="page-banner">
         <div class="container">
-            <h1>关于我们</h1>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">首页</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">关于我们</li>
-                </ol>
-            </nav>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="banner-content text-center">
+                        <h1>关于我们</h1>
+                        <p>专注少儿编程教育，培养未来科技创新人才</p>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="index.html">首页</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">关于我们</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="banner-shape">
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
         </div>
     </section>
 
@@ -66,40 +111,37 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="about-image">
-                        <img src="images/about-school.jpg" alt="未来码少儿编程" class="img-fluid rounded">
+                        <img src="images/about/school.jpg" alt="壹零贰肆少儿编程" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="about-content">
-                        <div class="section-title text-start">
-                            <h2>未来码少儿编程</h2>
-                            <p>培养孩子面向未来的能力</p>
-                        </div>
-                        <p>未来码少儿编程成立于2015年，是国内领先的专注于5-16岁青少年编程教育的科技教育机构。我们致力于让孩子在趣味编程的世界中培养逻辑思维、计算思维、创新能力和解决问题的能力。</p>
+                        <h2>壹零贰肆少儿编程</h2>
+                        <p>壹零贰肆少儿编程成立于2020年，是一家专注于5-16岁青少年编程教育的科技教育机构。我们致力于让孩子在趣味编程的世界中培养逻辑思维、计算思维、创新能力和解决问题的能力。</p>
                         <p>我们的使命是通过编程教育，培养孩子适应未来数字化世界的核心竞争力，让他们从编程中获得创造的乐趣和成就感，并为将来的学习和职业发展奠定坚实基础。</p>
                         <div class="about-stats">
                             <div class="row">
                                 <div class="col-6 col-md-3">
                                     <div class="stats-item">
-                                        <h3>8+</h3>
+                                        <h3>3</h3>
                                         <p>办学年限</p>
                                     </div>
                                 </div>
                                 <div class="col-6 col-md-3">
                                     <div class="stats-item">
-                                        <h3>15+</h3>
+                                        <h3>5</h3>
                                         <p>校区数量</p>
                                     </div>
                                 </div>
                                 <div class="col-6 col-md-3">
                                     <div class="stats-item">
-                                        <h3>50+</h3>
+                                        <h3>20</h3>
                                         <p>专业教师</p>
                                     </div>
                                 </div>
                                 <div class="col-6 col-md-3">
                                     <div class="stats-item">
-                                        <h3>10000+</h3>
+                                        <h3>1000</h3>
                                         <p>培养学员</p>
                                     </div>
                                 </div>
@@ -111,93 +153,116 @@
         </div>
     </section>
 
-    <!-- 教育理念与愿景 -->
-    <section class="vision-section section-padding bg-light">
+    <!-- 教育理念 -->
+    <section id="vision" class="vision-section section-padding">
         <div class="container">
-            <div class="section-title">
-                <h2>教育理念与愿景</h2>
-                <p>为什么选择未来码少儿编程</p>
+            <div class="section-title text-center">
+                <h2>教育理念</h2>
+                <p>以学生为中心，培养面向未来的创新型人才</p>
             </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="vision-card">
-                        <div class="vision-icon">
-                            <i class="bi bi-star"></i>
-                        </div>
-                        <h3>我们的理念</h3>
-                        <p>我们相信，编程不仅仅是一种技能，更是一种思维方式。通过编程教育，孩子们能够学会系统性思考、逻辑分析和创造性解决问题，这些能力将对他们的未来学习和职业发展产生深远影响。</p>
-                        <p>我们坚持"以学生为中心"的教学方式，注重激发孩子的兴趣和创造力，让他们在学习过程中体验成功的喜悦，建立自信心和成就感。</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
                     <div class="vision-card">
                         <div class="vision-icon">
                             <i class="bi bi-lightbulb"></i>
                         </div>
-                        <h3>我们的愿景</h3>
-                        <p>我们的愿景是成为中国最受信赖的少儿编程教育品牌，让每一个孩子都能享受到优质的编程教育，培养他们成为具有创新精神和实践能力的数字时代人才。</p>
-                        <p>未来，我们将继续完善课程体系，升级教学模式，扩展学习场景，让孩子们在编程世界中探索无限可能，为他们的未来学习和发展打下坚实基础。</p>
+                        <h3>兴趣驱动</h3>
+                        <p>采用游戏化、项目式学习方法，让编程学习变得有趣且富有挑战性。通过精心设计的课程内容，激发孩子的学习兴趣和创造热情。</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="vision-card">
+                        <div class="vision-icon">
+                            <i class="bi bi-diagram-3"></i>
+                        </div>
+                        <h3>思维培养</h3>
+                        <p>注重培养逻辑思维、计算思维和创新思维能力。通过编程训练，提升孩子的问题分析、算法设计和系统思考能力。</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="vision-card">
+                        <div class="vision-icon">
+                            <i class="bi bi-person-check"></i>
+                        </div>
+                        <h3>因材施教</h3>
+                        <p>根据学生的年龄特点、认知水平和学习进度，制定个性化的学习计划。采用小班教学模式，确保每个孩子都能得到充分关注。</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="vision-card">
+                        <div class="vision-icon">
+                            <i class="bi bi-layers"></i>
+                        </div>
+                        <h3>循序渐进</h3>
+                        <p>课程体系科学合理，从图形化编程到文本编程，由浅入深，确保学生能够扎实掌握每一个知识点，建立起完整的知识体系。</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="vision-card">
+                        <div class="vision-icon">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <h3>协作学习</h3>
+                        <p>鼓励团队合作和peer learning，通过小组项目和编程竞赛，培养孩子的沟通能力、团队协作精神和领导力。</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="vision-card">
+                        <div class="vision-icon">
+                            <i class="bi bi-rocket"></i>
+                        </div>
+                        <h3>面向未来</h3>
+                        <p>紧跟科技发展趋势，将人工智能、数据科学等前沿知识融入课程，培养具有国际视野和创新能力的未来科技人才。</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 发展历程 -->
-    <section class="history-section section-padding">
+    <!-- 师资力量 -->
+    <section id="teachers" class="teachers-section section-padding">
         <div class="container">
-            <div class="section-title">
-                <h2>发展历程</h2>
-                <p>我们一路走来的重要里程碑</p>
+            <div class="section-title text-center mb-5">
+                <h2>师资力量</h2>
+                <p>专业、敬业、富有爱心的教师团队</p>
             </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>2015年</h3>
-                        <p>未来码少儿编程在科技园区成立第一家校区，开始提供Scratch编程基础课程。</p>
+            <div class="row g-4">
+                <div class="col-lg-6 col-md-6">
+                    <div class="teacher-card">
+                        <div class="teacher-image">
+                            <img src="images/teachers/teacher1.jpg" alt="张老师" class="img-fluid">
+                            <div class="teacher-overlay">
+                                <div class="teacher-social">
+                                    <a href="#"><i class="bi bi-github"></i></a>
+                                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                                    <a href="#"><i class="bi bi-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="teacher-info">
+                            <h3>张老师</h3>
+                            <p class="teacher-title">教学总监</p>
+                            <p class="teacher-description">拥有10年编程教育经验，曾指导学生获得多项编程竞赛奖项，擅长Scratch和Python教学。</p>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content right">
-                        <h3>2017年</h3>
-                        <p>研发完成系统性课程体系，新增Python少儿编程和机器人编程课程，学员人数突破1000人。</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>2019年</h3>
-                        <p>开设第5家校区，与多所中小学建立合作关系，开展校园编程课程和活动。</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content right">
-                        <h3>2020年</h3>
-                        <p>开发在线教学平台，推出线上线下融合教学模式，应对疫情挑战，保证教学质量。</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>2021年</h3>
-                        <p>获得A轮融资，加速全国化布局，新增5家直营校区，培训学员突破5000人。</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content right">
-                        <h3>2022年</h3>
-                        <p>推出创新人工智能启蒙课程，学员团队在全国青少年编程大赛中获得多项大奖。</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>2023年</h3>
-                        <p>校区数量突破15家，覆盖全国多个城市，学员人数超过10000人，成为行业领先品牌。</p>
+                <div class="col-lg-6 col-md-6">
+                    <div class="teacher-card">
+                        <div class="teacher-image">
+                            <img src="images/teachers/teacher2.jpg" alt="李老师" class="img-fluid">
+                            <div class="teacher-overlay">
+                                <div class="teacher-social">
+                                    <a href="#"><i class="bi bi-github"></i></a>
+                                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                                    <a href="#"><i class="bi bi-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="teacher-info">
+                            <h3>李老师</h3>
+                            <p class="teacher-title">高级讲师</p>
+                            <p class="teacher-description">计算机科学硕士，专注于C++算法教学，培养出多名信息学奥赛获奖选手。</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -205,397 +270,224 @@
     </section>
 
     <!-- 教学特色 -->
-    <section class="features-section section-padding bg-light">
+    <section id="features" class="features-section">
         <div class="container">
-            <div class="section-title">
-                <h2>我们的教学特色</h2>
-                <p>专业的团队，科学的方法，优质的服务</p>
+            <div class="section-title text-center mb-5">
+                <h2>教学特色</h2>
+                <p>专业的教学体系，全方位的成长支持</p>
             </div>
-            <div class="row">
-                <div class="col-md-4">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <a href="http://oj.1024code.top" target="_blank" class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-code-square"></i>
+                        </div>
+                        <h3>在线评测平台</h3>
+                        <p>自主研发的OJ平台，提供丰富的编程题库和实时评测功能，帮助学生快速提升编程能力。</p>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <a href="https://blog.y-liberty.cn" target="_blank" class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-journal-text"></i>
+                        </div>
+                        <h3>课后博客系统</h3>
+                        <p>专属的博客平台，记录学习历程，分享技术心得，培养写作和表达能力。</p>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <h3>小班教学</h3>
+                        <p>采用小班教学模式，确保每位学生都能得到充分的关注和指导。</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
                     <div class="feature-card">
                         <div class="feature-icon">
                             <i class="bi bi-graph-up"></i>
                         </div>
-                        <h3>科学的课程体系</h3>
-                        <p>根据不同年龄段孩子的认知特点和学习能力，设计进阶式课程体系，满足孩子从入门到精通的学习需求</p>
+                        <h3>项目驱动</h3>
+                        <p>通过实际项目开发，培养学生的实践能力和团队协作精神。</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="bi bi-person-check"></i>
-                        </div>
-                        <h3>专业的师资团队</h3>
-                        <p>所有教师均具备计算机相关专业背景和丰富的教学经验，定期培训，确保教学质量</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="bi bi-book"></i>
-                        </div>
-                        <h3>特色教材与资源</h3>
-                        <p>自主研发专业教材和教学资源，结合国际先进教育理念，兼顾趣味性和实用性</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="bi bi-clipboard-data"></i>
-                        </div>
-                        <h3>智能学习系统</h3>
-                        <p>利用智能化学习平台，记录和分析学生学习数据，为每个孩子提供个性化学习方案</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
+                <div class="col-lg-4 col-md-6">
                     <div class="feature-card">
                         <div class="feature-icon">
                             <i class="bi bi-trophy"></i>
                         </div>
-                        <h3>竞赛与展示机会</h3>
-                        <p>定期组织编程比赛和作品展示活动，提供学以致用的平台，增强学习动力和成就感</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="bi bi-chat-square-dots"></i>
-                        </div>
-                        <h3>完善的家校沟通</h3>
-                        <p>通过课堂观摩、成长报告和家长会等多种形式，保持与家长的紧密沟通，共同关注孩子成长</p>
+                        <h3>竞赛指导</h3>
+                        <p>专业的竞赛指导团队，帮助学生参与各类编程竞赛，提升竞争力。</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 荣誉资质 -->
-    <section class="awards-section section-padding">
+
+
+    <!-- 荣誉资质（暂时注释） -->
+    <!--
+    <section class="awards-section section-padding bg-light">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title text-center">
                 <h2>荣誉资质</h2>
-                <p>我们获得的认可与荣誉</p>
+                <p>专业实力，值得信赖</p>
             </div>
             <div class="row awards-gallery">
                 <div class="col-md-3 col-6">
                     <div class="award-item">
-                        <img src="images/award1.jpg" alt="荣誉证书" class="img-fluid">
-                        <div class="award-title">全国青少年信息教育示范基地</div>
+                        <img src="images/about/award1.jpg" alt="荣誉证书" class="img-fluid">
+                        <div class="award-title">教育行业认证</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-6">
                     <div class="award-item">
-                        <img src="images/award2.jpg" alt="荣誉证书" class="img-fluid">
-                        <div class="award-title">CCTV科教频道合作机构</div>
+                        <img src="images/about/award2.jpg" alt="荣誉证书" class="img-fluid">
+                        <div class="award-title">优秀教育机构</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-6">
                     <div class="award-item">
-                        <img src="images/award3.jpg" alt="荣誉证书" class="img-fluid">
-                        <div class="award-title">中国教育科技示范单位</div>
+                        <img src="images/about/award3.jpg" alt="荣誉证书" class="img-fluid">
+                        <div class="award-title">科技创新奖</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-6">
                     <div class="award-item">
-                        <img src="images/award4.jpg" alt="荣誉证书" class="img-fluid">
-                        <div class="award-title">年度影响力教育品牌</div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-4">
-                <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#certificatesModal">查看全部资质证书</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 团队介绍 -->
-    <section class="team-section section-padding bg-light">
-        <div class="container">
-            <div class="section-title">
-                <h2>核心团队</h2>
-                <p>专业的团队造就卓越的教育</p>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="team-card">
-                        <div class="team-image">
-                            <img src="images/team1.jpg" alt="团队成员" class="img-fluid">
-                        </div>
-                        <div class="team-info">
-                            <h3>王明</h3>
-                            <p class="team-position">创始人兼CEO</p>
-                            <p class="team-description">清华大学计算机科学博士，曾任知名互联网公司技术总监，有丰富的教育科技领域经验</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="team-card">
-                        <div class="team-image">
-                            <img src="images/team2.jpg" alt="团队成员" class="img-fluid">
-                        </div>
-                        <div class="team-info">
-                            <h3>李华</h3>
-                            <p class="team-position">教学总监</p>
-                            <p class="team-description">北京师范大学教育学硕士，拥有10年青少年编程教育经验，负责课程体系研发</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="team-card">
-                        <div class="team-image">
-                            <img src="images/team3.jpg" alt="团队成员" class="img-fluid">
-                        </div>
-                        <div class="team-info">
-                            <h3>张伟</h3>
-                            <p class="team-position">技术总监</p>
-                            <p class="team-description">前Google软件工程师，负责教学平台和系统开发，确保技术支持教学创新</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="team-card">
-                        <div class="team-image">
-                            <img src="images/team4.jpg" alt="团队成员" class="img-fluid">
-                        </div>
-                        <div class="team-info">
-                            <h3>赵芳</h3>
-                            <p class="team-position">运营总监</p>
-                            <p class="team-description">拥有多年教育机构运营管理经验，负责校区运营和品质管理，确保教学服务质量</p>
-                        </div>
+                        <img src="images/about/award4.jpg" alt="荣誉证书" class="img-fluid">
+                        <div class="award-title">最佳教育品牌</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    -->
 
-    <!-- 合作伙伴 -->
+    <!-- 合作伙伴（暂时注释） -->
+    <!--
     <section class="partners-section section-padding">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title text-center">
                 <h2>合作伙伴</h2>
-                <p>强强联合，共同推动少儿编程教育发展</p>
+                <p>携手共创未来</p>
             </div>
             <div class="partners-slider">
                 <div class="row">
                     <div class="col-md-2 col-4">
                         <div class="partner-item">
-                            <img src="images/partner1.jpg" alt="合作伙伴" class="img-fluid">
+                            <img src="images/about/partner1.jpg" alt="合作伙伴" class="img-fluid">
                         </div>
                     </div>
                     <div class="col-md-2 col-4">
                         <div class="partner-item">
-                            <img src="images/partner2.jpg" alt="合作伙伴" class="img-fluid">
+                            <img src="images/about/partner2.jpg" alt="合作伙伴" class="img-fluid">
                         </div>
                     </div>
                     <div class="col-md-2 col-4">
                         <div class="partner-item">
-                            <img src="images/partner3.jpg" alt="合作伙伴" class="img-fluid">
+                            <img src="images/about/partner3.jpg" alt="合作伙伴" class="img-fluid">
                         </div>
                     </div>
                     <div class="col-md-2 col-4">
                         <div class="partner-item">
-                            <img src="images/partner4.jpg" alt="合作伙伴" class="img-fluid">
+                            <img src="images/about/partner4.jpg" alt="合作伙伴" class="img-fluid">
                         </div>
                     </div>
                     <div class="col-md-2 col-4">
                         <div class="partner-item">
-                            <img src="images/partner5.jpg" alt="合作伙伴" class="img-fluid">
+                            <img src="images/about/partner5.jpg" alt="合作伙伴" class="img-fluid">
                         </div>
                     </div>
                     <div class="col-md-2 col-4">
                         <div class="partner-item">
-                            <img src="images/partner6.jpg" alt="合作伙伴" class="img-fluid">
+                            <img src="images/about/partner6.jpg" alt="合作伙伴" class="img-fluid">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    -->
 
-    <!-- 免费体验CTA -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>让孩子体验编程的乐趣</h2>
-                <p>现在预约免费试听课，让孩子感受趣味编程的魅力</p>
-                <a href="#" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#trialModal">立即预约</a>
-            </div>
-        </div>
-    </section>
+    <!-- 底部区域 -->
+    <footer class="footer-section">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+                        <div class="footer-widget">
+                            <h4>关于我们</h4>
+                            <p>壹零贰肆少儿编程致力于为6-18岁青少年提供优质的编程教育，培养孩子的逻辑思维、解决问题的能力和创造力。</p>
 
-    <!-- 证书模态框 -->
-    <div class="modal fade" id="certificatesModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">荣誉资质证书</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="certificates-gallery">
-                        <div class="row">
-                            <div class="col-md-4 col-6 mb-4">
-                                <div class="certificate-item">
-                                    <img src="images/award1.jpg" alt="荣誉证书" class="img-fluid">
-                                    <div class="certificate-title">全国青少年信息教育示范基地</div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-6 mb-4">
-                                <div class="certificate-item">
-                                    <img src="images/award2.jpg" alt="荣誉证书" class="img-fluid">
-                                    <div class="certificate-title">CCTV科教频道合作机构</div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-6 mb-4">
-                                <div class="certificate-item">
-                                    <img src="images/award3.jpg" alt="荣誉证书" class="img-fluid">
-                                    <div class="certificate-title">中国教育科技示范单位</div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-6 mb-4">
-                                <div class="certificate-item">
-                                    <img src="images/award4.jpg" alt="荣誉证书" class="img-fluid">
-                                    <div class="certificate-title">年度影响力教育品牌</div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-6 mb-4">
-                                <div class="certificate-item">
-                                    <img src="images/award5.jpg" alt="荣誉证书" class="img-fluid">
-                                    <div class="certificate-title">教育部产学研合作基地</div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-6 mb-4">
-                                <div class="certificate-item">
-                                    <img src="images/award6.jpg" alt="荣誉证书" class="img-fluid">
-                                    <div class="certificate-title">高新技术企业认证</div>
+                            <div class="mt-4">
+                                <h4>扫码关注</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="text-center">
+                                            <h5>关注公众号</h5>
+                                            <img src="images/qrcode/qrcode.jpg" alt="公众号二维码" class="img-fluid"
+                                                style="max-width: 150px;">
+                                            <p>获取最新资讯、课程优惠与教育干货</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="text-center">
+                                            <h5>微信客服</h5>
+                                            <img src="images/qrcode/wechat.jpg" alt="微信二维码" class="img-fluid"
+                                                style="max-width: 150px;">
+                                            <p>添加微信客服咨询课程详情</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 免费试听模态框 -->
-    <div class="modal fade" id="trialModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">预约免费试听课</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form class="trial-form">
-                        <div class="mb-3">
-                            <label class="form-label">孩子姓名</label>
-                            <input type="text" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">孩子年龄</label>
-                            <input type="number" class="form-control" min="5" max="16" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">家长姓名</label>
-                            <input type="text" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">联系电话</label>
-                            <input type="tel" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">感兴趣的课程</label>
-                            <select class="form-select" required>
-                                <option selected disabled value="">请选择课程</option>
-                                <option>Scratch编程启蒙</option>
-                                <option>Python少儿编程</option>
-                                <option>机器人编程</option>
-                                <option>其他课程</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">预约时间</label>
-                            <input type="date" class="form-control" min="2023-03-22" required>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-primary">提交预约</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 页脚 -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="footer-about">
-                        <h3 class="footer-title">未来码少儿编程</h3>
-                        <p>专注于5-16岁青少年编程教育，致力于培养孩子的逻辑思维能力、创造力和解决问题的能力。</p>
-                        <div class="footer-contact">
-                            <p><i class="bi bi-telephone"></i> 400-123-4567</p>
-                            <p><i class="bi bi-envelope"></i> info@weilaima.com</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6">
-                    <div class="footer-links">
-                        <h3 class="footer-title">快速链接</h3>
-                        <ul>
-                            <li><a href="index.html">首页</a></li>
-                            <li><a href="about.html">关于我们</a></li>
-                            <li><a href="courses.html">课程体系</a></li>
-                            <li><a href="teachers.html">师资力量</a></li>
-                            <li><a href="showcase.html">学生作品</a></li>
-                            <li><a href="news.html">新闻动态</a></li>
-                            <li><a href="contact.html">联系我们</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-links">
-                        <h3 class="footer-title">课程分类</h3>
-                        <ul>
-                            <li><a href="courses.html#scratch">Scratch编程启蒙</a></li>
-                            <li><a href="courses.html#python">Python少儿编程</a></li>
-                            <li><a href="courses.html#robot">机器人编程</a></li>
-                            <li><a href="courses.html#app">App开发</a></li>
-                            <li><a href="courses.html#ai">人工智能启蒙</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-newsletter">
-                        <h3 class="footer-title">关注我们</h3>
-                        <p>扫描下方二维码，关注公众号获取更多资讯</p>
-                        <div class="qrcode-wrap">
-                            <img src="images/qrcode.jpg" alt="公众号二维码" class="img-fluid">
+                    <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
+                        <div class="footer-widget">
+                            <h4>快捷导航</h4>
+                            <div class="row">
+                                <div class="col-6">
+                                    <ul class="footer-links">
+                                        <li><a href="index.html">首页</a></li>
+                                        <li><a href="courses.html">课程体系</a></li>
+                                        <li><a href="scratch.html">Scratch编程</a></li>
+                                        <li><a href="python.html">Python编程</a></li>
+                                        <li><a href="cpp.html">C++编程</a></li>
+                                        <li><a href="competition.html">赛事活动</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul class="footer-links">
+                                        <li><a href="showcase.html">学生作品</a></li>
+                                        <li><a href="news.html">新闻动态</a></li>
+                                        <li><a href="about.html">机构介绍</a></li>
+                                        <li><a href="resources.html">编程资源</a></li>
+                                        <li><a href="contact.html">联系我们</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <div class="copyright">
-                                <p>© 2023 壹零贰肆少儿编程 版权所有 | 京ICP备12345678号-1</p>
-                            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="copyright">
+                            <p>© 2024 壹零贰肆少儿编程 版权所有 | 蒙ICP备2024016867号-1</p>
                         </div>
-                        <div class="col-md-6">
-                            <div class="footer-menu">
-                                <a href="privacy-policy.html">隐私政策</a>
-                                <a href="terms-of-service.html">服务条款</a>
-                                <a href="careers.html">招贤纳士</a>
-                                <a href="sitemap.html">网站地图</a>
-                            </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-menu">
+                            <a href="privacy-policy.html">隐私政策</a>
+                            <a href="terms-of-service.html">服务条款</a>
+                            <a href="careers.html">招贤纳士</a>
+                            <a href="sitemap.html">网站地图</a>
                         </div>
                     </div>
                 </div>
@@ -611,5 +503,7 @@
     <!-- JavaScript 文件 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/about.js"></script>
 </body>
-</html> 
+
+</html>

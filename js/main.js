@@ -137,6 +137,25 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
         });
     });
+    
+    // 侧边导航栏显示控制
+    const sidebar = document.querySelector('.quick-nav-sidebar');
+    const banner = document.querySelector('.page-banner');
+    
+    if (sidebar && banner) {
+        const bannerBottom = banner.offsetTop + banner.offsetHeight;
+        
+        function checkScroll() {
+            if (window.scrollY > bannerBottom) {
+                sidebar.classList.add('visible');
+            } else {
+                sidebar.classList.remove('visible');
+            }
+        }
+        
+        window.addEventListener('scroll', checkScroll);
+        checkScroll(); // 初始检查
+    }
 });
 
 // 初始化返回顶部按钮
